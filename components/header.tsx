@@ -84,32 +84,32 @@ export function Header() {
         {mobileMenuOpen && (
           <div className="lg:hidden border-t border-white/10 bg-black">
             <nav className="container mx-auto px-4 py-6 flex flex-col gap-4">
-              <Link href="/" className="text-sm text-zinc-300 hover:text-white transition-colors py-2">
+              <Link href="/" className="text-sm text-zinc-300 hover:text-white transition-colors py-2" onClick={() => setMobileMenuOpen(false)}>
                 Home
               </Link>
-              <Link href="/inventory" className="text-sm text-zinc-300 hover:text-white transition-colors py-2">
+              <Link href="/inventory" className="text-sm text-zinc-300 hover:text-white transition-colors py-2" onClick={() => setMobileMenuOpen(false)}>
                 View Stock
               </Link>
-              <Link href="/finance" className="text-sm text-zinc-300 hover:text-white transition-colors py-2">
+              <Link href="/finance" className="text-sm text-zinc-300 hover:text-white transition-colors py-2" onClick={() => setMobileMenuOpen(false)}>
                 Finance
               </Link>
-              <Link href="/services/warranty" className="text-sm text-zinc-300 hover:text-white transition-colors py-2">
+              <Link href="/services/warranty" className="text-sm text-zinc-300 hover:text-white transition-colors py-2" onClick={() => setMobileMenuOpen(false)}>
                 Warranty
               </Link>
-              <Link href="/services/part-exchange" className="text-sm text-zinc-300 hover:text-white transition-colors py-2">
+              <Link href="/services/part-exchange" className="text-sm text-zinc-300 hover:text-white transition-colors py-2" onClick={() => setMobileMenuOpen(false)}>
                 Part Exchange
               </Link>
-              <Link href="/about" className="text-sm text-zinc-300 hover:text-white transition-colors py-2">
+              <Link href="/about" className="text-sm text-zinc-300 hover:text-white transition-colors py-2" onClick={() => setMobileMenuOpen(false)}>
                 About
               </Link>
-              <Link href="/contact" className="text-sm text-zinc-300 hover:text-white transition-colors py-2">
+              <Link href="/contact" className="text-sm text-zinc-300 hover:text-white transition-colors py-2" onClick={() => setMobileMenuOpen(false)}>
                 Contact
               </Link>
               <div className="flex flex-col gap-3 pt-4 border-t border-white/10">
-                <Button variant="outline" size="sm" asChild>
+                <Button variant="outline" size="sm" asChild onClick={() => setMobileMenuOpen(false)}>
                   <Link href="/services/sell-your-car">Sell Your Car</Link>
                 </Button>
-                <Button variant="primary" size="sm" asChild>
+                <Button variant="primary" size="sm" asChild onClick={() => setMobileMenuOpen(false)}>
                   <Link href="/inventory">View Stock</Link>
                 </Button>
               </div>
