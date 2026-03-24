@@ -182,7 +182,7 @@ export default async function ServicePage({ params }: { params: { slug: string }
               className="prose prose-invert prose-lg max-w-none
                 prose-headings:text-white prose-headings:font-bold
                 prose-h2:text-3xl prose-h2:mb-6 prose-h2:mt-12
-                prose-h3:text-xl prose-h3:mb-4 prose-h3:mt-8 prose-h3:text-amber-500
+                prose-h3:text-xl prose-h3:mb-4 prose-h3:mt-8 prose-h3:text-red-600
                 prose-p:text-zinc-300 prose-p:leading-relaxed prose-p:mb-6
                 prose-ul:text-zinc-300 prose-ul:mb-6
                 prose-ol:text-zinc-300 prose-ol:mb-6

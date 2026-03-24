@@ -25,8 +25,8 @@ export default function ContactPage() {
 
             <div className="space-y-6 mb-12">
               <div className="flex items-start gap-4">
-                <div className="w-12 h-12 bg-amber-500/10 rounded-full flex items-center justify-center flex-shrink-0">
-                  <Phone className="w-6 h-6 text-amber-500" />
+                <div className="w-12 h-12 bg-red-600/10 rounded-full flex items-center justify-center flex-shrink-0">
+                  <Phone className="w-6 h-6 text-red-600" />
                 </div>
                 <div>
                   <h3 className="font-semibold mb-1">Phone</h3>
@@ -38,8 +38,8 @@ export default function ContactPage() {
               </div>
 
               <div className="flex items-start gap-4">
-                <div className="w-12 h-12 bg-amber-500/10 rounded-full flex items-center justify-center flex-shrink-0">
-                  <Mail className="w-6 h-6 text-amber-500" />
+                <div className="w-12 h-12 bg-red-600/10 rounded-full flex items-center justify-center flex-shrink-0">
+                  <Mail className="w-6 h-6 text-red-600" />
                 </div>
                 <div>
                   <h3 className="font-semibold mb-1">Email</h3>
@@ -51,8 +51,8 @@ export default function ContactPage() {
               </div>
 
               <div className="flex items-start gap-4">
-                <div className="w-12 h-12 bg-amber-500/10 rounded-full flex items-center justify-center flex-shrink-0">
-                  <MapPin className="w-6 h-6 text-amber-500" />
+                <div className="w-12 h-12 bg-red-600/10 rounded-full flex items-center justify-center flex-shrink-0">
+                  <MapPin className="w-6 h-6 text-red-600" />
                 </div>
                 <div>
                   <h3 className="font-semibold mb-1">Address</h3>
@@ -67,7 +67,7 @@ export default function ContactPage() {
 
             <div className="bg-zinc-900/50 border border-white/10 p-6">
               <div className="flex items-center gap-3 mb-4">
-                <Clock className="w-6 h-6 text-amber-500" />
+                <Clock className="w-6 h-6 text-red-600" />
                 <h3 className="text-xl font-semibold">Opening Hours</h3>
               </div>
               <div className="space-y-2 text-sm">

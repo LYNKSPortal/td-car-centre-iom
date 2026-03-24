@@ -40,7 +40,7 @@ export function VehicleCard({ vehicle }: VehicleCardProps) {
           />
           <div className="absolute top-4 right-4">
             {vehicle.financeMonthly && (
-              <div className="bg-gradient-to-r from-amber-500 to-yellow-500 text-black px-3 py-1.5 text-xs font-semibold">
+              <div className="bg-gradient-to-r from-red-600 to-red-600 text-black px-3 py-1.5 text-xs font-semibold">
                 From {formatPrice(parseFloat(vehicle.financeMonthly))}/mo
               </div>
             )}
@@ -48,7 +48,7 @@ export function VehicleCard({ vehicle }: VehicleCardProps) {
         </div>
 
         <div className="p-6">
-          <h3 className="text-xl font-semibold text-white mb-2 group-hover:text-amber-500 transition-colors">
+          <h3 className="text-xl font-semibold text-white mb-2 group-hover:text-red-600 transition-colors">
             {vehicle.title}
           </h3>
           
@@ -58,19 +58,19 @@ export function VehicleCard({ vehicle }: VehicleCardProps) {
 
           <div className="grid grid-cols-2 gap-3 mb-6 text-sm">
             <div className="flex items-center gap-2 text-zinc-400">
-              <Calendar className="w-4 h-4 text-amber-500" />
+              <Calendar className="w-4 h-4 text-red-600" />
               <span>{vehicle.year}</span>
             </div>
             <div className="flex items-center gap-2 text-zinc-400">
-              <Gauge className="w-4 h-4 text-amber-500" />
+              <Gauge className="w-4 h-4 text-red-600" />
               <span>{formatMileage(vehicle.mileage)} miles</span>
             </div>
             <div className="flex items-center gap-2 text-zinc-400">
-              <Cog className="w-4 h-4 text-amber-500" />
+              <Cog className="w-4 h-4 text-red-600" />
               <span>{vehicle.transmission}</span>
             </div>
             <div className="flex items-center gap-2 text-zinc-400">
-              <Fuel className="w-4 h-4 text-amber-500" />
+              <Fuel className="w-4 h-4 text-red-600" />
               <span>{vehicle.fuelType}</span>
             </div>
           </div>

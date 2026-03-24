@@ -9,7 +9,7 @@ export function Footer() {
           <div>
             <h3 className="text-xl font-bold mb-6">
               <span className="text-white">TD</span>
-              <span className="text-amber-500"> CAR CENTRE</span>
+              <span className="text-red-600"> CAR CENTRE</span>
             </h3>
             <p className="text-zinc-400 text-sm leading-relaxed mb-6">
               Premium luxury and prestige vehicles. Exceptional service, competitive finance, and nationwide delivery.
@@ -67,7 +67,7 @@ export function Footer() {
             <h4 className="text-white font-semibold mb-6">Contact</h4>
             <ul className="space-y-4">
               <li className="flex items-start gap-3">
-                <Phone className="w-4 h-4 text-amber-500 mt-0.5 flex-shrink-0" />
+                <Phone className="w-4 h-4 text-red-600 mt-0.5 flex-shrink-0" />
                 <div>
                   <a href="tel:+441234567890" className="text-zinc-400 hover:text-white text-sm transition-colors">
                     +44 1234 567890
@@ -75,7 +75,7 @@ export function Footer() {
                 </div>
               </li>
               <li className="flex items-start gap-3">
-                <Mail className="w-4 h-4 text-amber-500 mt-0.5 flex-shrink-0" />
+                <Mail className="w-4 h-4 text-red-600 mt-0.5 flex-shrink-0" />
                 <div>
                   <a href="mailto:sales@tdcarcentre.co.uk" className="text-zinc-400 hover:text-white text-sm transition-colors">
                     sales@tdcarcentre.co.uk
@@ -83,7 +83,7 @@ export function Footer() {
                 </div>
               </li>
               <li className="flex items-start gap-3">
-                <MapPin className="w-4 h-4 text-amber-500 mt-0.5 flex-shrink-0" />
+                <MapPin className="w-4 h-4 text-red-600 mt-0.5 flex-shrink-0" />
                 <div>
                   <p className="text-zinc-400 text-sm">
                     123 Premium Drive<br />

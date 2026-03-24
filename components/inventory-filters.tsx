@@ -57,7 +57,7 @@ export function InventoryFilters({ filterOptions, currentFilters }: FilterOption
           <select
             value={currentFilters.make || ''}
             onChange={(e) => updateFilter('make', e.target.value)}
-            className="w-full bg-zinc-900 border border-white/10 text-white px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-amber-500/50"
+            className="w-full bg-zinc-900 border border-white/10 text-white px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-red-600/50"
           >
             <option value="">All Makes</option>
             {filterOptions.makes.map((make) => (
@@ -71,7 +71,7 @@ export function InventoryFilters({ filterOptions, currentFilters }: FilterOption
           <select
             value={currentFilters.model || ''}
             onChange={(e) => updateFilter('model', e.target.value)}
-            className="w-full bg-zinc-900 border border-white/10 text-white px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-amber-500/50"
+            className="w-full bg-zinc-900 border border-white/10 text-white px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-red-600/50"
           >
             <option value="">All Models</option>
             {filterOptions.models.map((model) => (
@@ -88,14 +88,14 @@ export function InventoryFilters({ filterOptions, currentFilters }: FilterOption
               placeholder="Min"
               value={currentFilters.minPrice || ''}
               onChange={(e) => updateFilter('minPrice', e.target.value)}
-              className="w-full bg-zinc-900 border border-white/10 text-white px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-amber-500/50"
+              className="w-full bg-zinc-900 border border-white/10 text-white px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-red-600/50"
             />
             <input
               type="number"
               placeholder="Max"
               value={currentFilters.maxPrice || ''}
               onChange={(e) => updateFilter('maxPrice', e.target.value)}
-              className="w-full bg-zinc-900 border border-white/10 text-white px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-amber-500/50"
+              className="w-full bg-zinc-900 border border-white/10 text-white px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-red-600/50"
             />
           </div>
         </div>
@@ -108,14 +108,14 @@ export function InventoryFilters({ filterOptions, currentFilters }: FilterOption
               placeholder="Min"
               value={currentFilters.minYear || ''}
               onChange={(e) => updateFilter('minYear', e.target.value)}
-              className="w-full bg-zinc-900 border border-white/10 text-white px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-amber-500/50"
+              className="w-full bg-zinc-900 border border-white/10 text-white px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-red-600/50"
             />
             <input
               type="number"
               placeholder="Max"
               value={currentFilters.maxYear || ''}
               onChange={(e) => updateFilter('maxYear', e.target.value)}
-              className="w-full bg-zinc-900 border border-white/10 text-white px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-amber-500/50"
+              className="w-full bg-zinc-900 border border-white/10 text-white px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-red-600/50"
             />
           </div>
         </div>
@@ -127,7 +127,7 @@ export function InventoryFilters({ filterOptions, currentFilters }: FilterOption
             placeholder="e.g. 50000"
             value={currentFilters.maxMileage || ''}
             onChange={(e) => updateFilter('maxMileage', e.target.value)}
-            className="w-full bg-zinc-900 border border-white/10 text-white px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-amber-500/50"
+            className="w-full bg-zinc-900 border border-white/10 text-white px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-red-600/50"
           />
         </div>
 
@@ -136,7 +136,7 @@ export function InventoryFilters({ filterOptions, currentFilters }: FilterOption
           <select
             value={currentFilters.transmission || ''}
             onChange={(e) => updateFilter('transmission', e.target.value)}
-            className="w-full bg-zinc-900 border border-white/10 text-white px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-amber-500/50"
+            className="w-full bg-zinc-900 border border-white/10 text-white px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-red-600/50"
           >
             <option value="">All Transmissions</option>
             {filterOptions.transmissions.map((transmission) => (
@@ -150,7 +150,7 @@ export function InventoryFilters({ filterOptions, currentFilters }: FilterOption
           <select
             value={currentFilters.fuelType || ''}
             onChange={(e) => updateFilter('fuelType', e.target.value)}
-            className="w-full bg-zinc-900 border border-white/10 text-white px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-amber-500/50"
+            className="w-full bg-zinc-900 border border-white/10 text-white px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-red-600/50"
           >
             <option value="">All Fuel Types</option>
             {filterOptions.fuelTypes.map((fuelType) => (
@@ -164,7 +164,7 @@ export function InventoryFilters({ filterOptions, currentFilters }: FilterOption
           <select
             value={currentFilters.bodyType || ''}
             onChange={(e) => updateFilter('bodyType', e.target.value)}
-            className="w-full bg-zinc-900 border border-white/10 text-white px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-amber-500/50"
+            className="w-full bg-zinc-900 border border-white/10 text-white px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-red-600/50"
           >
             <option value="">All Body Types</option>
             {filterOptions.bodyTypes.map((bodyType) => (

@@ -26,7 +26,7 @@ export default async function Home() {
           <div className="max-w-2xl">
             <h1 className="text-5xl md:text-7xl font-bold mb-6 leading-tight">
               Prestige Vehicles,<br />
-              <span className="text-amber-500">Exceptional Service</span>
+              <span className="text-red-600">Exceptional Service</span>
             </h1>
             <p className="text-xl text-zinc-300 mb-8 leading-relaxed">
               Discover our curated collection of luxury and performance vehicles. 
@@ -46,7 +46,7 @@ export default async function Home() {
         </div>
       </section>
 
-      <section className="bg-gradient-to-b from-amber-500 to-yellow-500 py-8">
+      <section className="bg-gradient-to-b from-red-600 to-red-600 py-8">
         <div className="container mx-auto px-4">
           <div className="flex flex-col md:flex-row items-center justify-between gap-6 text-black">
             <div className="text-center md:text-left">
@@ -91,49 +91,49 @@ export default async function Home() {
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            <div className="bg-zinc-900/50 border border-white/10 p-8 text-center group hover:border-amber-500/50 transition-all">
-              <div className="w-16 h-16 bg-amber-500/10 rounded-full flex items-center justify-center mx-auto mb-6 group-hover:bg-amber-500/20 transition-colors">
-                <Shield className="w-8 h-8 text-amber-500" />
+            <div className="bg-zinc-900/50 border border-white/10 p-8 text-center group hover:border-red-600/50 transition-all">
+              <div className="w-16 h-16 bg-red-600/10 rounded-full flex items-center justify-center mx-auto mb-6 group-hover:bg-red-600/20 transition-colors">
+                <Shield className="w-8 h-8 text-red-600" />
               </div>
               <h3 className="text-xl font-semibold mb-3">Comprehensive Warranty</h3>
               <p className="text-zinc-400">All vehicles come with warranty options for complete peace of mind</p>
             </div>
 
-            <div className="bg-zinc-900/50 border border-white/10 p-8 text-center group hover:border-amber-500/50 transition-all">
-              <div className="w-16 h-16 bg-amber-500/10 rounded-full flex items-center justify-center mx-auto mb-6 group-hover:bg-amber-500/20 transition-colors">
-                <Truck className="w-8 h-8 text-amber-500" />
+            <div className="bg-zinc-900/50 border border-white/10 p-8 text-center group hover:border-red-600/50 transition-all">
+              <div className="w-16 h-16 bg-red-600/10 rounded-full flex items-center justify-center mx-auto mb-6 group-hover:bg-red-600/20 transition-colors">
+                <Truck className="w-8 h-8 text-red-600" />
               </div>
               <h3 className="text-xl font-semibold mb-3">Nationwide Delivery</h3>
               <p className="text-zinc-400">We deliver your dream car directly to your door, anywhere in the UK</p>
             </div>
 
-            <div className="bg-zinc-900/50 border border-white/10 p-8 text-center group hover:border-amber-500/50 transition-all">
-              <div className="w-16 h-16 bg-amber-500/10 rounded-full flex items-center justify-center mx-auto mb-6 group-hover:bg-amber-500/20 transition-colors">
-                <Search className="w-8 h-8 text-amber-500" />
+            <div className="bg-zinc-900/50 border border-white/10 p-8 text-center group hover:border-red-600/50 transition-all">
+              <div className="w-16 h-16 bg-red-600/10 rounded-full flex items-center justify-center mx-auto mb-6 group-hover:bg-red-600/20 transition-colors">
+                <Search className="w-8 h-8 text-red-600" />
               </div>
               <h3 className="text-xl font-semibold mb-3">Vehicle Sourcing</h3>
               <p className="text-zinc-400">Can't find what you're looking for? We'll source your perfect vehicle</p>
             </div>
 
-            <div className="bg-zinc-900/50 border border-white/10 p-8 text-center group hover:border-amber-500/50 transition-all">
-              <div className="w-16 h-16 bg-amber-500/10 rounded-full flex items-center justify-center mx-auto mb-6 group-hover:bg-amber-500/20 transition-colors">
-                <CreditCard className="w-8 h-8 text-amber-500" />
+            <div className="bg-zinc-900/50 border border-white/10 p-8 text-center group hover:border-red-600/50 transition-all">
+              <div className="w-16 h-16 bg-red-600/10 rounded-full flex items-center justify-center mx-auto mb-6 group-hover:bg-red-600/20 transition-colors">
+                <CreditCard className="w-8 h-8 text-red-600" />
               </div>
               <h3 className="text-xl font-semibold mb-3">Flexible Finance</h3>
               <p className="text-zinc-400">Competitive finance packages tailored to your budget and requirements</p>
             </div>
 
-            <div className="bg-zinc-900/50 border border-white/10 p-8 text-center group hover:border-amber-500/50 transition-all">
-              <div className="w-16 h-16 bg-amber-500/10 rounded-full flex items-center justify-center mx-auto mb-6 group-hover:bg-amber-500/20 transition-colors">
-                <RefreshCw className="w-8 h-8 text-amber-500" />
+            <div className="bg-zinc-900/50 border border-white/10 p-8 text-center group hover:border-red-600/50 transition-all">
+              <div className="w-16 h-16 bg-red-600/10 rounded-full flex items-center justify-center mx-auto mb-6 group-hover:bg-red-600/20 transition-colors">
+                <RefreshCw className="w-8 h-8 text-red-600" />
               </div>
               <h3 className="text-xl font-semibold mb-3">Part Exchange</h3>
               <p className="text-zinc-400">Get the best value for your current vehicle with our part exchange service</p>
             </div>
 
-            <div className="bg-zinc-900/50 border border-white/10 p-8 text-center group hover:border-amber-500/50 transition-all">
-              <div className="w-16 h-16 bg-amber-500/10 rounded-full flex items-center justify-center mx-auto mb-6 group-hover:bg-amber-500/20 transition-colors">
-                <Headphones className="w-8 h-8 text-amber-500" />
+            <div className="bg-zinc-900/50 border border-white/10 p-8 text-center group hover:border-red-600/50 transition-all">
+              <div className="w-16 h-16 bg-red-600/10 rounded-full flex items-center justify-center mx-auto mb-6 group-hover:bg-red-600/20 transition-colors">
+                <Headphones className="w-8 h-8 text-red-600" />
               </div>
               <h3 className="text-xl font-semibold mb-3">After Sales Support</h3>
               <p className="text-zinc-400">Dedicated support team available to assist you after your purchase</p>
@@ -156,7 +156,7 @@ export default async function Home() {
             <div>
               <h2 className="text-4xl md:text-5xl font-bold mb-6">
                 Your Trusted Partner in<br />
-                <span className="text-amber-500">Luxury Motoring</span>
+                <span className="text-red-600">Luxury Motoring</span>
               </h2>
               <p className="text-lg text-zinc-400 mb-6 leading-relaxed">
                 At TD Car Centre, we specialize in premium and prestige vehicles. Our carefully curated 
@@ -178,7 +178,7 @@ export default async function Home() {
         <div className="container mx-auto px-4">
           <div className="text-center mb-16">
             <h2 className="text-4xl md:text-5xl font-bold mb-4">What Our Customers Say</h2>
-            <div className="flex items-center justify-center gap-2 text-amber-500 mb-4">
+            <div className="flex items-center justify-center gap-2 text-red-600 mb-4">
               {[...Array(5)].map((_, i) => (
                 <Star key={i} className="w-6 h-6 fill-current" />
               ))}
@@ -188,7 +188,7 @@ export default async function Home() {
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             <div className="bg-zinc-900/50 border border-white/10 p-8">
-              <div className="flex gap-1 text-amber-500 mb-4">
+              <div className="flex gap-1 text-red-600 mb-4">
                 {[...Array(5)].map((_, i) => (
                   <Star key={i} className="w-4 h-4 fill-current" />
                 ))}
@@ -202,7 +202,7 @@ export default async function Home() {
             </div>
 
             <div className="bg-zinc-900/50 border border-white/10 p-8">
-              <div className="flex gap-1 text-amber-500 mb-4">
+              <div className="flex gap-1 text-red-600 mb-4">
                 {[...Array(5)].map((_, i) => (
                   <Star key={i} className="w-4 h-4 fill-current" />
                 ))}
@@ -216,7 +216,7 @@ export default async function Home() {
             </div>
 
             <div className="bg-zinc-900/50 border border-white/10 p-8">
-              <div className="flex gap-1 text-amber-500 mb-4">
+              <div className="flex gap-1 text-red-600 mb-4">
                 {[...Array(5)].map((_, i) => (
                   <Star key={i} className="w-4 h-4 fill-current" />
                 ))}
@@ -235,7 +235,7 @@ export default async function Home() {
       <section className="py-20 bg-gradient-to-r from-zinc-900 to-black border-t border-white/10">
         <div className="container mx-auto px-4">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-            <div className="bg-zinc-900/50 border border-white/10 p-12 group hover:border-amber-500/50 transition-all">
+            <div className="bg-zinc-900/50 border border-white/10 p-12 group hover:border-red-600/50 transition-all">
               <h3 className="text-3xl font-bold mb-4">Sell Your Car</h3>
               <p className="text-zinc-400 mb-6 leading-relaxed">
                 Get an instant valuation for your vehicle. We offer competitive prices and a hassle-free selling experience.
@@ -245,7 +245,7 @@ export default async function Home() {
               </Button>
             </div>
 
-            <div className="bg-zinc-900/50 border border-white/10 p-12 group hover:border-amber-500/50 transition-all">
+            <div className="bg-zinc-900/50 border border-white/10 p-12 group hover:border-red-600/50 transition-all">
               <h3 className="text-3xl font-bold mb-4">Part Exchange</h3>
               <p className="text-zinc-400 mb-6 leading-relaxed">
                 Use your current vehicle as part payment towards your next dream car. Simple, quick, and convenient.

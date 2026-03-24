@@ -33,7 +33,7 @@ export default function AboutPage() {
 
           <div className="flex flex-col justify-center">
             <h2 className="text-3xl md:text-4xl font-bold mb-6">
-              Excellence in <span className="text-amber-500">Luxury Motoring</span>
+              Excellence in <span className="text-red-600">Luxury Motoring</span>
             </h2>
             <p className="text-lg text-zinc-300 mb-6 leading-relaxed">
               TD Car Centre has established itself as a premier destination for luxury and prestige vehicles. 
@@ -55,32 +55,32 @@ export default function AboutPage() {
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-24">
           <div className="bg-zinc-900/50 border border-white/10 p-8 text-center">
-            <div className="w-16 h-16 bg-amber-500/10 rounded-full flex items-center justify-center mx-auto mb-6">
-              <Shield className="w-8 h-8 text-amber-500" />
+            <div className="w-16 h-16 bg-red-600/10 rounded-full flex items-center justify-center mx-auto mb-6">
+              <Shield className="w-8 h-8 text-red-600" />
             </div>
             <h3 className="text-2xl font-bold mb-2">10+</h3>
             <p className="text-zinc-400">Years Experience</p>
           </div>
 
           <div className="bg-zinc-900/50 border border-white/10 p-8 text-center">
-            <div className="w-16 h-16 bg-amber-500/10 rounded-full flex items-center justify-center mx-auto mb-6">
-              <Award className="w-8 h-8 text-amber-500" />
+            <div className="w-16 h-16 bg-red-600/10 rounded-full flex items-center justify-center mx-auto mb-6">
+              <Award className="w-8 h-8 text-red-600" />
             </div>
             <h3 className="text-2xl font-bold mb-2">500+</h3>
             <p className="text-zinc-400">Vehicles Sold</p>
           </div>
 
           <div className="bg-zinc-900/50 border border-white/10 p-8 text-center">
-            <div className="w-16 h-16 bg-amber-500/10 rounded-full flex items-center justify-center mx-auto mb-6">
-              <Users className="w-8 h-8 text-amber-500" />
+            <div className="w-16 h-16 bg-red-600/10 rounded-full flex items-center justify-center mx-auto mb-6">
+              <Users className="w-8 h-8 text-red-600" />
             </div>
             <h3 className="text-2xl font-bold mb-2">98%</h3>
             <p className="text-zinc-400">Customer Satisfaction</p>
           </div>
 
           <div className="bg-zinc-900/50 border border-white/10 p-8 text-center">
-            <div className="w-16 h-16 bg-amber-500/10 rounded-full flex items-center justify-center mx-auto mb-6">
-              <TrendingUp className="w-8 h-8 text-amber-500" />
+            <div className="w-16 h-16 bg-red-600/10 rounded-full flex items-center justify-center mx-auto mb-6">
+              <TrendingUp className="w-8 h-8 text-red-600" />
             </div>
             <h3 className="text-2xl font-bold mb-2">5.0</h3>
             <p className="text-zinc-400">Average Rating</p>
@@ -91,7 +91,7 @@ export default function AboutPage() {
           <h2 className="text-3xl font-bold mb-12 text-center">Our Values</h2>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             <div className="bg-zinc-900/50 border border-white/10 p-8">
-              <h3 className="text-xl font-semibold mb-4 text-amber-500">Quality</h3>
+              <h3 className="text-xl font-semibold mb-4 text-red-600">Quality</h3>
               <p className="text-zinc-300 leading-relaxed">
                 Every vehicle in our inventory is meticulously inspected and prepared to the highest standards. 
                 We only offer vehicles that meet our exacting quality criteria.
@@ -99,7 +99,7 @@ export default function AboutPage() {
             </div>
 
             <div className="bg-zinc-900/50 border border-white/10 p-8">
-              <h3 className="text-xl font-semibold mb-4 text-amber-500">Transparency</h3>
+              <h3 className="text-xl font-semibold mb-4 text-red-600">Transparency</h3>
               <p className="text-zinc-300 leading-relaxed">
                 Honesty and transparency are at the core of our business. We provide complete vehicle histories 
                 and detailed information to help you make informed decisions.
@@ -107,7 +107,7 @@ export default function AboutPage() {
             </div>
 
             <div className="bg-zinc-900/50 border border-white/10 p-8">
-              <h3 className="text-xl font-semibold mb-4 text-amber-500">Service</h3>
+              <h3 className="text-xl font-semibold mb-4 text-red-600">Service</h3>
               <p className="text-zinc-300 leading-relaxed">
                 Our commitment to exceptional service extends beyond the sale. We're here to support you 
                 throughout your ownership journey with dedicated after-sales care.

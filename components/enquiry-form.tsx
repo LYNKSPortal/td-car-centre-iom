@@ -53,8 +53,8 @@ export function EnquiryForm({ vehicleId, vehicleTitle }: EnquiryFormProps) {
       </h2>
 
       {isSuccess ? (
-        <div className="bg-amber-500/10 border border-amber-500/20 p-6 text-center">
-          <p className="text-lg font-semibold text-amber-500 mb-2">Thank you for your enquiry!</p>
+        <div className="bg-red-600/10 border border-red-600/20 p-6 text-center">
+          <p className="text-lg font-semibold text-red-600 mb-2">Thank you for your enquiry!</p>
           <p className="text-zinc-300">We'll be in touch shortly.</p>
         </div>
       ) : (

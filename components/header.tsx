@@ -36,7 +36,7 @@ export function Header() {
           <div className="flex items-center justify-between h-20">
             <Link href="/" className="text-2xl font-bold tracking-tight">
               <span className="text-white">TD</span>
-              <span className="text-amber-500"> CAR CENTRE</span>
+              <span className="text-red-600"> CAR CENTRE</span>
             </Link>
 
             <nav className="hidden lg:flex items-center gap-8">

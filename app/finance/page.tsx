@@ -24,7 +24,7 @@ export default function FinancePage() {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 mb-16">
           <div>
             <h2 className="text-3xl font-bold mb-6">
-              Finance Made <span className="text-amber-500">Simple</span>
+              Finance Made <span className="text-red-600">Simple</span>
             </h2>
             <p className="text-lg text-zinc-300 mb-6 leading-relaxed">
               At TD Car Centre, we understand that purchasing a prestige vehicle is a significant investment. 
@@ -37,8 +37,8 @@ export default function FinancePage() {
 
             <div className="space-y-4 mb-8">
               <div className="flex items-start gap-4">
-                <div className="w-12 h-12 bg-amber-500/10 rounded-full flex items-center justify-center flex-shrink-0">
-                  <CheckCircle className="w-6 h-6 text-amber-500" />
+                <div className="w-12 h-12 bg-red-600/10 rounded-full flex items-center justify-center flex-shrink-0">
+                  <CheckCircle className="w-6 h-6 text-red-600" />
                 </div>
                 <div>
                   <h3 className="font-semibold mb-1">Competitive Rates</h3>
@@ -47,8 +47,8 @@ export default function FinancePage() {
               </div>
 
               <div className="flex items-start gap-4">
-                <div className="w-12 h-12 bg-amber-500/10 rounded-full flex items-center justify-center flex-shrink-0">
-                  <Clock className="w-6 h-6 text-amber-500" />
+                <div className="w-12 h-12 bg-red-600/10 rounded-full flex items-center justify-center flex-shrink-0">
+                  <Clock className="w-6 h-6 text-red-600" />
                 </div>
                 <div>
                   <h3 className="font-semibold mb-1">Flexible Terms</h3>
@@ -57,8 +57,8 @@ export default function FinancePage() {
               </div>
 
               <div className="flex items-start gap-4">
-                <div className="w-12 h-12 bg-amber-500/10 rounded-full flex items-center justify-center flex-shrink-0">
-                  <CreditCard className="w-6 h-6 text-amber-500" />
+                <div className="w-12 h-12 bg-red-600/10 rounded-full flex items-center justify-center flex-shrink-0">
+                  <CreditCard className="w-6 h-6 text-red-600" />
                 </div>
                 <div>
                   <h3 className="font-semibold mb-1">Deposit Options</h3>
@@ -67,8 +67,8 @@ export default function FinancePage() {
               </div>
 
               <div className="flex items-start gap-4">
-                <div className="w-12 h-12 bg-amber-500/10 rounded-full flex items-center justify-center flex-shrink-0">
-                  <Shield className="w-6 h-6 text-amber-500" />
+                <div className="w-12 h-12 bg-red-600/10 rounded-full flex items-center justify-center flex-shrink-0">
+                  <Shield className="w-6 h-6 text-red-600" />
                 </div>
                 <div>
                   <h3 className="font-semibold mb-1">FCA Regulated</h3>
@@ -91,7 +91,7 @@ export default function FinancePage() {
           <h2 className="text-2xl font-bold mb-6">How It Works</h2>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             <div>
-              <div className="w-12 h-12 bg-amber-500 text-black rounded-full flex items-center justify-center font-bold text-xl mb-4">
+              <div className="w-12 h-12 bg-red-600 text-black rounded-full flex items-center justify-center font-bold text-xl mb-4">
                 1
               </div>
               <h3 className="font-semibold mb-2">Choose Your Vehicle</h3>
@@ -101,7 +101,7 @@ export default function FinancePage() {
             </div>
 
             <div>
-              <div className="w-12 h-12 bg-amber-500 text-black rounded-full flex items-center justify-center font-bold text-xl mb-4">
+              <div className="w-12 h-12 bg-red-600 text-black rounded-full flex items-center justify-center font-bold text-xl mb-4">
                 2
               </div>
               <h3 className="font-semibold mb-2">Get a Quote</h3>
@@ -111,7 +111,7 @@ export default function FinancePage() {
             </div>
 
             <div>
-              <div className="w-12 h-12 bg-amber-500 text-black rounded-full flex items-center justify-center font-bold text-xl mb-4">
+              <div className="w-12 h-12 bg-red-600 text-black rounded-full flex items-center justify-center font-bold text-xl mb-4">
                 3
               </div>
               <h3 className="font-semibold mb-2">Drive Away</h3>

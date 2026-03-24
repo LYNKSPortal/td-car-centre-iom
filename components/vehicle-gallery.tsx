@@ -64,7 +64,7 @@ export function VehicleGallery({ images, title }: VehicleGalleryProps) {
                   key={index}
                   onClick={() => setCurrentIndex(index)}
                   className={`w-2 h-2 rounded-full transition-all ${
-                    index === currentIndex ? 'bg-amber-500 w-8' : 'bg-white/50 hover:bg-white/70'
+                    index === currentIndex ? 'bg-red-600 w-8' : 'bg-white/50 hover:bg-white/70'
                   }`}
                 />
               ))}
@@ -80,7 +80,7 @@ export function VehicleGallery({ images, title }: VehicleGalleryProps) {
               key={image.id}
               onClick={() => setCurrentIndex(index)}
               className={`relative aspect-[4/3] overflow-hidden border-2 transition-all ${
-                index === currentIndex ? 'border-amber-500' : 'border-white/10 hover:border-white/30'
+                index === currentIndex ? 'border-red-600' : 'border-white/10 hover:border-white/30'
               }`}
             >
               <Image

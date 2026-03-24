@@ -12,6 +12,9 @@ const config: Config = {
         border: "hsl(var(--border))",
         background: "hsl(var(--background))",
         foreground: "hsl(var(--foreground))",
+        red: {
+          600: '#FF0000',
+        },
       },
       fontFamily: {
         sans: ["var(--font-inter)", "sans-serif"],

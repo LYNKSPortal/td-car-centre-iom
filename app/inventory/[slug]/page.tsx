@@ -44,14 +44,14 @@ export default async function VehicleDetailPage({ params }: { params: { slug: st
 
             <div className="mt-12">
               <h1 className="text-4xl font-bold mb-4">{vehicle.title}</h1>
-              <div className="text-3xl font-bold text-amber-500 mb-8">
+              <div className="text-3xl font-bold text-red-600 mb-8">
                 {formatPrice(parseFloat(vehicle.price))}
               </div>
 
               {vehicle.financeMonthly && (
-                <div className="bg-gradient-to-r from-amber-500/10 to-yellow-500/10 border border-amber-500/20 p-6 mb-8">
+                <div className="bg-gradient-to-r from-red-600/10 to-red-600/10 border border-red-600/20 p-6 mb-8">
                   <p className="text-sm text-zinc-400 mb-1">Finance from</p>
-                  <p className="text-2xl font-bold text-amber-500">
+                  <p className="text-2xl font-bold text-red-600">
                     {formatPrice(parseFloat(vehicle.financeMonthly))}/month
                   </p>
                   <p className="text-xs text-zinc-500 mt-2">
@@ -62,22 +62,22 @@ export default async function VehicleDetailPage({ params }: { params: { slug: st
 
               <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-12">
                 <div className="bg-zinc-900/50 border border-white/10 p-4">
-                  <Calendar className="w-5 h-5 text-amber-500 mb-2" />
+                  <Calendar className="w-5 h-5 text-red-600 mb-2" />
                   <p className="text-xs text-zinc-500 mb-1">Year</p>
                   <p className="font-semibold">{vehicle.year}</p>
                 </div>
                 <div className="bg-zinc-900/50 border border-white/10 p-4">
-                  <Gauge className="w-5 h-5 text-amber-500 mb-2" />
+                  <Gauge className="w-5 h-5 text-red-600 mb-2" />
                   <p className="text-xs text-zinc-500 mb-1">Mileage</p>
                   <p className="font-semibold">{formatMileage(vehicle.mileage)}</p>
                 </div>
                 <div className="bg-zinc-900/50 border border-white/10 p-4">
-                  <Cog className="w-5 h-5 text-amber-500 mb-2" />
+                  <Cog className="w-5 h-5 text-red-600 mb-2" />
                   <p className="text-xs text-zinc-500 mb-1">Transmission</p>
                   <p className="font-semibold">{vehicle.transmission}</p>
                 </div>
                 <div className="bg-zinc-900/50 border border-white/10 p-4">
-                  <Fuel className="w-5 h-5 text-amber-500 mb-2" />
+                  <Fuel className="w-5 h-5 text-red-600 mb-2" />
                   <p className="text-xs text-zinc-500 mb-1">Fuel Type</p>
                   <p className="font-semibold">{vehicle.fuelType}</p>
                 </div>
@@ -95,7 +95,7 @@ export default async function VehicleDetailPage({ params }: { params: { slug: st
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                   {vehicle.colour && (
                     <div className="flex items-center gap-3 bg-zinc-900/50 border border-white/10 p-4">
-                      <Palette className="w-5 h-5 text-amber-500" />
+                      <Palette className="w-5 h-5 text-red-600" />
                       <div>
                         <p className="text-xs text-zinc-500">Colour</p>
                         <p className="font-semibold">{vehicle.colour}</p>
@@ -104,7 +104,7 @@ export default async function VehicleDetailPage({ params }: { params: { slug: st
                   )}
                   {vehicle.engineSize && (
                     <div className="flex items-center gap-3 bg-zinc-900/50 border border-white/10 p-4">
-                      <Cog className="w-5 h-5 text-amber-500" />
+                      <Cog className="w-5 h-5 text-red-600" />
                       <div>
                         <p className="text-xs text-zinc-500">Engine</p>
                         <p className="font-semibold">{vehicle.engineSize}</p>
@@ -113,7 +113,7 @@ export default async function VehicleDetailPage({ params }: { params: { slug: st
                   )}
                   {vehicle.doors && (
                     <div className="flex items-center gap-3 bg-zinc-900/50 border border-white/10 p-4">
-                      <DoorClosed className="w-5 h-5 text-amber-500" />
+                      <DoorClosed className="w-5 h-5 text-red-600" />
                       <div>
                         <p className="text-xs text-zinc-500">Doors</p>
                         <p className="font-semibold">{vehicle.doors}</p>
@@ -122,7 +122,7 @@ export default async function VehicleDetailPage({ params }: { params: { slug: st
                   )}
                   {vehicle.seats && (
                     <div className="flex items-center gap-3 bg-zinc-900/50 border border-white/10 p-4">
-                      <Users className="w-5 h-5 text-amber-500" />
+                      <Users className="w-5 h-5 text-red-600" />
                       <div>
                         <p className="text-xs text-zinc-500">Seats</p>
                         <p className="font-semibold">{vehicle.seats}</p>
@@ -131,7 +131,7 @@ export default async function VehicleDetailPage({ params }: { params: { slug: st
                   )}
                   {vehicle.registration && (
                     <div className="flex items-center gap-3 bg-zinc-900/50 border border-white/10 p-4">
-                      <FileText className="w-5 h-5 text-amber-500" />
+                      <FileText className="w-5 h-5 text-red-600" />
                       <div>
                         <p className="text-xs text-zinc-500">Registration</p>
                         <p className="font-semibold">{vehicle.registration}</p>
@@ -140,7 +140,7 @@ export default async function VehicleDetailPage({ params }: { params: { slug: st
                   )}
                   {vehicle.previousOwners !== null && (
                     <div className="flex items-center gap-3 bg-zinc-900/50 border border-white/10 p-4">
-                      <User className="w-5 h-5 text-amber-500" />
+                      <User className="w-5 h-5 text-red-600" />
                       <div>
                         <p className="text-xs text-zinc-500">Previous Owners</p>
                         <p className="font-semibold">{vehicle.previousOwners}</p>
@@ -149,7 +149,7 @@ export default async function VehicleDetailPage({ params }: { params: { slug: st
                   )}
                   {vehicle.bodyType && (
                     <div className="flex items-center gap-3 bg-zinc-900/50 border border-white/10 p-4">
-                      <Cog className="w-5 h-5 text-amber-500" />
+                      <Cog className="w-5 h-5 text-red-600" />
                       <div>
                         <p className="text-xs text-zinc-500">Body Type</p>
                         <p className="font-semibold">{vehicle.bodyType}</p>
@@ -158,7 +158,7 @@ export default async function VehicleDetailPage({ params }: { params: { slug: st
                   )}
                   {vehicle.drivetrain && (
                     <div className="flex items-center gap-3 bg-zinc-900/50 border border-white/10 p-4">
-                      <Cog className="w-5 h-5 text-amber-500" />
+                      <Cog className="w-5 h-5 text-red-600" />
                       <div>
                         <p className="text-xs text-zinc-500">Drivetrain</p>
                         <p className="font-semibold">{vehicle.drivetrain}</p>
@@ -174,7 +174,7 @@ export default async function VehicleDetailPage({ params }: { params: { slug: st
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
                     {vehicle.features.map((feature) => (
                       <div key={feature.id} className="flex items-center gap-2 text-zinc-300">
-                        <div className="w-1.5 h-1.5 bg-amber-500 rounded-full" />
+                        <div className="w-1.5 h-1.5 bg-red-600 rounded-full" />
                         <span>{feature.featureName}</span>
                       </div>
                     ))}
@@ -205,14 +205,14 @@ export default async function VehicleDetailPage({ params }: { params: { slug: st
                 <h3 className="text-lg font-semibold mb-4">Need Help?</h3>
                 <div className="space-y-3 text-sm">
                   <a href="tel:+441234567890" className="flex items-center gap-2 text-zinc-300 hover:text-white transition-colors">
-                    <div className="w-8 h-8 bg-amber-500/10 rounded-full flex items-center justify-center">
-                      <span className="text-amber-500">📞</span>
+                    <div className="w-8 h-8 bg-red-600/10 rounded-full flex items-center justify-center">
+                      <span className="text-red-600">📞</span>
                     </div>
                     <span>+44 1234 567890</span>
                   </a>
                   <a href="mailto:sales@tdcarcentre.co.uk" className="flex items-center gap-2 text-zinc-300 hover:text-white transition-colors">
-                    <div className="w-8 h-8 bg-amber-500/10 rounded-full flex items-center justify-center">
-                      <span className="text-amber-500">✉️</span>
+                    <div className="w-8 h-8 bg-red-600/10 rounded-full flex items-center justify-center">
+                      <span className="text-red-600">✉️</span>
                     </div>
                     <span>sales@tdcarcentre.co.uk</span>
                   </a>

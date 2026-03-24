@@ -39,7 +39,7 @@ export function FinanceCalculator() {
             step="1000"
             value={vehiclePrice}
             onChange={(e) => setVehiclePrice(Number(e.target.value))}
-            className="w-full h-2 bg-zinc-700 rounded-lg appearance-none cursor-pointer accent-amber-500"
+            className="w-full h-2 bg-zinc-700 rounded-lg appearance-none cursor-pointer accent-red-600"
           />
           <div className="flex justify-between text-xs text-zinc-500 mt-1">
             <span>£10,000</span>
@@ -58,7 +58,7 @@ export function FinanceCalculator() {
             step="500"
             value={deposit}
             onChange={(e) => setDeposit(Number(e.target.value))}
-            className="w-full h-2 bg-zinc-700 rounded-lg appearance-none cursor-pointer accent-amber-500"
+            className="w-full h-2 bg-zinc-700 rounded-lg appearance-none cursor-pointer accent-red-600"
           />
           <div className="flex justify-between text-xs text-zinc-500 mt-1">
             <span>£0</span>
@@ -77,7 +77,7 @@ export function FinanceCalculator() {
             step="0.1"
             value={interestRate}
             onChange={(e) => setInterestRate(Number(e.target.value))}
-            className="w-full h-2 bg-zinc-700 rounded-lg appearance-none cursor-pointer accent-amber-500"
+            className="w-full h-2 bg-zinc-700 rounded-lg appearance-none cursor-pointer accent-red-600"
           />
           <div className="flex justify-between text-xs text-zinc-500 mt-1">
             <span>3.0%</span>
@@ -96,7 +96,7 @@ export function FinanceCalculator() {
             step="12"
             value={termMonths}
             onChange={(e) => setTermMonths(Number(e.target.value))}
-            className="w-full h-2 bg-zinc-700 rounded-lg appearance-none cursor-pointer accent-amber-500"
+            className="w-full h-2 bg-zinc-700 rounded-lg appearance-none cursor-pointer accent-red-600"
           />
           <div className="flex justify-between text-xs text-zinc-500 mt-1">
             <span>12 months</span>
@@ -105,7 +105,7 @@ export function FinanceCalculator() {
         </div>
       </div>
 
-      <div className="bg-gradient-to-r from-amber-500 to-yellow-500 p-6 mb-6">
+      <div className="bg-gradient-to-r from-red-600 to-red-600 p-6 mb-6">
         <p className="text-sm text-black/70 mb-1">Estimated Monthly Payment</p>
         <p className="text-4xl font-bold text-black">{formatPrice(monthlyPayment)}</p>
       </div>

@@ -33,7 +33,7 @@ export function InventorySearch({ totalCount, currentSort }: InventorySearchProp
         <select
           value={currentSort || 'newest'}
           onChange={(e) => updateSort(e.target.value)}
-          className="bg-zinc-900 border border-white/10 text-white px-4 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-amber-500/50"
+          className="bg-zinc-900 border border-white/10 text-white px-4 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-red-600/50"
         >
           <option value="newest">Newest Added</option>
           <option value="price-asc">Price: Low to High</option>
