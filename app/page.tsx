@@ -13,8 +13,8 @@ export default async function Home() {
       <section className="relative h-[90vh] min-h-[600px] overflow-hidden">
         <div className="absolute inset-0">
           <Image
-            src="https://images.unsplash.com/photo-1618843479313-40f8afb4b4d8?w=1920&q=80"
-            alt="Luxury vehicle"
+            src="/images/homepage-screen.jpg"
+            alt="TD Car Centre Dealership"
             fill
             className="object-cover"
             priority
