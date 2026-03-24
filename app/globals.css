@@ -13,52 +13,52 @@
 
   /* Mobile */
   p, li, a, label, input, textarea, select {
-    font-size: 14px;
+    font-size: 14px !important;
   }
 
   button {
-    font-size: 14px;
+    font-size: 14px !important;
   }
 
-  h1 { font-size: 32px; }
-  h2 { font-size: 28px; }
-  h3 { font-size: 24px; }
-  h4 { font-size: 20px; }
-  h5 { font-size: 18px; }
-  h6 { font-size: 16px; }
+  h1 { font-size: 32px !important; }
+  h2 { font-size: 28px !important; }
+  h3 { font-size: 24px !important; }
+  h4 { font-size: 20px !important; }
+  h5 { font-size: 18px !important; }
+  h6 { font-size: 16px !important; }
 
   @media (min-width: 768px) {
     p, li, a, label, input, textarea, select {
-      font-size: 15px;
+      font-size: 15px !important;
     }
 
     button {
-      font-size: 16px;
+      font-size: 16px !important;
     }
 
-    h1 { font-size: 40px; }
-    h2 { font-size: 34px; }
-    h3 { font-size: 28px; }
-    h4 { font-size: 24px; }
-    h5 { font-size: 20px; }
-    h6 { font-size: 18px; }
+    h1 { font-size: 40px !important; }
+    h2 { font-size: 34px !important; }
+    h3 { font-size: 28px !important; }
+    h4 { font-size: 24px !important; }
+    h5 { font-size: 20px !important; }
+    h6 { font-size: 18px !important; }
   }
 
   @media (min-width: 1024px) {
     p, li, a, label, input, textarea, select {
-      font-size: 16px;
+      font-size: 16px !important;
     }
 
     button {
-      font-size: 18px;
+      font-size: 18px !important;
     }
 
-    h1 { font-size: 48px; }
-    h2 { font-size: 40px; }
-    h3 { font-size: 32px; }
-    h4 { font-size: 26px; }
-    h5 { font-size: 22px; }
-    h6 { font-size: 18px; }
+    h1 { font-size: 48px !important; }
+    h2 { font-size: 40px !important; }
+    h3 { font-size: 32px !important; }
+    h4 { font-size: 26px !important; }
+    h5 { font-size: 22px !important; }
+    h6 { font-size: 18px !important; }
   }
 }
 
