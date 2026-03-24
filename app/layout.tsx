@@ -1,12 +1,13 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
+import { Host_Grotesk } from "next/font/google";
 import "./globals.css";
 import { Header } from "@/components/header";
 import { Footer } from "@/components/footer";
 
-const inter = Inter({
+const hostGrotesk = Host_Grotesk({
   subsets: ["latin"],
-  variable: "--font-inter",
+  variable: "--font-host-grotesk",
+  weight: ["300", "400", "500", "600", "700", "800"],
 });
 
 export const metadata: Metadata = {
@@ -26,7 +27,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={`${inter.variable} h-full antialiased`}>
+    <html lang="en" className={`${hostGrotesk.variable} h-full antialiased`}>
       <body className="min-h-full flex flex-col bg-black text-white font-sans">
         <Header />
         <main className="flex-1">{children}</main>
