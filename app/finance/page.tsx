@@ -91,7 +91,7 @@ export default function FinancePage() {
           <h2 className="text-2xl font-bold mb-6">How It Works</h2>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             <div>
-              <div className="w-12 h-12 bg-red-600 text-black rounded-full flex items-center justify-center font-bold text-xl mb-4">
+              <div className="w-12 h-12 bg-red-600 text-white rounded-full flex items-center justify-center font-bold text-xl mb-4">
                 1
               </div>
               <h3 className="font-semibold mb-2">Choose Your Vehicle</h3>
@@ -101,7 +101,7 @@ export default function FinancePage() {
             </div>
 
             <div>
-              <div className="w-12 h-12 bg-red-600 text-black rounded-full flex items-center justify-center font-bold text-xl mb-4">
+              <div className="w-12 h-12 bg-red-600 text-white rounded-full flex items-center justify-center font-bold text-xl mb-4">
                 2
               </div>
               <h3 className="font-semibold mb-2">Get a Quote</h3>
@@ -111,7 +111,7 @@ export default function FinancePage() {
             </div>
 
             <div>
-              <div className="w-12 h-12 bg-red-600 text-black rounded-full flex items-center justify-center font-bold text-xl mb-4">
+              <div className="w-12 h-12 bg-red-600 text-white rounded-full flex items-center justify-center font-bold text-xl mb-4">
                 3
               </div>
               <h3 className="font-semibold mb-2">Drive Away</h3>
