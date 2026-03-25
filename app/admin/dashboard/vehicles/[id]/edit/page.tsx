@@ -11,7 +11,7 @@ import { ArrowLeft } from 'lucide-react';
 export default async function EditVehiclePage({
   params,
 }: {
-  params: { id: string };
+  params: Promise<{ id: string }>;
 }) {
   const session = await getServerSession(authOptions);
 
@@ -19,10 +19,12 @@ export default async function EditVehiclePage({
     redirect('/admin/login');
   }
 
+  const { id } = await params;
+
   const vehicle = await db
     .select()
     .from(vehicles)
-    .where(eq(vehicles.id, params.id))
+    .where(eq(vehicles.id, id))
     .limit(1);
 
   if (!vehicle || vehicle.length === 0) {

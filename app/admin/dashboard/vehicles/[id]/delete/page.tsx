@@ -12,7 +12,7 @@ import { DeleteVehicleButton } from '@/components/admin/delete-vehicle-button';
 export default async function DeleteVehiclePage({
   params,
 }: {
-  params: { id: string };
+  params: Promise<{ id: string }>;
 }) {
   const session = await getServerSession(authOptions);
 
@@ -20,10 +20,12 @@ export default async function DeleteVehiclePage({
     redirect('/admin/login');
   }
 
+  const { id } = await params;
+
   const vehicle = await db
     .select()
     .from(vehicles)
-    .where(eq(vehicles.id, params.id))
+    .where(eq(vehicles.id, id))
     .limit(1);
 
   if (!vehicle || vehicle.length === 0) {
