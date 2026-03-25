@@ -18,6 +18,7 @@ interface VehicleCardProps {
     transmission: string;
     fuelType: string;
     bodyType: string;
+    status: string;
     images: Array<{
       imageUrl: string;
       altText: string | null;
@@ -27,6 +28,19 @@ interface VehicleCardProps {
 
 export function VehicleCard({ vehicle }: VehicleCardProps) {
   const primaryImage = vehicle.images[0]?.imageUrl || '/placeholder-car.jpg';
+
+  const getStatusColor = (status: string) => {
+    switch (status.toLowerCase()) {
+      case 'sold':
+        return 'bg-red-600';
+      case 'available':
+        return 'bg-green-600';
+      case 'reserved':
+        return 'bg-yellow-600';
+      default:
+        return 'bg-gray-600';
+    }
+  };
 
   return (
     <div className="group bg-zinc-900/50 border border-white/10 hover:border-white/20 transition-all duration-300 overflow-hidden">
@@ -39,11 +53,9 @@ export function VehicleCard({ vehicle }: VehicleCardProps) {
             className="object-cover group-hover:scale-105 transition-transform duration-500"
           />
           <div className="absolute top-4 right-4">
-            {vehicle.financeMonthly && (
-              <div className="bg-gradient-to-r from-red-600 to-red-600 text-white px-3 py-1.5 font-semibold">
-                From {formatPrice(parseFloat(vehicle.financeMonthly))}/mo
-              </div>
-            )}
+            <div className={`${getStatusColor(vehicle.status)} text-white px-3 py-1.5 font-semibold uppercase text-sm`}>
+              {vehicle.status}
+            </div>
           </div>
         </div>
 
