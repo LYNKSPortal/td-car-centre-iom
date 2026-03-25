@@ -45,14 +45,12 @@ export function VehicleCard({ vehicle }: VehicleCardProps) {
   return (
     <div className="group bg-zinc-900/50 border border-white/10 hover:border-white/20 transition-all duration-300 overflow-hidden">
       <Link href={`/inventory/${vehicle.slug}`} className="block">
-        <div className="relative w-full pb-[100%] overflow-hidden bg-zinc-950">
+        <div className="relative aspect-square overflow-hidden bg-zinc-950">
           {primaryImage ? (
-            <Image
+            <img
               src={primaryImage}
               alt={vehicle.title}
-              fill
-              sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-              className="absolute inset-0 object-cover group-hover:scale-105 transition-transform duration-500"
+              className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
             />
           ) : (
             <div className="absolute inset-0 flex items-center justify-center">
