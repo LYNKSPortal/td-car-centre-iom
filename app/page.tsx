@@ -6,7 +6,7 @@ import { VehicleCard } from '@/components/vehicle-card';
 import { getFeaturedVehicles } from '@/lib/queries';
 
 export default async function Home() {
-  const featuredVehicles = await getFeaturedVehicles(6);
+  const featuredVehicles = await getFeaturedVehicles(3);
 
   return (
     <div className="bg-black">
