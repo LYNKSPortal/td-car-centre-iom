@@ -2,7 +2,7 @@
 
 import Link from 'next/link';
 import Image from 'next/image';
-import { Phone, Mail, MapPin, Menu, X } from 'lucide-react';
+import { Phone, Mail, MapPin, Menu, X, Search } from 'lucide-react';
 import { Button } from './ui/button';
 import { useState } from 'react';
 
@@ -11,76 +11,66 @@ export function Header() {
 
   return (
     <>
-      <div className="bg-zinc-950 border-b border-white/5">
-        <div className="container mx-auto px-4">
-          <div className="flex items-center justify-between h-10 text-zinc-400">
-            <div className="flex items-center gap-6">
+      <header className="sticky top-0 z-50 bg-black border-b border-white/10">
+        <div className="container mx-auto">
+          <div className="flex items-center justify-between h-16">
+            {/* Left: Contact Info */}
+            <div className="hidden lg:flex items-center gap-6 text-sm text-zinc-400">
               <a href="tel:01624670590" className="flex items-center gap-2 hover:text-white transition-colors">
-                <Phone className="w-3 h-3" />
-                <span className="hidden sm:inline">01624 670590</span>
+                <Phone className="w-4 h-4" />
+                <span>01624 670590</span>
               </a>
               <a href="mailto:tony@tdcar.im" className="flex items-center gap-2 hover:text-white transition-colors">
-                <Mail className="w-3 h-3" />
-                <span className="hidden md:inline">tony@tdcar.im</span>
+                <Mail className="w-4 h-4" />
+                <span>Sales</span>
+              </a>
+              <a href="mailto:tony@tdcar.im" className="flex items-center gap-2 hover:text-white transition-colors">
+                <Mail className="w-4 h-4" />
+                <span>Aftersales</span>
+              </a>
+              <a href="https://maps.google.com/?q=Unit+02+Hills+Meadow+Industrial+Estate+Peel+Road+Douglas+Isle+of+Man+IM1+5EA" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 hover:text-white transition-colors">
+                <MapPin className="w-4 h-4" />
+                <span>Directions</span>
               </a>
             </div>
-            <div className="flex items-center gap-2">
-              <MapPin className="w-3 h-3" />
-              <span className="hidden lg:inline">Unit 02, Hills Meadow Industrial Estate, Peel Road, Douglas, Isle of Man, IM1 5EA</span>
-            </div>
-          </div>
-        </div>
-      </div>
 
-      <header className="sticky top-0 z-50 bg-black/95 backdrop-blur-md border-b border-white/10">
-        <div className="container mx-auto px-4">
-          <div className="flex items-center justify-between py-6">
-            <Link href="/" className="flex items-center">
+            {/* Center: Logo */}
+            <Link href="/" className="absolute left-1/2 transform -translate-x-1/2">
               <Image
                 src="/images/white-logo.png"
                 alt="TD Car Centre"
                 width={150}
                 height={50}
-                className="w-[150px] h-auto"
+                className="w-[120px] lg:w-[150px] h-auto"
                 priority
               />
             </Link>
 
-            <nav className="hidden xl:flex items-center gap-6">
-              <Link href="/" className="text-sm text-zinc-300 hover:text-white transition-colors whitespace-nowrap">
-                Home
-              </Link>
-              <Link href="/inventory" className="text-sm text-zinc-300 hover:text-white transition-colors whitespace-nowrap">
-                View Stock
-              </Link>
-              <Link href="/finance" className="text-sm text-zinc-300 hover:text-white transition-colors whitespace-nowrap">
+            {/* Right: Action Buttons */}
+            <div className="hidden lg:flex items-center gap-4 text-sm">
+              <Link href="/finance" className="text-zinc-300 hover:text-white transition-colors">
                 Finance
               </Link>
-              <Link href="/services/warranty" className="text-sm text-zinc-300 hover:text-white transition-colors whitespace-nowrap">
-                Warranty
+              <Link href="/services/sell-your-car" className="text-zinc-300 hover:text-white transition-colors">
+                Sell
               </Link>
-              <Link href="/services/part-exchange" className="text-sm text-zinc-300 hover:text-white transition-colors whitespace-nowrap">
-                Part Exchange
+              <Link href="/inventory" className="flex items-center gap-2 text-zinc-300 hover:text-white transition-colors">
+                <Search className="w-4 h-4" />
               </Link>
-              <Link href="/about" className="text-sm text-zinc-300 hover:text-white transition-colors whitespace-nowrap">
-                About
-              </Link>
-              <Link href="/contact" className="text-sm text-zinc-300 hover:text-white transition-colors whitespace-nowrap">
-                Contact
-              </Link>
-            </nav>
-
-            <div className="hidden xl:flex items-center gap-3">
-              <Button variant="outline" size="sm" asChild>
-                <Link href="/services/sell-your-car">Sell Your Car</Link>
-              </Button>
+              <button
+                className="text-white p-2"
+                onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+              >
+                <Menu className="w-5 h-5" />
+              </button>
               <Button variant="primary" size="sm" asChild>
                 <Link href="/inventory">View Stock</Link>
               </Button>
             </div>
 
+            {/* Mobile Menu Button */}
             <button
-              className="xl:hidden text-white p-2"
+              className="lg:hidden text-white p-2"
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
             >
               {mobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
