@@ -38,7 +38,7 @@ export default async function InventoryPage({
 
       <div className="container mx-auto px-4 py-12">
         <div className="flex flex-col lg:flex-row gap-8">
-          <aside className="lg:w-80 flex-shrink-0">
+          <aside className="lg:w-96 flex-shrink-0">
             <div className="sticky top-24">
               <Suspense fallback={<div>Loading filters...</div>}>
                 <InventoryFilters filterOptions={filterOptions} currentFilters={filters} />
@@ -58,7 +58,7 @@ export default async function InventoryPage({
               </div>
             ) : (
               <>
-                <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6 mb-12">
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-12">
                   {vehicles.map((vehicle) => (
                     <VehicleCard key={vehicle.id} vehicle={vehicle} />
                   ))}
