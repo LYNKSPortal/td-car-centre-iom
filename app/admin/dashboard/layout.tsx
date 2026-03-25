@@ -53,7 +53,7 @@ export default function AdminDashboardLayout({
             </div>
             <nav className="px-4 space-y-2">
               {navigation.map((item) => {
-                const isActive = pathname === item.href || pathname?.startsWith(item.href + '/');
+                const isActive = pathname === item.href;
                 return (
                   <Link
                     key={item.name}
@@ -78,7 +78,7 @@ export default function AdminDashboardLayout({
       {/* Desktop sidebar */}
       <div className="hidden lg:fixed lg:inset-y-0 lg:flex lg:w-64 lg:flex-col">
         <div className="flex flex-col flex-1 bg-zinc-950 border-r border-white/10">
-          <div className="flex items-center p-6">
+          <div className="flex items-center justify-center p-6">
             <Link href="/">
               <Image
                 src="/images/white-logo.png"
@@ -91,7 +91,7 @@ export default function AdminDashboardLayout({
           </div>
           <nav className="flex-1 px-4 space-y-2">
             {navigation.map((item) => {
-              const isActive = pathname === item.href || pathname?.startsWith(item.href + '/');
+              const isActive = pathname === item.href;
               return (
                 <Link
                   key={item.name}
