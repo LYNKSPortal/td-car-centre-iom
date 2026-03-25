@@ -8,6 +8,8 @@ import Link from 'next/link';
 import { Button } from '@/components/ui/button';
 import { ArrowLeft } from 'lucide-react';
 
+export const dynamic = 'force-dynamic';
+
 type Props = {
   params: { id: string };
 };
@@ -24,11 +26,17 @@ export default async function EditVehiclePage({ params }: Props) {
     notFound();
   }
 
-  const vehicle = await db
-    .select()
-    .from(vehicles)
-    .where(eq(vehicles.id, params.id))
-    .limit(1);
+  let vehicle;
+  try {
+    vehicle = await db
+      .select()
+      .from(vehicles)
+      .where(eq(vehicles.id, params.id))
+      .limit(1);
+  } catch (error) {
+    console.error('Database query error:', error);
+    notFound();
+  }
 
   if (!vehicle || vehicle.length === 0) {
     notFound();
