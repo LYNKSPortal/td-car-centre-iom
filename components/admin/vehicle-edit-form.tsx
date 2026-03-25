@@ -119,12 +119,94 @@ export function VehicleEditForm({ vehicle }: { vehicle: Vehicle }) {
 
         <div>
           <Label htmlFor="make">Make *</Label>
-          <Input
+          <select
             id="make"
             value={formData.make}
             onChange={(e) => setFormData({ ...formData, make: e.target.value })}
+            className="w-full px-3 py-2 bg-zinc-800 border border-white/10 rounded-md text-white"
             required
-          />
+          >
+            <option value="">Select Make</option>
+            <option value="Aston Martin">Aston Martin</option>
+            <option value="Audi">Audi</option>
+            <option value="Bentley">Bentley</option>
+            <option value="BMW">BMW</option>
+            <option value="Cadillac">Cadillac</option>
+            <option value="Chevrolet">Chevrolet</option>
+            <option value="Chrysler">Chrysler</option>
+            <option value="Citroën">Citroën</option>
+            <option value="Dacia">Dacia</option>
+            <option value="Daihatsu">Daihatsu</option>
+            <option value="Dodge">Dodge</option>
+            <option value="Eagle">Eagle</option>
+            <option value="Excalibur">Excalibur</option>
+            <option value="Ferrari">Ferrari</option>
+            <option value="Fiat">Fiat</option>
+            <option value="Fisker">Fisker</option>
+            <option value="Ford">Ford</option>
+            <option value="Genesis">Genesis</option>
+            <option value="Ginetta">Ginetta</option>
+            <option value="GMC">GMC</option>
+            <option value="Haval">Haval</option>
+            <option value="Honda">Honda</option>
+            <option value="Hummer">Hummer</option>
+            <option value="Hyundai">Hyundai</option>
+            <option value="Infiniti">Infiniti</option>
+            <option value="Isuzu">Isuzu</option>
+            <option value="Iveco">Iveco</option>
+            <option value="Jaguar">Jaguar</option>
+            <option value="Jeep">Jeep</option>
+            <option value="Kia">Kia</option>
+            <option value="Koenigsegg">Koenigsegg</option>
+            <option value="Lamborghini">Lamborghini</option>
+            <option value="Lancia">Lancia</option>
+            <option value="Land Rover">Land Rover</option>
+            <option value="Lexus">Lexus</option>
+            <option value="Lincoln">Lincoln</option>
+            <option value="Lotus">Lotus</option>
+            <option value="Maserati">Maserati</option>
+            <option value="Mazda">Mazda</option>
+            <option value="McLaren">McLaren</option>
+            <option value="Mercedes-Benz">Mercedes-Benz</option>
+            <option value="MG">MG</option>
+            <option value="MINI">MINI</option>
+            <option value="Mitsubishi">Mitsubishi</option>
+            <option value="Morgan">Morgan</option>
+            <option value="Nissan">Nissan</option>
+            <option value="Oldsmobile">Oldsmobile</option>
+            <option value="Opel">Opel</option>
+            <option value="Pagani">Pagani</option>
+            <option value="Peugeot">Peugeot</option>
+            <option value="Polestar">Polestar</option>
+            <option value="Pontiac">Pontiac</option>
+            <option value="Porsche">Porsche</option>
+            <option value="Qoros">Qoros</option>
+            <option value="Radical">Radical</option>
+            <option value="Range Rover">Range Rover</option>
+            <option value="Renault">Renault</option>
+            <option value="Riley">Riley</option>
+            <option value="Rolls-Royce">Rolls-Royce</option>
+            <option value="Rover">Rover</option>
+            <option value="Saab">Saab</option>
+            <option value="SEAT">SEAT</option>
+            <option value="Škoda">Škoda</option>
+            <option value="Smart">Smart</option>
+            <option value="SsangYong">SsangYong</option>
+            <option value="Subaru">Subaru</option>
+            <option value="Suzuki">Suzuki</option>
+            <option value="Tata">Tata</option>
+            <option value="Tesla">Tesla</option>
+            <option value="Toyota">Toyota</option>
+            <option value="Triumph">Triumph</option>
+            <option value="TVR">TVR</option>
+            <option value="Ultima">Ultima</option>
+            <option value="Vauxhall">Vauxhall</option>
+            <option value="Volkswagen">Volkswagen</option>
+            <option value="Volvo">Volvo</option>
+            <option value="Westfield">Westfield</option>
+            <option value="Wiesmann">Wiesmann</option>
+            <option value="Zenvo">Zenvo</option>
+          </select>
         </div>
 
         <div>
