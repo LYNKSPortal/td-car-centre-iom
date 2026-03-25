@@ -63,13 +63,7 @@
   }
 }
 
-@layer utilities {
-  .text-balance {
-    text-wrap: balance;
-  }
-}
-
-/* Finance Calculator Specific Overrides */
+/* Finance Calculator Specific Overrides - Must be outside @layer for proper specificity */
 .finance-calculator-content * {
   font-size: 14px !important;
 }
@@ -83,5 +77,11 @@
 @media (min-width: 1024px) {
   .finance-calculator-content * {
     font-size: 18px !important;
+  }
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
   }
 }
