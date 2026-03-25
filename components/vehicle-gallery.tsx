@@ -18,8 +18,10 @@ export function VehicleGallery({ images, title }: VehicleGalleryProps) {
 
   if (images.length === 0) {
     return (
-      <div className="relative aspect-square bg-zinc-900 flex items-center justify-center">
-        <p className="text-zinc-500">No images available</p>
+      <div className="relative w-full pb-[100%] bg-zinc-900">
+        <div className="absolute inset-0 flex items-center justify-center">
+          <p className="text-zinc-500">No images available</p>
+        </div>
       </div>
     );
   }
@@ -34,13 +36,13 @@ export function VehicleGallery({ images, title }: VehicleGalleryProps) {
 
   return (
     <div className="space-y-4">
-      <div className="relative aspect-square bg-zinc-950 overflow-hidden group">
+      <div className="relative w-full pb-[100%] bg-zinc-950 overflow-hidden group">
         <Image
           src={images[currentIndex].imageUrl}
           alt={images[currentIndex].altText || title}
           fill
           sizes="(max-width: 768px) 100vw, 66vw"
-          className="object-cover"
+          className="absolute inset-0 object-cover"
           priority
         />
 
@@ -80,7 +82,7 @@ export function VehicleGallery({ images, title }: VehicleGalleryProps) {
             <button
               key={image.id}
               onClick={() => setCurrentIndex(index)}
-              className={`relative aspect-square overflow-hidden border-2 transition-all ${
+              className={`relative w-full pb-[100%] overflow-hidden border-2 transition-all ${
                 index === currentIndex ? 'border-red-600' : 'border-white/10 hover:border-white/30'
               }`}
             >
@@ -89,7 +91,7 @@ export function VehicleGallery({ images, title }: VehicleGalleryProps) {
                 alt={image.altText || `${title} - Image ${index + 1}`}
                 fill
                 sizes="(max-width: 768px) 25vw, 10vw"
-                className="object-cover"
+                className="absolute inset-0 object-cover"
               />
             </button>
           ))}
