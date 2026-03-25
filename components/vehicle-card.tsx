@@ -40,7 +40,7 @@ export function VehicleCard({ vehicle }: VehicleCardProps) {
           />
           <div className="absolute top-4 right-4">
             {vehicle.financeMonthly && (
-              <div className="bg-gradient-to-r from-red-600 to-red-600 text-white px-3 py-1.5 text-xs font-semibold">
+              <div className="bg-gradient-to-r from-red-600 to-red-600 text-white px-3 py-1.5 font-semibold">
                 From {formatPrice(parseFloat(vehicle.financeMonthly))}/mo
               </div>
             )}
