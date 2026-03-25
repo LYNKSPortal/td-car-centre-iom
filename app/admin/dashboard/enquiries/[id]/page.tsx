@@ -20,7 +20,11 @@ export default async function EnquiryDetailPage({
     redirect('/admin/login');
   }
 
-  const { id } = await params;
+  const resolvedParams = await params;
+  
+  if (!resolvedParams?.id) {
+    notFound();
+  }
 
   const result = await db
     .select({
@@ -29,7 +33,7 @@ export default async function EnquiryDetailPage({
     })
     .from(enquiries)
     .leftJoin(vehicles, eq(enquiries.vehicleId, vehicles.id))
-    .where(eq(enquiries.id, id))
+    .where(eq(enquiries.id, resolvedParams.id))
     .limit(1);
 
   if (!result || result.length === 0) {

@@ -19,12 +19,16 @@ export default async function EditVehiclePage({
     redirect('/admin/login');
   }
 
-  const { id } = await params;
+  const resolvedParams = await params;
+  
+  if (!resolvedParams?.id) {
+    notFound();
+  }
 
   const vehicle = await db
     .select()
     .from(vehicles)
-    .where(eq(vehicles.id, id))
+    .where(eq(vehicles.id, resolvedParams.id))
     .limit(1);
 
   if (!vehicle || vehicle.length === 0) {
