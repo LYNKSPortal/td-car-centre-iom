@@ -69,6 +69,27 @@
   }
 }
 
+/* Container Padding Overrides */
+.container {
+  padding-left: 20px !important;
+  padding-right: 20px !important;
+  max-width: 100% !important;
+}
+
+@media (min-width: 768px) {
+  .container {
+    padding-left: 50px !important;
+    padding-right: 50px !important;
+  }
+}
+
+@media (min-width: 1024px) {
+  .container {
+    padding-left: 50px !important;
+    padding-right: 50px !important;
+  }
+}
+
 /* Finance Calculator Specific Overrides - Must be at the end for maximum specificity */
 .finance-calculator-content *,
 .finance-calculator-content span,
