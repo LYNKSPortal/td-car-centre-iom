@@ -42,6 +42,7 @@ export const vehicleImages = pgTable('vehicle_images', {
   id: uuid('id').defaultRandom().primaryKey(),
   vehicleId: uuid('vehicle_id').notNull().references(() => vehicles.id, { onDelete: 'cascade' }),
   imageUrl: text('image_url').notNull(),
+  publicId: text('public_id'),
   altText: varchar('alt_text', { length: 255 }),
   sortOrder: integer('sort_order').default(0).notNull(),
   createdAt: timestamp('created_at').defaultNow().notNull(),

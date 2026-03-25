@@ -2,12 +2,13 @@ import { getServerSession } from 'next-auth';
 import { authOptions } from '@/app/api/auth/[...nextauth]/route';
 import { redirect, notFound } from 'next/navigation';
 import { db } from '@/lib/db';
-import { vehicles } from '@/lib/db/schema';
-import { eq } from 'drizzle-orm';
+import { vehicles, vehicleImages } from '@/lib/db/schema';
+import { eq, asc } from 'drizzle-orm';
 import Link from 'next/link';
 import { Button } from '@/components/ui/button';
 import { ArrowLeft } from 'lucide-react';
 import { VehicleEditForm } from '@/components/admin/vehicle-edit-form';
+import { VehicleImageManager } from '@/components/admin/vehicle-image-manager';
 
 export const dynamic = 'force-dynamic';
 
@@ -28,13 +29,16 @@ export default async function EditVehiclePage(props: Props) {
     redirect('/admin/login');
   }
 
-  const vehicle = await db
-    .select()
-    .from(vehicles)
-    .where(eq(vehicles.id, params.id))
-    .limit(1);
+  const vehicleData = await db.query.vehicles.findFirst({
+    where: eq(vehicles.id, params.id),
+    with: {
+      images: {
+        orderBy: asc(vehicleImages.sortOrder),
+      },
+    },
+  });
 
-  if (!vehicle || vehicle.length === 0) {
+  if (!vehicleData) {
     notFound();
   }
 
@@ -51,7 +55,11 @@ export default async function EditVehiclePage(props: Props) {
 
       <div className="bg-zinc-900 border border-white/10 p-6 rounded-lg">
         <h1 className="text-2xl font-bold text-white mb-6">Edit Vehicle</h1>
-        <VehicleEditForm vehicle={vehicle[0]} />
+        <VehicleEditForm vehicle={vehicleData} />
+      </div>
+
+      <div className="bg-zinc-900 border border-white/10 p-6 rounded-lg">
+        <VehicleImageManager vehicleId={params.id} images={vehicleData.images} />
       </div>
     </div>
   );
