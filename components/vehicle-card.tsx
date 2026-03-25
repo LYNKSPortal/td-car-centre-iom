@@ -58,45 +58,47 @@ export function VehicleCard({ vehicle }: VehicleCardProps) {
             </div>
           </div>
         </div>
+      </Link>
 
-        <div className="p-6">
+      <div className="p-6">
+        <Link href={`/inventory/${vehicle.slug}`}>
           <h3 className="text-xl font-semibold text-white mb-2 group-hover:text-red-600 transition-colors">
             {vehicle.title}
           </h3>
-          
-          <div className="text-2xl font-bold text-white mb-4">
-            {formatPrice(parseFloat(vehicle.price))}
-          </div>
+        </Link>
+        
+        <div className="text-2xl font-bold text-white mb-4">
+          {formatPrice(parseFloat(vehicle.price))}
+        </div>
 
-          <div className="grid grid-cols-2 gap-3 mb-6 text-sm">
-            <div className="flex items-center gap-2 text-zinc-400">
-              <Calendar className="w-4 h-4 text-red-600" />
-              <span>{vehicle.year}</span>
-            </div>
-            <div className="flex items-center gap-2 text-zinc-400">
-              <Gauge className="w-4 h-4 text-red-600" />
-              <span>{formatMileage(vehicle.mileage)} miles</span>
-            </div>
-            <div className="flex items-center gap-2 text-zinc-400">
-              <Cog className="w-4 h-4 text-red-600" />
-              <span>{vehicle.transmission}</span>
-            </div>
-            <div className="flex items-center gap-2 text-zinc-400">
-              <Fuel className="w-4 h-4 text-red-600" />
-              <span>{vehicle.fuelType}</span>
-            </div>
+        <div className="grid grid-cols-2 gap-3 mb-6 text-sm">
+          <div className="flex items-center gap-2 text-zinc-400">
+            <Calendar className="w-4 h-4 text-red-600" />
+            <span>{vehicle.year}</span>
           </div>
-
-          <div className="flex gap-3">
-            <Button variant="outline" size="sm" className="flex-1" asChild>
-              <Link href={`/inventory/${vehicle.slug}#enquire`}>Enquire</Link>
-            </Button>
-            <Button variant="primary" size="sm" className="flex-1" asChild>
-              <Link href={`/inventory/${vehicle.slug}`}>View Details</Link>
-            </Button>
+          <div className="flex items-center gap-2 text-zinc-400">
+            <Gauge className="w-4 h-4 text-red-600" />
+            <span>{formatMileage(vehicle.mileage)} miles</span>
+          </div>
+          <div className="flex items-center gap-2 text-zinc-400">
+            <Cog className="w-4 h-4 text-red-600" />
+            <span>{vehicle.transmission}</span>
+          </div>
+          <div className="flex items-center gap-2 text-zinc-400">
+            <Fuel className="w-4 h-4 text-red-600" />
+            <span>{vehicle.fuelType}</span>
           </div>
         </div>
-      </Link>
+
+        <div className="flex gap-3">
+          <Button variant="outline" size="sm" className="flex-1" asChild>
+            <Link href={`/inventory/${vehicle.slug}#enquire`}>Enquire</Link>
+          </Button>
+          <Button variant="primary" size="sm" className="flex-1" asChild>
+            <Link href={`/inventory/${vehicle.slug}`}>View Details</Link>
+          </Button>
+        </div>
+      </div>
     </div>
   );
 }
