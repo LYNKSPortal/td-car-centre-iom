@@ -9,18 +9,21 @@ import { Button } from '@/components/ui/button';
 import { ArrowLeft, Mail, Phone, MessageSquare, Car } from 'lucide-react';
 import { MarkAsHandledButton } from '@/components/admin/mark-as-handled-button';
 
-export default async function EnquiryDetailPage(props: {
-  params: Promise<{ id: string }>;
-}) {
+interface PageProps {
+  params: { id: string };
+}
+
+export default async function EnquiryDetailPage({ params }: PageProps) {
   const session = await getServerSession(authOptions);
 
   if (!session) {
     redirect('/admin/login');
   }
   
-  const params = await props.params;
+  // Ensure params and id exist
+  const enquiryId = params?.id;
   
-  if (!params?.id) {
+  if (!enquiryId) {
     notFound();
   }
 
@@ -31,7 +34,7 @@ export default async function EnquiryDetailPage(props: {
     })
     .from(enquiries)
     .leftJoin(vehicles, eq(enquiries.vehicleId, vehicles.id))
-    .where(eq(enquiries.id, params.id))
+    .where(eq(enquiries.id, enquiryId))
     .limit(1);
 
   if (!result || result.length === 0) {
