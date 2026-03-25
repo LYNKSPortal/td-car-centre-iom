@@ -63,25 +63,37 @@
   }
 }
 
-/* Finance Calculator Specific Overrides - Must be outside @layer for proper specificity */
-.finance-calculator-content * {
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+}
+
+/* Finance Calculator Specific Overrides - Must be at the end for maximum specificity */
+.finance-calculator-content *,
+.finance-calculator-content span,
+.finance-calculator-content p,
+.finance-calculator-content label,
+.finance-calculator-content div {
   font-size: 14px !important;
 }
 
 @media (min-width: 768px) {
-  .finance-calculator-content * {
+  .finance-calculator-content *,
+  .finance-calculator-content span,
+  .finance-calculator-content p,
+  .finance-calculator-content label,
+  .finance-calculator-content div {
     font-size: 16px !important;
   }
 }
 
 @media (min-width: 1024px) {
-  .finance-calculator-content * {
+  .finance-calculator-content *,
+  .finance-calculator-content span,
+  .finance-calculator-content p,
+  .finance-calculator-content label,
+  .finance-calculator-content div {
     font-size: 18px !important;
-  }
-}
-
-@layer utilities {
-  .text-balance {
-    text-wrap: balance;
   }
 }
