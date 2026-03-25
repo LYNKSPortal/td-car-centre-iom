@@ -10,17 +10,19 @@ import { ArrowLeft, Mail, Phone, MessageSquare, Car } from 'lucide-react';
 import { MarkAsHandledButton } from '@/components/admin/mark-as-handled-button';
 
 type Props = {
-  params: { id: string };
+  params: Promise<{ id: string }>;
 };
 
-export default async function EnquiryDetailPage({ params }: Props) {
+export default async function EnquiryDetailPage(props: Props) {
   const session = await getServerSession(authOptions);
 
   if (!session) {
     redirect('/admin/login');
   }
   
-  // Validate id exists
+  // Await params for Next.js 16
+  const params = await props.params;
+  
   if (!params || !params.id) {
     notFound();
   }

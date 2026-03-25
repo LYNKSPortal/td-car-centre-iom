@@ -10,17 +10,19 @@ import { ArrowLeft, AlertTriangle } from 'lucide-react';
 import { DeleteVehicleButton } from '@/components/admin/delete-vehicle-button';
 
 type Props = {
-  params: { id: string };
+  params: Promise<{ id: string }>;
 };
 
-export default async function DeleteVehiclePage({ params }: Props) {
+export default async function DeleteVehiclePage(props: Props) {
   const session = await getServerSession(authOptions);
 
   if (!session) {
     redirect('/admin/login');
   }
   
-  // Validate id exists
+  // Await params for Next.js 16
+  const params = await props.params;
+  
   if (!params || !params.id) {
     notFound();
   }
