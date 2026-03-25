@@ -3,10 +3,13 @@ import { notFound } from 'next/navigation';
 export const dynamic = 'force-dynamic';
 
 type Props = {
-  params: { id: string };
+  params: Promise<{ id: string }>;
 };
 
-export default async function EditVehiclePage({ params }: Props) {
+export default async function EditVehiclePage(props: Props) {
+  // Await params for Next.js 15+
+  const params = await props.params;
+  
   // Simple test - just return the ID
   if (!params || !params.id) {
     notFound();
