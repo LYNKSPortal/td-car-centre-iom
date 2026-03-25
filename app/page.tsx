@@ -24,7 +24,7 @@ export default async function Home() {
 
         <div className="relative container mx-auto px-4 h-full flex items-center">
           <div className="max-w-2xl">
-            <h1 className="text-5xl md:text-7xl font-bold mb-6 leading-tight">
+            <h1 className="text-[30px] md:text-[45px] lg:text-[70px] font-bold mb-6 leading-tight">
               Prestige Vehicles,<br />
               <span className="text-red-600">Exceptional Service</span>
             </h1>
