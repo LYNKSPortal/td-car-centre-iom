@@ -2,8 +2,8 @@ import { getServerSession } from 'next-auth';
 import { authOptions } from '@/app/api/auth/[...nextauth]/route';
 import { redirect } from 'next/navigation';
 import { db } from '@/lib/db';
-import { vehicles } from '@/lib/db/schema';
-import { desc } from 'drizzle-orm';
+import { vehicles, vehicleImages } from '@/lib/db/schema';
+import { desc, eq, asc } from 'drizzle-orm';
 import Link from 'next/link';
 import Image from 'next/image';
 import { Button } from '@/components/ui/button';
@@ -17,10 +17,15 @@ export default async function VehiclesPage() {
     redirect('/admin/login');
   }
 
-  const allVehicles = await db
-    .select()
-    .from(vehicles)
-    .orderBy(desc(vehicles.createdAt));
+  const allVehicles = await db.query.vehicles.findMany({
+    orderBy: [desc(vehicles.createdAt)],
+    with: {
+      images: {
+        orderBy: [asc(vehicleImages.sortOrder)],
+        limit: 1,
+      },
+    },
+  });
 
   return (
     <div className="space-y-6">
@@ -62,8 +67,20 @@ export default async function VehiclesPage() {
                   <tr key={vehicle.id} className="hover:bg-white/5 transition-colors">
                     <td className="px-6 py-4">
                       <div className="flex items-center gap-4">
-                        <div className="w-16 h-16 bg-zinc-950 rounded overflow-hidden flex-shrink-0">
-                          <div className="w-full h-full bg-zinc-800" />
+                        <div className="relative w-16 h-16 bg-zinc-950 rounded overflow-hidden flex-shrink-0">
+                          {vehicle.images[0]?.imageUrl ? (
+                            <Image
+                              src={vehicle.images[0].imageUrl}
+                              alt={vehicle.title}
+                              fill
+                              sizes="64px"
+                              className="object-cover"
+                            />
+                          ) : (
+                            <div className="w-full h-full bg-zinc-800 flex items-center justify-center">
+                              <span className="text-2xl">🚗</span>
+                            </div>
+                          )}
                         </div>
                         <div>
                           <p className="font-medium text-white">{vehicle.title}</p>
