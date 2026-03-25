@@ -37,6 +37,7 @@ export async function POST(request: Request) {
         bodyType: body.bodyType,
         drivetrain: body.drivetrain || null,
         colour: body.colour || null,
+        interiorColour: body.interiorColour || null,
         engineSize: body.engineSize || null,
         doors: body.doors || null,
         seats: body.seats || null,
