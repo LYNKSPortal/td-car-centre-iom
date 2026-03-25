@@ -96,6 +96,21 @@
   .finance-calculator-content div {
     font-size: 18px !important;
   }
+  
+  /* Exception for h2 in finance calculator */
+  .finance-calculator-content h2 {
+    font-size: 40px !important;
+  }
+}
+
+@media (min-width: 768px) {
+  .finance-calculator-content h2 {
+    font-size: 34px !important;
+  }
+}
+
+.finance-calculator-content h2 {
+  font-size: 28px !important;
 }
 
 /* Hero Title - Specific Override */
