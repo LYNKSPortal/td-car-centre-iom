@@ -7,7 +7,7 @@ import { eq } from 'drizzle-orm';
 
 export async function PATCH(
   request: Request,
-  { params }: { params: { id: string } }
+  context: { params: Promise<{ id: string }> }
 ) {
   const session = await getServerSession(authOptions);
 
@@ -16,6 +16,7 @@ export async function PATCH(
   }
 
   try {
+    const params = await context.params;
     const body = await request.json();
     const { handled } = body;
 
