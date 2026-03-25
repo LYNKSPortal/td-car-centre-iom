@@ -108,7 +108,7 @@ export function FinanceCalculator() {
 
       <div className="bg-gradient-to-r from-red-600 to-red-600 p-6 mb-6 finance-calculator-content">
         <p className="text-white/70 mb-1">Estimated Monthly Payment</p>
-        <p className="text-4xl font-bold text-white">{formatPrice(monthlyPayment)}</p>
+        <h2 className="text-4xl font-bold text-white">{formatPrice(monthlyPayment)}</h2>
       </div>
 
       <div className="space-y-3 mb-6 finance-calculator-content">
