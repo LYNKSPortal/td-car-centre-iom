@@ -8,16 +8,16 @@ import Link from 'next/link';
 import { Button } from '@/components/ui/button';
 import { ArrowLeft } from 'lucide-react';
 
-export default async function EditVehiclePage({
-  params,
-}: {
-  params: { id: string };
+export default async function EditVehiclePage(props: {
+  params: Promise<{ id: string }>;
 }) {
   const session = await getServerSession(authOptions);
 
   if (!session) {
     redirect('/admin/login');
   }
+  
+  const params = await props.params;
   
   if (!params?.id) {
     notFound();

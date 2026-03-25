@@ -9,16 +9,16 @@ import { Button } from '@/components/ui/button';
 import { ArrowLeft, AlertTriangle } from 'lucide-react';
 import { DeleteVehicleButton } from '@/components/admin/delete-vehicle-button';
 
-export default async function DeleteVehiclePage({
-  params,
-}: {
-  params: { id: string };
+export default async function DeleteVehiclePage(props: {
+  params: Promise<{ id: string }>;
 }) {
   const session = await getServerSession(authOptions);
 
   if (!session) {
     redirect('/admin/login');
   }
+  
+  const params = await props.params;
   
   if (!params?.id) {
     notFound();

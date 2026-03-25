@@ -9,16 +9,16 @@ import { Button } from '@/components/ui/button';
 import { ArrowLeft, Mail, Phone, MessageSquare, Car } from 'lucide-react';
 import { MarkAsHandledButton } from '@/components/admin/mark-as-handled-button';
 
-export default async function EnquiryDetailPage({
-  params,
-}: {
-  params: { id: string };
+export default async function EnquiryDetailPage(props: {
+  params: Promise<{ id: string }>;
 }) {
   const session = await getServerSession(authOptions);
 
   if (!session) {
     redirect('/admin/login');
   }
+  
+  const params = await props.params;
   
   if (!params?.id) {
     notFound();
