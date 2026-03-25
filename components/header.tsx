@@ -46,7 +46,7 @@ export function Header() {
               />
             </Link>
 
-            <nav className="hidden xl:flex items-center gap-8">
+            <nav className="hidden lg:flex items-center gap-4">
               <Link href="/" className="text-sm text-zinc-300 hover:text-white transition-colors">
                 Home
               </Link>
@@ -70,7 +70,7 @@ export function Header() {
               </Link>
             </nav>
 
-            <div className="hidden xl:flex items-center gap-3">
+            <div className="hidden lg:flex items-center gap-3">
               <Button variant="outline" size="sm" asChild>
                 <Link href="/services/sell-your-car">Sell Your Car</Link>
               </Button>
@@ -80,7 +80,7 @@ export function Header() {
             </div>
 
             <button
-              className="xl:hidden text-white p-2"
+              className="lg:hidden text-white p-2"
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
             >
               {mobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
@@ -89,7 +89,7 @@ export function Header() {
         </div>
 
         {mobileMenuOpen && (
-          <div className="xl:hidden border-t border-white/10 bg-black">
+          <div className="lg:hidden border-t border-white/10 bg-black">
             <nav className="container mx-auto px-4 py-6 flex flex-col gap-4">
               <Link href="/" className="text-sm text-zinc-300 hover:text-white transition-colors py-2" onClick={() => setMobileMenuOpen(false)}>
                 Home
