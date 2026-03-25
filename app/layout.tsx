@@ -3,6 +3,7 @@ import { Host_Grotesk } from "next/font/google";
 import "./globals.css";
 import { Header } from "@/components/header";
 import { Footer } from "@/components/footer";
+import { NextAuthProvider } from "@/components/providers/session-provider";
 
 const hostGrotesk = Host_Grotesk({
   subsets: ["latin"],
@@ -34,9 +35,11 @@ export default function RootLayout({
   return (
     <html lang="en" className={`${hostGrotesk.variable} h-full antialiased`}>
       <body className="min-h-full flex flex-col bg-black text-white font-sans">
-        <Header />
-        <main className="flex-1">{children}</main>
-        <Footer />
+        <NextAuthProvider>
+          <Header />
+          <main className="flex-1">{children}</main>
+          <Footer />
+        </NextAuthProvider>
       </body>
     </html>
   );
