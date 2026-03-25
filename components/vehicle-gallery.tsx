@@ -39,6 +39,7 @@ export function VehicleGallery({ images, title }: VehicleGalleryProps) {
           src={images[currentIndex].imageUrl}
           alt={images[currentIndex].altText || title}
           fill
+          sizes="(max-width: 768px) 100vw, 66vw"
           className="object-cover"
           priority
         />
@@ -87,6 +88,7 @@ export function VehicleGallery({ images, title }: VehicleGalleryProps) {
                 src={image.imageUrl}
                 alt={image.altText || `${title} - Image ${index + 1}`}
                 fill
+                sizes="(max-width: 768px) 25vw, 10vw"
                 className="object-cover"
               />
             </button>
