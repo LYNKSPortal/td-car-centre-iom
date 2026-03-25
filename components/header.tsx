@@ -15,18 +15,18 @@ export function Header() {
         <div className="container mx-auto px-4">
           <div className="flex items-center justify-between h-10 text-zinc-400">
             <div className="flex items-center gap-6">
-              <a href="tel:+441234567890" className="flex items-center gap-2 hover:text-white transition-colors">
+              <a href="tel:01624670590" className="flex items-center gap-2 hover:text-white transition-colors">
                 <Phone className="w-3 h-3" />
-                <span className="hidden sm:inline">+44 1234 567890</span>
+                <span className="hidden sm:inline">01624 670590</span>
               </a>
-              <a href="mailto:sales@tdcarcentre.co.uk" className="flex items-center gap-2 hover:text-white transition-colors">
+              <a href="mailto:tony@tdcar.im" className="flex items-center gap-2 hover:text-white transition-colors">
                 <Mail className="w-3 h-3" />
-                <span className="hidden md:inline">sales@tdcarcentre.co.uk</span>
+                <span className="hidden md:inline">tony@tdcar.im</span>
               </a>
             </div>
             <div className="flex items-center gap-2">
               <MapPin className="w-3 h-3" />
-              <span className="hidden lg:inline">123 Premium Drive, London, SW1A 1AA</span>
+              <span className="hidden lg:inline">Unit 02, Hills Meadow Industrial Estate, Peel Road, Douglas, Isle of Man, IM1 5EA</span>
             </div>
           </div>
         </div>

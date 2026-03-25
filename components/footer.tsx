@@ -75,16 +75,16 @@ export function Footer() {
               <li className="flex items-start gap-3">
                 <Phone className="w-4 h-4 text-red-600 mt-0.5 flex-shrink-0" />
                 <div>
-                  <a href="tel:+441234567890" className="text-zinc-400 hover:text-white text-sm transition-colors">
-                    +44 1234 567890
+                  <a href="tel:01624670590" className="text-zinc-400 hover:text-white text-sm transition-colors">
+                    01624 670590
                   </a>
                 </div>
               </li>
               <li className="flex items-start gap-3">
                 <Mail className="w-4 h-4 text-red-600 mt-0.5 flex-shrink-0" />
                 <div>
-                  <a href="mailto:sales@tdcarcentre.co.uk" className="text-zinc-400 hover:text-white text-sm transition-colors">
-                    sales@tdcarcentre.co.uk
+                  <a href="mailto:tony@tdcar.im" className="text-zinc-400 hover:text-white text-sm transition-colors">
+                    tony@tdcar.im
                   </a>
                 </div>
               </li>
@@ -92,8 +92,9 @@ export function Footer() {
                 <MapPin className="w-4 h-4 text-red-600 mt-0.5 flex-shrink-0" />
                 <div>
                   <p className="text-zinc-400 text-sm">
-                    123 Premium Drive<br />
-                    London, SW1A 1AA
+                    Unit 02, Hills Meadow Industrial Estate<br />
+                    Peel Road, Douglas<br />
+                    Isle of Man, IM1 5EA
                   </p>
                 </div>
               </li>
