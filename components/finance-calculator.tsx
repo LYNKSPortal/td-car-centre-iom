@@ -28,9 +28,9 @@ export function FinanceCalculator() {
     <div className="bg-zinc-900/50 border border-white/10 p-8">
       <h2 className="text-2xl font-bold mb-6">Finance Calculator</h2>
       
-      <div className="space-y-6 mb-8">
+      <div className="space-y-6 mb-8 text-sm md:text-base lg:text-lg">
         <div>
-          <label className="block text-sm font-medium mb-2 text-zinc-300">
+          <label className="block font-medium mb-2 text-zinc-300">
             Vehicle Price: {formatPrice(vehiclePrice)}
           </label>
           <input
@@ -49,7 +49,7 @@ export function FinanceCalculator() {
         </div>
 
         <div>
-          <label className="block text-sm font-medium mb-2 text-zinc-300">
+          <label className="block font-medium mb-2 text-zinc-300">
             Deposit: {formatPrice(deposit)}
           </label>
           <input
@@ -68,7 +68,7 @@ export function FinanceCalculator() {
         </div>
 
         <div>
-          <label className="block text-sm font-medium mb-2 text-zinc-300">
+          <label className="block font-medium mb-2 text-zinc-300">
             Interest Rate: {interestRate.toFixed(1)}% APR
           </label>
           <input
@@ -87,7 +87,7 @@ export function FinanceCalculator() {
         </div>
 
         <div>
-          <label className="block text-sm font-medium mb-2 text-zinc-300">
+          <label className="block font-medium mb-2 text-zinc-300">
             Term: {termMonths} months ({Math.floor(termMonths / 12)} years)
           </label>
           <input
@@ -107,11 +107,11 @@ export function FinanceCalculator() {
       </div>
 
       <div className="bg-gradient-to-r from-red-600 to-red-600 p-6 mb-6">
-        <p className="text-sm text-white/70 mb-1">Estimated Monthly Payment</p>
+        <p className="text-sm md:text-base lg:text-lg text-white/70 mb-1">Estimated Monthly Payment</p>
         <p className="text-4xl font-bold text-white">{formatPrice(monthlyPayment)}</p>
       </div>
 
-      <div className="space-y-3 text-sm mb-6">
+      <div className="space-y-3 text-sm md:text-base lg:text-lg mb-6">
         <div className="flex justify-between">
           <span className="text-zinc-400">Amount to Finance:</span>
           <span className="font-semibold">{formatPrice(vehiclePrice - deposit)}</span>
@@ -126,7 +126,7 @@ export function FinanceCalculator() {
         </div>
       </div>
 
-      <p className="text-xs text-zinc-500 mb-6">
+      <p className="text-xs md:text-sm lg:text-base text-zinc-500 mb-6">
         This is an example calculation only. Actual rates and terms may vary based on your credit profile 
         and the vehicle selected. Subject to status and affordability checks.
       </p>
