@@ -3,6 +3,7 @@
 import { useRouter, useSearchParams } from 'next/navigation';
 import { Button } from './ui/button';
 import { X } from 'lucide-react';
+import { useState, useEffect } from 'react';
 
 interface FilterOptionsProps {
   filterOptions: {
@@ -19,6 +20,21 @@ interface FilterOptionsProps {
 export function InventoryFilters({ filterOptions, currentFilters }: FilterOptionsProps) {
   const router = useRouter();
   const searchParams = useSearchParams();
+  const [availableModels, setAvailableModels] = useState<string[]>(filterOptions.models);
+
+  useEffect(() => {
+    // Filter models based on selected make
+    if (currentFilters.make) {
+      // Fetch models for the selected make
+      fetch(`/api/vehicles/models?make=${encodeURIComponent(currentFilters.make)}`)
+        .then(res => res.json())
+        .then(data => setAvailableModels(data.models || []))
+        .catch(() => setAvailableModels([]));
+    } else {
+      // Show all models if no make is selected
+      setAvailableModels(filterOptions.models);
+    }
+  }, [currentFilters.make, filterOptions.models]);
 
   const updateFilter = (key: string, value: string) => {
     const params = new URLSearchParams(searchParams.toString());
@@ -27,6 +43,12 @@ export function InventoryFilters({ filterOptions, currentFilters }: FilterOption
     } else {
       params.delete(key);
     }
+    
+    // Clear model filter when make changes
+    if (key === 'make') {
+      params.delete('model');
+    }
+    
     params.delete('page');
     router.push(`/inventory?${params.toString()}`);
   };
@@ -72,9 +94,10 @@ export function InventoryFilters({ filterOptions, currentFilters }: FilterOption
             value={currentFilters.model || ''}
             onChange={(e) => updateFilter('model', e.target.value)}
             className="w-full bg-zinc-900 border border-white/10 text-white px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-red-600/50"
+            disabled={!currentFilters.make}
           >
             <option value="">All Models</option>
-            {filterOptions.models.map((model) => (
+            {availableModels.map((model) => (
               <option key={model} value={model}>{model}</option>
             ))}
           </select>
