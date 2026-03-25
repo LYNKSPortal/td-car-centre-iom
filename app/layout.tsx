@@ -1,8 +1,7 @@
 import type { Metadata } from "next";
 import { Host_Grotesk } from "next/font/google";
 import "./globals.css";
-import { Header } from "@/components/header";
-import { Footer } from "@/components/footer";
+import { ConditionalLayout } from "@/components/conditional-layout";
 import { NextAuthProvider } from "@/components/providers/session-provider";
 
 const hostGrotesk = Host_Grotesk({
@@ -36,9 +35,7 @@ export default function RootLayout({
     <html lang="en" className={`${hostGrotesk.variable} h-full antialiased`}>
       <body className="min-h-full flex flex-col bg-black text-white font-sans">
         <NextAuthProvider>
-          <Header />
-          <main className="flex-1">{children}</main>
-          <Footer />
+          <ConditionalLayout>{children}</ConditionalLayout>
         </NextAuthProvider>
       </body>
     </html>
