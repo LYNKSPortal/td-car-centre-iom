@@ -84,9 +84,6 @@ export default async function VehiclesPage() {
                         </div>
                         <div>
                           <p className="font-medium text-white">{vehicle.title}</p>
-                          <p className="text-sm text-zinc-400">
-                            {vehicle.make} {vehicle.model}
-                          </p>
                         </div>
                       </div>
                     </td>
