@@ -42,7 +42,7 @@ export function FinanceCalculator() {
             onChange={(e) => setVehiclePrice(Number(e.target.value))}
             className="w-full h-2 bg-zinc-700 rounded-lg appearance-none cursor-pointer accent-red-600"
           />
-          <div className="flex justify-between text-xs text-zinc-500 mt-1">
+          <div className="flex justify-between text-zinc-500 mt-1">
             <span>£10,000</span>
             <span>£300,000</span>
           </div>
@@ -61,7 +61,7 @@ export function FinanceCalculator() {
             onChange={(e) => setDeposit(Number(e.target.value))}
             className="w-full h-2 bg-zinc-700 rounded-lg appearance-none cursor-pointer accent-red-600"
           />
-          <div className="flex justify-between text-xs text-zinc-500 mt-1">
+          <div className="flex justify-between text-zinc-500 mt-1">
             <span>£0</span>
             <span>{formatPrice(vehiclePrice * 0.5)}</span>
           </div>
@@ -80,7 +80,7 @@ export function FinanceCalculator() {
             onChange={(e) => setInterestRate(Number(e.target.value))}
             className="w-full h-2 bg-zinc-700 rounded-lg appearance-none cursor-pointer accent-red-600"
           />
-          <div className="flex justify-between text-xs text-zinc-500 mt-1">
+          <div className="flex justify-between text-zinc-500 mt-1">
             <span>3.0%</span>
             <span>15.0%</span>
           </div>
@@ -99,7 +99,7 @@ export function FinanceCalculator() {
             onChange={(e) => setTermMonths(Number(e.target.value))}
             className="w-full h-2 bg-zinc-700 rounded-lg appearance-none cursor-pointer accent-red-600"
           />
-          <div className="flex justify-between text-xs text-zinc-500 mt-1">
+          <div className="flex justify-between text-zinc-500 mt-1">
             <span>12 months</span>
             <span>84 months</span>
           </div>
