@@ -9,20 +9,26 @@ import { Button } from '@/components/ui/button';
 import { ArrowLeft } from 'lucide-react';
 
 interface PageProps {
-  params: { id: string };
+  params?: { id?: string };
 }
 
-export default async function EditVehiclePage({ params }: PageProps) {
+export default async function EditVehiclePage(props: PageProps) {
   const session = await getServerSession(authOptions);
 
   if (!session) {
     redirect('/admin/login');
   }
   
-  // Ensure params and id exist
+  // Defensive extraction of id
+  const params = props?.params;
   const vehicleId = params?.id;
   
+  console.log('EditVehiclePage - props:', props);
+  console.log('EditVehiclePage - params:', params);
+  console.log('EditVehiclePage - vehicleId:', vehicleId);
+  
   if (!vehicleId) {
+    console.error('No vehicle ID found in params');
     notFound();
   }
 
