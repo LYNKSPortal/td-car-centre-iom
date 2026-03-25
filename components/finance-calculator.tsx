@@ -139,9 +139,9 @@ export function FinanceCalculator() {
         <Image
           src="/images/Conister-approved-partner.png"
           alt="Conister Approved Partner"
-          width={200}
-          height={80}
-          className="w-auto h-auto max-w-[200px]"
+          width={400}
+          height={160}
+          className="w-[250px] md:w-[300px] lg:w-[400px] h-auto"
         />
       </div>
     </div>
