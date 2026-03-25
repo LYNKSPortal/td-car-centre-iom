@@ -8,34 +8,26 @@ import Link from 'next/link';
 import { Button } from '@/components/ui/button';
 import { ArrowLeft } from 'lucide-react';
 
-interface PageProps {
-  params?: { id?: string };
-}
+type Props = {
+  params: { id: string };
+};
 
-export default async function EditVehiclePage(props: PageProps) {
+export default async function EditVehiclePage({ params }: Props) {
   const session = await getServerSession(authOptions);
 
   if (!session) {
     redirect('/admin/login');
   }
   
-  // Defensive extraction of id
-  const params = props?.params;
-  const vehicleId = params?.id;
-  
-  console.log('EditVehiclePage - props:', props);
-  console.log('EditVehiclePage - params:', params);
-  console.log('EditVehiclePage - vehicleId:', vehicleId);
-  
-  if (!vehicleId) {
-    console.error('No vehicle ID found in params');
+  // Validate id exists
+  if (!params || !params.id) {
     notFound();
   }
 
   const vehicle = await db
     .select()
     .from(vehicles)
-    .where(eq(vehicles.id, vehicleId))
+    .where(eq(vehicles.id, params.id))
     .limit(1);
 
   if (!vehicle || vehicle.length === 0) {

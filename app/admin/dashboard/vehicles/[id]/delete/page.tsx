@@ -9,28 +9,26 @@ import { Button } from '@/components/ui/button';
 import { ArrowLeft, AlertTriangle } from 'lucide-react';
 import { DeleteVehicleButton } from '@/components/admin/delete-vehicle-button';
 
-interface PageProps {
+type Props = {
   params: { id: string };
-}
+};
 
-export default async function DeleteVehiclePage({ params }: PageProps) {
+export default async function DeleteVehiclePage({ params }: Props) {
   const session = await getServerSession(authOptions);
 
   if (!session) {
     redirect('/admin/login');
   }
   
-  // Ensure params and id exist
-  const vehicleId = params?.id;
-  
-  if (!vehicleId) {
+  // Validate id exists
+  if (!params || !params.id) {
     notFound();
   }
 
   const vehicle = await db
     .select()
     .from(vehicles)
-    .where(eq(vehicles.id, vehicleId))
+    .where(eq(vehicles.id, params.id))
     .limit(1);
 
   if (!vehicle || vehicle.length === 0) {
