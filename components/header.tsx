@@ -39,9 +39,9 @@ export function Header() {
               <Image
                 src="/images/white-logo.png"
                 alt="TD Car Centre"
-                width={300}
-                height={100}
-                className="w-[200px] md:w-[250px] lg:w-[300px] h-auto"
+                width={150}
+                height={50}
+                className="w-[150px] h-auto"
                 priority
               />
             </Link>
