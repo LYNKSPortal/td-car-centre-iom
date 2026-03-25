@@ -18,7 +18,7 @@ export function VehicleGallery({ images, title }: VehicleGalleryProps) {
 
   if (images.length === 0) {
     return (
-      <div className="relative aspect-[16/9] bg-zinc-900 flex items-center justify-center">
+      <div className="relative aspect-square bg-zinc-900 flex items-center justify-center">
         <p className="text-zinc-500">No images available</p>
       </div>
     );
@@ -34,7 +34,7 @@ export function VehicleGallery({ images, title }: VehicleGalleryProps) {
 
   return (
     <div className="space-y-4">
-      <div className="relative aspect-[16/9] bg-zinc-950 overflow-hidden group">
+      <div className="relative aspect-square bg-zinc-950 overflow-hidden group">
         <Image
           src={images[currentIndex].imageUrl}
           alt={images[currentIndex].altText || title}
@@ -79,7 +79,7 @@ export function VehicleGallery({ images, title }: VehicleGalleryProps) {
             <button
               key={image.id}
               onClick={() => setCurrentIndex(index)}
-              className={`relative aspect-[4/3] overflow-hidden border-2 transition-all ${
+              className={`relative aspect-square overflow-hidden border-2 transition-all ${
                 index === currentIndex ? 'border-red-600' : 'border-white/10 hover:border-white/30'
               }`}
             >
