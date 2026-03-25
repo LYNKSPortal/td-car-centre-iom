@@ -24,30 +24,10 @@ export default async function Home() {
 
         <div className="relative container mx-auto px-4 h-full flex items-center">
           <div className="max-w-2xl">
-            <h1 
-              className="hero-title font-bold mb-6 leading-tight"
-              style={{
-                fontSize: 'clamp(30px, 5vw, 70px)',
-              }}
-            >
+            <h1 className="hero-title font-bold mb-6">
               Prestige Vehicles,<br />
               <span className="text-red-600">Exceptional Service</span>
             </h1>
-            <style dangerouslySetInnerHTML={{__html: `
-              .hero-title {
-                font-size: 30px !important;
-              }
-              @media (min-width: 768px) {
-                .hero-title {
-                  font-size: 45px !important;
-                }
-              }
-              @media (min-width: 1024px) {
-                .hero-title {
-                  font-size: 70px !important;
-                }
-              }
-            `}} />
             <p className="text-xl text-zinc-300 mb-8 leading-relaxed">
               Discover our curated collection of luxury and performance vehicles. 
               Competitive finance, nationwide delivery, and unparalleled customer care.
