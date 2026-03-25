@@ -11,24 +11,22 @@ import { ArrowLeft } from 'lucide-react';
 export default async function EditVehiclePage({
   params,
 }: {
-  params: Promise<{ id: string }>;
+  params: { id: string };
 }) {
   const session = await getServerSession(authOptions);
 
   if (!session) {
     redirect('/admin/login');
   }
-
-  const resolvedParams = await params;
   
-  if (!resolvedParams?.id) {
+  if (!params?.id) {
     notFound();
   }
 
   const vehicle = await db
     .select()
     .from(vehicles)
-    .where(eq(vehicles.id, resolvedParams.id))
+    .where(eq(vehicles.id, params.id))
     .limit(1);
 
   if (!vehicle || vehicle.length === 0) {

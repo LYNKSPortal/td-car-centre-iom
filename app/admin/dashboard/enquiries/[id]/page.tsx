@@ -12,17 +12,15 @@ import { MarkAsHandledButton } from '@/components/admin/mark-as-handled-button';
 export default async function EnquiryDetailPage({
   params,
 }: {
-  params: Promise<{ id: string }>;
+  params: { id: string };
 }) {
   const session = await getServerSession(authOptions);
 
   if (!session) {
     redirect('/admin/login');
   }
-
-  const resolvedParams = await params;
   
-  if (!resolvedParams?.id) {
+  if (!params?.id) {
     notFound();
   }
 
@@ -33,7 +31,7 @@ export default async function EnquiryDetailPage({
     })
     .from(enquiries)
     .leftJoin(vehicles, eq(enquiries.vehicleId, vehicles.id))
-    .where(eq(enquiries.id, resolvedParams.id))
+    .where(eq(enquiries.id, params.id))
     .limit(1);
 
   if (!result || result.length === 0) {
