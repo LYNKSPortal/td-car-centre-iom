@@ -60,29 +60,6 @@ export default async function VehicleDetailPage({ params }: { params: { slug: st
                 </div>
               )}
 
-              <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-12">
-                <div className="bg-zinc-900/50 border border-white/10 p-4">
-                  <Calendar className="w-5 h-5 text-red-600 mb-2" />
-                  <p className="text-xs text-zinc-500 mb-1">Year</p>
-                  <p className="font-semibold">{vehicle.year}</p>
-                </div>
-                <div className="bg-zinc-900/50 border border-white/10 p-4">
-                  <Gauge className="w-5 h-5 text-red-600 mb-2" />
-                  <p className="text-xs text-zinc-500 mb-1">Mileage</p>
-                  <p className="font-semibold">{formatMileage(vehicle.mileage)}</p>
-                </div>
-                <div className="bg-zinc-900/50 border border-white/10 p-4">
-                  <Cog className="w-5 h-5 text-red-600 mb-2" />
-                  <p className="text-xs text-zinc-500 mb-1">Transmission</p>
-                  <p className="font-semibold">{vehicle.transmission}</p>
-                </div>
-                <div className="bg-zinc-900/50 border border-white/10 p-4">
-                  <Fuel className="w-5 h-5 text-red-600 mb-2" />
-                  <p className="text-xs text-zinc-500 mb-1">Fuel Type</p>
-                  <p className="font-semibold">{vehicle.fuelType}</p>
-                </div>
-              </div>
-
               {vehicle.description && (
                 <div className="mb-12">
                   <h2 className="text-2xl font-bold mb-4">Description</h2>
@@ -93,6 +70,34 @@ export default async function VehicleDetailPage({ params }: { params: { slug: st
               <div className="mb-12">
                 <h2 className="text-2xl font-bold mb-6">Specification</h2>
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                  <div className="flex items-center gap-3 bg-zinc-900/50 border border-white/10 p-4">
+                    <Calendar className="w-5 h-5 text-red-600" />
+                    <div>
+                      <p className="text-xs text-zinc-500">Year</p>
+                      <p className="font-semibold">{vehicle.year}</p>
+                    </div>
+                  </div>
+                  <div className="flex items-center gap-3 bg-zinc-900/50 border border-white/10 p-4">
+                    <Gauge className="w-5 h-5 text-red-600" />
+                    <div>
+                      <p className="text-xs text-zinc-500">Mileage</p>
+                      <p className="font-semibold">{formatMileage(vehicle.mileage)}</p>
+                    </div>
+                  </div>
+                  <div className="flex items-center gap-3 bg-zinc-900/50 border border-white/10 p-4">
+                    <Cog className="w-5 h-5 text-red-600" />
+                    <div>
+                      <p className="text-xs text-zinc-500">Transmission</p>
+                      <p className="font-semibold">{vehicle.transmission}</p>
+                    </div>
+                  </div>
+                  <div className="flex items-center gap-3 bg-zinc-900/50 border border-white/10 p-4">
+                    <Fuel className="w-5 h-5 text-red-600" />
+                    <div>
+                      <p className="text-xs text-zinc-500">Fuel Type</p>
+                      <p className="font-semibold">{vehicle.fuelType}</p>
+                    </div>
+                  </div>
                   {vehicle.colour && (
                     <div className="flex items-center gap-3 bg-zinc-900/50 border border-white/10 p-4">
                       <Palette className="w-5 h-5 text-red-600" />
