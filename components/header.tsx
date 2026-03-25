@@ -46,26 +46,26 @@ export function Header() {
               />
             </Link>
 
-            <nav className="hidden lg:flex items-center gap-4">
-              <Link href="/" className="text-sm text-zinc-300 hover:text-white transition-colors">
+            <nav className="hidden lg:flex items-center gap-4 text-[13px] xl:text-sm">
+              <Link href="/" className="text-zinc-300 hover:text-white transition-colors whitespace-nowrap">
                 Home
               </Link>
-              <Link href="/inventory" className="text-sm text-zinc-300 hover:text-white transition-colors">
+              <Link href="/inventory" className="text-zinc-300 hover:text-white transition-colors whitespace-nowrap">
                 View Stock
               </Link>
-              <Link href="/finance" className="text-sm text-zinc-300 hover:text-white transition-colors">
+              <Link href="/finance" className="text-zinc-300 hover:text-white transition-colors whitespace-nowrap">
                 Finance
               </Link>
-              <Link href="/services/warranty" className="text-sm text-zinc-300 hover:text-white transition-colors">
+              <Link href="/services/warranty" className="text-zinc-300 hover:text-white transition-colors whitespace-nowrap">
                 Warranty
               </Link>
-              <Link href="/services/part-exchange" className="text-sm text-zinc-300 hover:text-white transition-colors">
+              <Link href="/services/part-exchange" className="text-zinc-300 hover:text-white transition-colors whitespace-nowrap">
                 Part Exchange
               </Link>
-              <Link href="/about" className="text-sm text-zinc-300 hover:text-white transition-colors">
+              <Link href="/about" className="text-zinc-300 hover:text-white transition-colors whitespace-nowrap">
                 About
               </Link>
-              <Link href="/contact" className="text-sm text-zinc-300 hover:text-white transition-colors">
+              <Link href="/contact" className="text-zinc-300 hover:text-white transition-colors whitespace-nowrap">
                 Contact
               </Link>
             </nav>
