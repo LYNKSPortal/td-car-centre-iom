@@ -9,21 +9,23 @@ import { Button } from '@/components/ui/button';
 import { ArrowLeft } from 'lucide-react';
 
 export const dynamic = 'force-dynamic';
+export const dynamicParams = true;
+export const revalidate = 0;
 
 type Props = {
   params: { id: string };
 };
 
 export default async function EditVehiclePage({ params }: Props) {
+  // Validate params first before any async operations
+  if (!params || !params.id) {
+    notFound();
+  }
+
   const session = await getServerSession(authOptions);
 
   if (!session) {
     redirect('/admin/login');
-  }
-  
-  // Validate id exists
-  if (!params || !params.id) {
-    notFound();
   }
 
   let vehicle;
