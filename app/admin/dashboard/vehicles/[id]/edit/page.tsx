@@ -11,40 +11,32 @@ import { ArrowLeft } from 'lucide-react';
 export const dynamic = 'force-dynamic';
 
 type Props = {
-  params: { id: string };
+  params: Promise<{ id: string }>;
 };
 
-export default async function EditVehiclePage({ params }: Props) {
-  console.log('EditVehiclePage called with params:', params);
+export default async function EditVehiclePage(props: Props) {
+  // Await params for Next.js 16
+  const params = await props.params;
   
   if (!params || !params.id) {
-    console.log('No params or params.id, calling notFound()');
     notFound();
   }
 
-  console.log('Checking session...');
   const session = await getServerSession(authOptions);
 
   if (!session) {
-    console.log('No session, redirecting to login');
     redirect('/admin/login');
   }
 
-  console.log('Querying database for vehicle ID:', params.id);
   const vehicle = await db
     .select()
     .from(vehicles)
     .where(eq(vehicles.id, params.id))
     .limit(1);
 
-  console.log('Vehicle query result:', vehicle);
-
   if (!vehicle || vehicle.length === 0) {
-    console.log('No vehicle found, calling notFound()');
     notFound();
   }
-
-  console.log('Vehicle found, rendering page');
 
   return (
     <div className="space-y-6">
