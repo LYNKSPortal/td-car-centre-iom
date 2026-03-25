@@ -1,6 +1,7 @@
 'use client';
 
 import Link from 'next/link';
+import Image from 'next/image';
 import { Phone, Mail, MapPin, Menu, X } from 'lucide-react';
 import { Button } from './ui/button';
 import { useState } from 'react';
@@ -34,9 +35,15 @@ export function Header() {
       <header className="sticky top-0 z-50 bg-black/95 backdrop-blur-md border-b border-white/10">
         <div className="container mx-auto px-4">
           <div className="flex items-center justify-between h-20">
-            <Link href="/" className="text-2xl font-bold tracking-tight">
-              <span className="text-white">TD</span>
-              <span className="text-red-600"> CAR CENTRE</span>
+            <Link href="/" className="relative">
+              <Image
+                src="/images/white-logo.png"
+                alt="TD Car Centre"
+                width={300}
+                height={100}
+                className="w-[200px] md:w-[250px] lg:w-[300px] h-auto"
+                priority
+              />
             </Link>
 
             <nav className="hidden lg:flex items-center gap-8">

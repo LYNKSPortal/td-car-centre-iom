@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import Image from 'next/image';
 import { Phone, Mail, MapPin } from 'lucide-react';
 
 export function Footer() {
@@ -7,10 +8,15 @@ export function Footer() {
       <div className="container mx-auto px-4 py-16">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
           <div>
-            <h3 className="text-xl font-bold mb-6">
-              <span className="text-white">TD</span>
-              <span className="text-red-600"> CAR CENTRE</span>
-            </h3>
+            <div className="mb-6">
+              <Image
+                src="/images/white-logo.png"
+                alt="TD Car Centre"
+                width={250}
+                height={83}
+                className="w-[200px] h-auto"
+              />
+            </div>
             <p className="text-zinc-400 text-sm leading-relaxed mb-6">
               Premium luxury and prestige vehicles. Exceptional service, competitive finance, and nationwide delivery.
             </p>
