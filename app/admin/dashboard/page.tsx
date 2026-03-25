@@ -3,7 +3,7 @@ import { authOptions } from '@/app/api/auth/[...nextauth]/route';
 import { redirect } from 'next/navigation';
 import { db } from '@/lib/db';
 import { vehicles, enquiries } from '@/lib/db/schema';
-import { eq, count } from 'drizzle-orm';
+import { eq, count, desc } from 'drizzle-orm';
 import Link from 'next/link';
 import { Car, MessageSquare, DollarSign, TrendingUp } from 'lucide-react';
 import { Button } from '@/components/ui/button';
@@ -25,7 +25,7 @@ export default async function AdminDashboardPage() {
   const recentEnquiries = await db
     .select()
     .from(enquiries)
-    .orderBy(enquiries.createdAt)
+    .orderBy(desc(enquiries.createdAt))
     .limit(5);
 
   const stats = [
