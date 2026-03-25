@@ -25,6 +25,7 @@ export const vehicles = pgTable('vehicles', {
   bodyType: bodyTypeEnum('body_type').notNull(),
   drivetrain: drivetrainEnum('drivetrain'),
   colour: varchar('colour', { length: 50 }),
+  interiorColour: varchar('interior_colour', { length: 50 }),
   engineSize: varchar('engine_size', { length: 50 }),
   doors: integer('doors'),
   seats: integer('seats'),

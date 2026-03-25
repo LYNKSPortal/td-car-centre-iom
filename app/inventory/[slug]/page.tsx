@@ -97,8 +97,17 @@ export default async function VehicleDetailPage({ params }: { params: { slug: st
                     <div className="flex items-center gap-3 bg-zinc-900/50 border border-white/10 p-4">
                       <Palette className="w-5 h-5 text-red-600" />
                       <div>
-                        <p className="text-xs text-zinc-500">Colour</p>
+                        <p className="text-xs text-zinc-500">External Colour</p>
                         <p className="font-semibold">{vehicle.colour}</p>
+                      </div>
+                    </div>
+                  )}
+                  {vehicle.interiorColour && (
+                    <div className="flex items-center gap-3 bg-zinc-900/50 border border-white/10 p-4">
+                      <Palette className="w-5 h-5 text-red-600" />
+                      <div>
+                        <p className="text-xs text-zinc-500">Internal Colour</p>
+                        <p className="font-semibold">{vehicle.interiorColour}</p>
                       </div>
                     </div>
                   )}

@@ -21,6 +21,7 @@ type Vehicle = {
   bodyType: string;
   drivetrain: string | null;
   colour: string | null;
+  interiorColour: string | null;
   engineSize: string | null;
   doors: number | null;
   seats: number | null;
@@ -49,6 +50,7 @@ export function VehicleEditForm({ vehicle }: { vehicle: Vehicle }) {
     bodyType: vehicle.bodyType,
     drivetrain: vehicle.drivetrain || '',
     colour: vehicle.colour || '',
+    interiorColour: vehicle.interiorColour || '',
     engineSize: vehicle.engineSize || '',
     doors: vehicle.doors || 4,
     seats: vehicle.seats || 5,
@@ -302,11 +304,21 @@ export function VehicleEditForm({ vehicle }: { vehicle: Vehicle }) {
         </div>
 
         <div>
-          <Label htmlFor="colour">Colour</Label>
+          <Label htmlFor="colour">External Colour</Label>
           <Input
             id="colour"
             value={formData.colour}
             onChange={(e) => setFormData({ ...formData, colour: e.target.value })}
+          />
+        </div>
+
+        <div>
+          <Label htmlFor="interiorColour">Internal Colour</Label>
+          <Input
+            id="interiorColour"
+            value={formData.interiorColour}
+            onChange={(e) => setFormData({ ...formData, interiorColour: e.target.value })}
+            placeholder="e.g., Beige"
           />
         </div>
 

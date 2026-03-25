@@ -24,6 +24,7 @@ export function VehicleCreateForm() {
     bodyType: 'Saloon',
     drivetrain: '',
     colour: '',
+    interiorColour: '',
     engineSize: '',
     doors: 4,
     seats: 5,
@@ -283,12 +284,22 @@ export function VehicleCreateForm() {
         </div>
 
         <div>
-          <Label htmlFor="colour">Colour</Label>
+          <Label htmlFor="colour">External Colour</Label>
           <Input
             id="colour"
             value={formData.colour}
             onChange={(e) => setFormData({ ...formData, colour: e.target.value })}
             placeholder="e.g., Black"
+          />
+        </div>
+
+        <div>
+          <Label htmlFor="interiorColour">Internal Colour</Label>
+          <Input
+            id="interiorColour"
+            value={formData.interiorColour}
+            onChange={(e) => setFormData({ ...formData, interiorColour: e.target.value })}
+            placeholder="e.g., Beige"
           />
         </div>
 
