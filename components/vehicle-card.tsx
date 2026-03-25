@@ -27,7 +27,7 @@ interface VehicleCardProps {
 }
 
 export function VehicleCard({ vehicle }: VehicleCardProps) {
-  const primaryImage = vehicle.images[0]?.imageUrl || '/placeholder-car.jpg';
+  const primaryImage = vehicle.images[0]?.imageUrl;
 
   const getStatusColor = (status: string) => {
     switch (status.toLowerCase()) {
@@ -46,12 +46,21 @@ export function VehicleCard({ vehicle }: VehicleCardProps) {
     <div className="group bg-zinc-900/50 border border-white/10 hover:border-white/20 transition-all duration-300 overflow-hidden">
       <Link href={`/inventory/${vehicle.slug}`} className="block">
         <div className="relative aspect-square overflow-hidden bg-zinc-950">
-          <Image
-            src={primaryImage}
-            alt={vehicle.title}
-            fill
-            className="object-cover group-hover:scale-105 transition-transform duration-500"
-          />
+          {primaryImage ? (
+            <Image
+              src={primaryImage}
+              alt={vehicle.title}
+              fill
+              className="object-cover group-hover:scale-105 transition-transform duration-500"
+            />
+          ) : (
+            <div className="absolute inset-0 flex items-center justify-center">
+              <div className="text-center">
+                <div className="text-6xl mb-2">🚗</div>
+                <p className="text-zinc-500 text-sm">No Image</p>
+              </div>
+            </div>
+          )}
           <div className="absolute top-4 right-4">
             <div className={`${getStatusColor(vehicle.status)} text-white px-3 py-1.5 font-semibold uppercase text-sm`}>
               {vehicle.status}
