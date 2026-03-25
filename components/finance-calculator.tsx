@@ -1,6 +1,7 @@
 'use client';
 
 import { useState } from 'react';
+import Image from 'next/image';
 import { Input } from './ui/input';
 import { Button } from './ui/button';
 import { formatPrice } from '@/lib/utils';
@@ -133,6 +134,16 @@ export function FinanceCalculator() {
       <Button variant="primary" size="lg" className="w-full">
         Apply for Finance
       </Button>
+
+      <div className="mt-6 flex justify-center">
+        <Image
+          src="/images/Conister-approved-partner.png"
+          alt="Conister Approved Partner"
+          width={200}
+          height={80}
+          className="w-auto h-auto max-w-[200px]"
+        />
+      </div>
     </div>
   );
 }
