@@ -46,31 +46,31 @@ export function Header() {
               />
             </Link>
 
-            <nav className="hidden lg:flex items-center gap-4 text-[13px] xl:text-sm">
-              <Link href="/" className="text-zinc-300 hover:text-white transition-colors whitespace-nowrap">
+            <nav className="hidden xl:flex items-center gap-6">
+              <Link href="/" className="text-sm text-zinc-300 hover:text-white transition-colors whitespace-nowrap">
                 Home
               </Link>
-              <Link href="/inventory" className="text-zinc-300 hover:text-white transition-colors whitespace-nowrap">
+              <Link href="/inventory" className="text-sm text-zinc-300 hover:text-white transition-colors whitespace-nowrap">
                 View Stock
               </Link>
-              <Link href="/finance" className="text-zinc-300 hover:text-white transition-colors whitespace-nowrap">
+              <Link href="/finance" className="text-sm text-zinc-300 hover:text-white transition-colors whitespace-nowrap">
                 Finance
               </Link>
-              <Link href="/services/warranty" className="text-zinc-300 hover:text-white transition-colors whitespace-nowrap">
+              <Link href="/services/warranty" className="text-sm text-zinc-300 hover:text-white transition-colors whitespace-nowrap">
                 Warranty
               </Link>
-              <Link href="/services/part-exchange" className="text-zinc-300 hover:text-white transition-colors whitespace-nowrap">
+              <Link href="/services/part-exchange" className="text-sm text-zinc-300 hover:text-white transition-colors whitespace-nowrap">
                 Part Exchange
               </Link>
-              <Link href="/about" className="text-zinc-300 hover:text-white transition-colors whitespace-nowrap">
+              <Link href="/about" className="text-sm text-zinc-300 hover:text-white transition-colors whitespace-nowrap">
                 About
               </Link>
-              <Link href="/contact" className="text-zinc-300 hover:text-white transition-colors whitespace-nowrap">
+              <Link href="/contact" className="text-sm text-zinc-300 hover:text-white transition-colors whitespace-nowrap">
                 Contact
               </Link>
             </nav>
 
-            <div className="hidden lg:flex items-center gap-3">
+            <div className="hidden xl:flex items-center gap-3">
               <Button variant="outline" size="sm" asChild>
                 <Link href="/services/sell-your-car">Sell Your Car</Link>
               </Button>
@@ -80,7 +80,7 @@ export function Header() {
             </div>
 
             <button
-              className="lg:hidden text-white p-2"
+              className="xl:hidden text-white p-2"
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
             >
               {mobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
@@ -89,7 +89,7 @@ export function Header() {
         </div>
 
         {mobileMenuOpen && (
-          <div className="lg:hidden border-t border-white/10 bg-black">
+          <div className="xl:hidden border-t border-white/10 bg-black">
             <nav className="container mx-auto px-4 py-6 flex flex-col gap-4">
               <Link href="/" className="text-sm text-zinc-300 hover:text-white transition-colors py-2" onClick={() => setMobileMenuOpen(false)}>
                 Home
