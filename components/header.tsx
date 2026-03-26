@@ -13,7 +13,7 @@ export function Header() {
     <>
       <header className="sticky top-0 z-50 bg-black border-b border-white/10">
         <div className="container mx-auto">
-          <div className="flex items-center justify-between py-2.5">
+          <div className="flex items-center justify-between py-5">
             {/* Left: Contact Info */}
             <div className="hidden lg:flex items-center gap-6 text-sm text-zinc-400">
               <a href="tel:01624670590" className="flex items-center gap-2 hover:text-white transition-colors">
