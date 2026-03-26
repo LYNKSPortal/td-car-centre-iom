@@ -55,9 +55,10 @@ export default function AdminDashboardLayout({
                 <X className="w-6 h-6 text-white" />
               </button>
             </div>
-            <nav className="px-4 space-y-6">
+            <nav className="px-4 space-y-2">
               {navigation.map((item) => {
                 const isActive = pathname === item.href;
+                const addMargin = item.name === 'Dashboard' || item.name === 'Garage Work';
                 return (
                   <Link
                     key={item.name}
@@ -67,7 +68,7 @@ export default function AdminDashboardLayout({
                       isActive
                         ? 'bg-red-600 text-white'
                         : 'text-zinc-400 hover:bg-white/5 hover:text-white'
-                    }`}
+                    } ${addMargin ? 'mb-10' : ''}`}
                   >
                     <item.icon className="w-5 h-5" />
                     <span>{item.name}</span>
@@ -93,9 +94,10 @@ export default function AdminDashboardLayout({
               />
             </Link>
           </div>
-          <nav className="flex-1 px-4 space-y-6">
+          <nav className="flex-1 px-4 space-y-2">
             {navigation.map((item) => {
               const isActive = pathname === item.href;
+              const addMargin = item.name === 'Dashboard' || item.name === 'Garage Work';
               return (
                 <Link
                   key={item.name}
@@ -104,7 +106,7 @@ export default function AdminDashboardLayout({
                     isActive
                       ? 'bg-red-600 text-white'
                       : 'text-zinc-400 hover:bg-white/5 hover:text-white'
-                  }`}
+                  } ${addMargin ? 'mb-10' : ''}`}
                 >
                   <item.icon className="w-5 h-5" />
                   <span>{item.name}</span>
