@@ -15,6 +15,7 @@ interface VehicleGalleryProps {
 
 export function VehicleGallery({ images, title }: VehicleGalleryProps) {
   const [currentIndex, setCurrentIndex] = useState(0);
+  const [isTransitioning, setIsTransitioning] = useState(false);
 
   if (images.length === 0) {
     return (
@@ -27,44 +28,70 @@ export function VehicleGallery({ images, title }: VehicleGalleryProps) {
   }
 
   const goToPrevious = () => {
+    if (isTransitioning) return;
+    setIsTransitioning(true);
     setCurrentIndex((prev) => (prev === 0 ? images.length - 1 : prev - 1));
+    setTimeout(() => setIsTransitioning(false), 500);
   };
 
   const goToNext = () => {
+    if (isTransitioning) return;
+    setIsTransitioning(true);
     setCurrentIndex((prev) => (prev === images.length - 1 ? 0 : prev + 1));
+    setTimeout(() => setIsTransitioning(false), 500);
   };
 
   return (
     <div className="space-y-4">
-      <div className="relative w-full pb-[100%] bg-zinc-950 overflow-hidden group">
-        <Image
-          src={images[currentIndex].imageUrl}
-          alt={images[currentIndex].altText || title}
-          fill
-          sizes="(max-width: 768px) 100vw, 66vw"
-          className="absolute inset-0 object-cover"
-          priority
-        />
+      <div className="relative w-full pb-[100%] bg-zinc-950 overflow-hidden">
+        {images.map((image, index) => (
+          <div
+            key={image.id}
+            className={`absolute inset-0 transition-opacity duration-500 ${
+              index === currentIndex ? 'opacity-100 z-10' : 'opacity-0 z-0'
+            }`}
+          >
+            <Image
+              src={image.imageUrl}
+              alt={image.altText || title}
+              fill
+              sizes="(max-width: 768px) 100vw, 66vw"
+              className="object-cover"
+              priority={index === 0}
+            />
+          </div>
+        ))}
 
         {images.length > 1 && (
           <>
             <button
               onClick={goToPrevious}
-              className="absolute left-4 top-4 w-12 h-12 bg-black/70 hover:bg-black/90 rounded-full flex items-center justify-center transition-all"
+              disabled={isTransitioning}
+              className="absolute bottom-0 left-0 z-20 bg-white hover:bg-zinc-100 transition-all disabled:opacity-50 p-4 pl-6 pr-8"
+              style={{
+                clipPath: 'polygon(0 0, 100% 0, 85% 100%, 0 100%)'
+              }}
               aria-label="Previous image"
             >
-              <ChevronLeft className="w-6 h-6 text-white" />
+              <ChevronLeft className="w-6 h-6 text-black" />
             </button>
+            
             <button
               onClick={goToNext}
-              className="absolute right-4 top-4 w-12 h-12 bg-black/70 hover:bg-black/90 rounded-full flex items-center justify-center transition-all"
+              disabled={isTransitioning}
+              className="absolute bottom-0 right-0 z-20 bg-white hover:bg-zinc-100 transition-all disabled:opacity-50 p-4 pr-6 pl-8"
+              style={{
+                clipPath: 'polygon(15% 0, 100% 0, 100% 100%, 0 100%)'
+              }}
               aria-label="Next image"
             >
-              <ChevronRight className="w-6 h-6 text-white" />
+              <ChevronRight className="w-6 h-6 text-black" />
             </button>
 
-            <div className="absolute bottom-6 left-6 bg-black/70 px-4 py-2 rounded text-white text-sm font-medium">
-              {currentIndex + 1} / {images.length}
+            <div className="absolute bottom-16 right-8 z-20 text-white text-4xl font-light">
+              <span className="font-normal">{currentIndex + 1}</span>
+              <span className="text-white/50 mx-2">/</span>
+              <span className="text-white/50">{images.length}</span>
             </div>
           </>
         )}
