@@ -21,9 +21,9 @@ import { useState } from 'react';
 const navigation = [
   { name: 'Dashboard', href: '/admin/dashboard', icon: LayoutDashboard },
   { name: 'Vehicles', href: '/admin/dashboard/vehicles', icon: Car },
-  { name: 'Enquiries', href: '/admin/dashboard/enquiries', icon: MessageSquare },
   { name: 'Warranty Work', href: '/admin/dashboard/warranty', icon: Shield },
   { name: 'Garage Work', href: '/admin/dashboard/garage', icon: Wrench },
+  { name: 'Enquiries', href: '/admin/dashboard/enquiries', icon: MessageSquare },
   { name: 'Settings', href: '/admin/dashboard/settings', icon: Settings },
 ];
 
