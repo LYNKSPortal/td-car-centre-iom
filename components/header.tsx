@@ -47,25 +47,27 @@ export function Header() {
             </Link>
 
             {/* Right: Action Buttons */}
-            <div className="hidden lg:flex items-center gap-4 text-sm">
-              <Link href="/finance" className="text-zinc-300 hover:text-white transition-colors">
+            <div className="hidden lg:flex items-center gap-8 text-sm">
+              <Link href="/inventory" className="text-white hover:text-zinc-300 transition-colors">
+                Buy
+              </Link>
+              <Link href="/finance" className="text-white hover:text-zinc-300 transition-colors">
                 Finance
               </Link>
-              <Link href="/services/sell-your-car" className="text-zinc-300 hover:text-white transition-colors">
+              <Link href="/services/sell-your-car" className="text-white hover:text-zinc-300 transition-colors">
                 Sell
               </Link>
-              <Link href="/inventory" className="flex items-center gap-2 text-zinc-300 hover:text-white transition-colors">
-                <Search className="w-4 h-4" />
+              <div className="h-8 w-px bg-white/20"></div>
+              <Link href="/inventory" className="text-white hover:text-zinc-300 transition-colors">
+                <Search className="w-5 h-5" />
               </Link>
               <button
-                className="text-white p-2"
+                className="text-white hover:text-zinc-300 transition-colors flex items-center gap-2"
                 onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
               >
+                <span>Menu</span>
                 <Menu className="w-5 h-5" />
               </button>
-              <Button variant="primary" size="sm" asChild>
-                <Link href="/inventory">View Stock</Link>
-              </Button>
             </div>
 
             {/* Mobile Menu Button */}
