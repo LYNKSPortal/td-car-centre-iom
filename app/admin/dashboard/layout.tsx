@@ -55,24 +55,26 @@ export default function AdminDashboardLayout({
                 <X className="w-6 h-6 text-white" />
               </button>
             </div>
-            <nav className="px-4 space-y-2">
-              {navigation.map((item) => {
+            <nav className="px-4">
+              {navigation.map((item, index) => {
                 const isActive = pathname === item.href;
-                const addMargin = item.name === 'Dashboard' || item.name === 'Garage Work';
+                const addMarginAfter = item.name === 'Dashboard' || item.name === 'Garage Work';
+                const addMarginBefore = index > 0 && !addMarginAfter;
                 return (
-                  <Link
-                    key={item.name}
-                    href={item.href}
-                    onClick={() => setSidebarOpen(false)}
-                    className={`flex items-center gap-3 px-4 py-3 rounded-lg transition-colors ${
-                      isActive
-                        ? 'bg-red-600 text-white'
-                        : 'text-zinc-400 hover:bg-white/5 hover:text-white'
-                    } ${addMargin ? 'mb-10' : ''}`}
-                  >
-                    <item.icon className="w-5 h-5" />
-                    <span>{item.name}</span>
-                  </Link>
+                  <div key={item.name} className={addMarginAfter ? 'mb-10' : addMarginBefore ? 'mt-2' : ''}>
+                    <Link
+                      href={item.href}
+                      onClick={() => setSidebarOpen(false)}
+                      className={`flex items-center gap-3 px-4 py-3 rounded-lg transition-colors ${
+                        isActive
+                          ? 'bg-red-600 text-white'
+                          : 'text-zinc-400 hover:bg-white/5 hover:text-white'
+                      }`}
+                    >
+                      <item.icon className="w-5 h-5" />
+                      <span>{item.name}</span>
+                    </Link>
+                  </div>
                 );
               })}
             </nav>
@@ -94,23 +96,25 @@ export default function AdminDashboardLayout({
               />
             </Link>
           </div>
-          <nav className="flex-1 px-4 space-y-2">
-            {navigation.map((item) => {
+          <nav className="flex-1 px-4">
+            {navigation.map((item, index) => {
               const isActive = pathname === item.href;
-              const addMargin = item.name === 'Dashboard' || item.name === 'Garage Work';
+              const addMarginAfter = item.name === 'Dashboard' || item.name === 'Garage Work';
+              const addMarginBefore = index > 0 && !addMarginAfter;
               return (
-                <Link
-                  key={item.name}
-                  href={item.href}
-                  className={`flex items-center gap-3 px-4 py-3 rounded-lg transition-colors ${
-                    isActive
-                      ? 'bg-red-600 text-white'
-                      : 'text-zinc-400 hover:bg-white/5 hover:text-white'
-                  } ${addMargin ? 'mb-10' : ''}`}
-                >
-                  <item.icon className="w-5 h-5" />
-                  <span>{item.name}</span>
-                </Link>
+                <div key={item.name} className={addMarginAfter ? 'mb-10' : addMarginBefore ? 'mt-2' : ''}>
+                  <Link
+                    href={item.href}
+                    className={`flex items-center gap-3 px-4 py-3 rounded-lg transition-colors ${
+                      isActive
+                        ? 'bg-red-600 text-white'
+                        : 'text-zinc-400 hover:bg-white/5 hover:text-white'
+                    }`}
+                  >
+                    <item.icon className="w-5 h-5" />
+                    <span>{item.name}</span>
+                  </Link>
+                </div>
               );
             })}
           </nav>
