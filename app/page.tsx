@@ -3,6 +3,7 @@ import Image from 'next/image';
 import { ArrowRight, Shield, Truck, Search, CreditCard, RefreshCw, Headphones, Star } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { VehicleCard } from '@/components/vehicle-card';
+import { HeroSlider } from '@/components/hero-slider';
 import { getFeaturedVehicles } from '@/lib/queries';
 
 export default async function Home() {
@@ -10,41 +11,7 @@ export default async function Home() {
 
   return (
     <div className="bg-black">
-      <section className="relative h-[90vh] min-h-[600px] overflow-hidden">
-        <div className="absolute inset-0">
-          <Image
-            src="/images/homepage-screen.jpg"
-            alt="TD Car Centre Dealership"
-            fill
-            className="object-cover"
-            priority
-          />
-          <div className="absolute inset-0 bg-gradient-to-r from-black via-black/80 to-transparent" />
-        </div>
-
-        <div className="relative container mx-auto px-4 h-full flex items-center">
-          <div className="max-w-2xl">
-            <h1 className="hero-title font-bold mb-6">
-              Prestige Vehicles,<br />
-              <span className="text-red-600">Exceptional Service</span>
-            </h1>
-            <p className="text-xl text-zinc-300 mb-8 leading-relaxed">
-              Discover our curated collection of luxury and performance vehicles. 
-              Competitive finance, nationwide delivery, and unparalleled customer care.
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4">
-              <Button variant="primary" size="xl" asChild>
-                <Link href="/inventory">
-                  View Stock <ArrowRight className="ml-2" />
-                </Link>
-              </Button>
-              <Button variant="outline" size="xl" asChild>
-                <Link href="/finance">Apply for Finance</Link>
-              </Button>
-            </div>
-          </div>
-        </div>
-      </section>
+      <HeroSlider />
 
       <section className="bg-gradient-to-b from-red-600 to-red-600 py-8">
         <div className="container mx-auto px-4">
