@@ -134,7 +134,7 @@ export function HeroSlider() {
       </button>
 
       {/* Slide Counter */}
-      <div className="absolute bottom-12 right-12 z-20 text-white text-6xl font-light">
+      <div className="absolute bottom-32 right-12 z-20 text-white text-6xl font-light">
         <span className="font-normal">{currentSlide + 1}</span>
         <span className="text-white/50 mx-2">/</span>
         <span className="text-white/50">{slides.length}</span>
