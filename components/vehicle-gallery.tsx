@@ -50,27 +50,21 @@ export function VehicleGallery({ images, title }: VehicleGalleryProps) {
           <>
             <button
               onClick={goToPrevious}
-              className="absolute left-4 top-1/2 -translate-y-1/2 w-12 h-12 bg-black/50 hover:bg-black/70 border border-white/20 flex items-center justify-center transition-all opacity-0 group-hover:opacity-100"
+              className="absolute left-4 top-4 w-12 h-12 bg-black/70 hover:bg-black/90 rounded-full flex items-center justify-center transition-all"
+              aria-label="Previous image"
             >
               <ChevronLeft className="w-6 h-6 text-white" />
             </button>
             <button
               onClick={goToNext}
-              className="absolute right-4 top-1/2 -translate-y-1/2 w-12 h-12 bg-black/50 hover:bg-black/70 border border-white/20 flex items-center justify-center transition-all opacity-0 group-hover:opacity-100"
+              className="absolute right-4 top-4 w-12 h-12 bg-black/70 hover:bg-black/90 rounded-full flex items-center justify-center transition-all"
+              aria-label="Next image"
             >
               <ChevronRight className="w-6 h-6 text-white" />
             </button>
 
-            <div className="absolute bottom-4 left-1/2 -translate-x-1/2 flex gap-2">
-              {images.map((_, index) => (
-                <button
-                  key={index}
-                  onClick={() => setCurrentIndex(index)}
-                  className={`w-2 h-2 rounded-full transition-all ${
-                    index === currentIndex ? 'bg-red-600 w-8' : 'bg-white/50 hover:bg-white/70'
-                  }`}
-                />
-              ))}
+            <div className="absolute bottom-6 left-6 bg-black/70 px-4 py-2 rounded text-white text-sm font-medium">
+              {currentIndex + 1} / {images.length}
             </div>
           </>
         )}
