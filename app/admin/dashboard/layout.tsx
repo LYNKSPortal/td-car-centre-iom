@@ -55,7 +55,7 @@ export default function AdminDashboardLayout({
                 <X className="w-6 h-6 text-white" />
               </button>
             </div>
-            <nav className="px-4 space-y-2">
+            <nav className="px-4 space-y-6">
               {navigation.map((item) => {
                 const isActive = pathname === item.href;
                 return (
@@ -93,7 +93,7 @@ export default function AdminDashboardLayout({
               />
             </Link>
           </div>
-          <nav className="flex-1 px-4 space-y-2">
+          <nav className="flex-1 px-4 space-y-6">
             {navigation.map((item) => {
               const isActive = pathname === item.href;
               return (
