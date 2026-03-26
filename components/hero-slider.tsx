@@ -109,30 +109,35 @@ export function HeroSlider() {
       ))}
 
       {/* Navigation Arrows */}
-      <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 z-20 flex items-center gap-4">
-        <button
-          onClick={prevSlide}
-          disabled={isTransitioning}
-          className="bg-white/10 hover:bg-white/20 backdrop-blur-sm border border-white/20 p-3 transition-all disabled:opacity-50"
-          aria-label="Previous slide"
-        >
-          <ChevronLeft className="w-6 h-6 text-white" />
-        </button>
-        
-        <div className="flex items-center gap-2 text-white text-lg font-semibold">
-          <span>{currentSlide + 1}</span>
-          <span className="text-zinc-400">/</span>
-          <span className="text-zinc-400">{slides.length}</span>
-        </div>
-        
-        <button
-          onClick={nextSlide}
-          disabled={isTransitioning}
-          className="bg-white/10 hover:bg-white/20 backdrop-blur-sm border border-white/20 p-3 transition-all disabled:opacity-50"
-          aria-label="Next slide"
-        >
-          <ChevronRight className="w-6 h-6 text-white" />
-        </button>
+      <button
+        onClick={prevSlide}
+        disabled={isTransitioning}
+        className="absolute bottom-8 left-0 z-20 bg-white hover:bg-zinc-100 transition-all disabled:opacity-50 p-4 pl-6 pr-8"
+        style={{
+          clipPath: 'polygon(0 0, 100% 0, 85% 100%, 0 100%)'
+        }}
+        aria-label="Previous slide"
+      >
+        <ChevronLeft className="w-6 h-6 text-black" />
+      </button>
+      
+      <button
+        onClick={nextSlide}
+        disabled={isTransitioning}
+        className="absolute bottom-8 right-0 z-20 bg-white hover:bg-zinc-100 transition-all disabled:opacity-50 p-4 pr-6 pl-8"
+        style={{
+          clipPath: 'polygon(15% 0, 100% 0, 100% 100%, 0 100%)'
+        }}
+        aria-label="Next slide"
+      >
+        <ChevronRight className="w-6 h-6 text-black" />
+      </button>
+
+      {/* Slide Counter */}
+      <div className="absolute bottom-12 right-12 z-20 text-white text-6xl font-light">
+        <span className="font-normal">{currentSlide + 1}</span>
+        <span className="text-white/50 mx-2">/</span>
+        <span className="text-white/50">{slides.length}</span>
       </div>
     </section>
   );
