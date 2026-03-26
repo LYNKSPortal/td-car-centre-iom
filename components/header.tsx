@@ -15,22 +15,24 @@ export function Header() {
         <div className="container mx-auto">
           <div className="flex items-center justify-between py-8">
             {/* Left: Contact Info */}
-            <div className="hidden lg:flex items-center gap-6 text-sm text-zinc-400">
-              <a href="tel:01624670590" className="flex items-center gap-2 hover:text-white transition-colors">
+            <div className="hidden lg:flex items-center gap-6 text-sm text-white">
+              <a href="tel:01942945371" className="flex items-center gap-2 hover:text-zinc-300 transition-colors">
                 <Phone className="w-4 h-4" />
-                <span>01624 670590</span>
+                <span>01942 945371</span>
               </a>
-              <a href="mailto:tony@tdcar.im" className="flex items-center gap-2 hover:text-white transition-colors">
+              <div className="h-8 w-px bg-white/20"></div>
+              <a href="mailto:tony@tdcar.im" className="flex items-center gap-2 hover:text-zinc-300 transition-colors">
                 <Mail className="w-4 h-4" />
                 <span>Sales</span>
               </a>
-              <a href="mailto:tony@tdcar.im" className="flex items-center gap-2 hover:text-white transition-colors">
+              <a href="mailto:tony@tdcar.im" className="flex items-center gap-2 hover:text-zinc-300 transition-colors">
                 <Mail className="w-4 h-4" />
                 <span>Aftersales</span>
               </a>
-              <a href="https://maps.google.com/?q=Unit+02+Hills+Meadow+Industrial+Estate+Peel+Road+Douglas+Isle+of+Man+IM1+5EA" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 hover:text-white transition-colors">
-                <MapPin className="w-4 h-4" />
-                <span>Directions</span>
+              <div className="h-8 w-px bg-white/20"></div>
+              <a href="#" className="flex items-center gap-2 hover:text-zinc-300 transition-colors">
+                <Mail className="w-4 h-4" />
+                <span>Chat</span>
               </a>
             </div>
 
