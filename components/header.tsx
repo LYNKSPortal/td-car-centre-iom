@@ -37,7 +37,7 @@ export function Header() {
             {/* Center: Logo */}
             <Link href="/" className="absolute left-1/2 transform -translate-x-1/2">
               <Image
-                src="/images/white-logo.png"
+                src="/images/TD-white-logo.png"
                 alt="TD Car Centre"
                 width={150}
                 height={50}
