@@ -13,7 +13,7 @@ export function Header() {
     <>
       <header className="sticky top-0 z-50 bg-black border-b border-white/10">
         <div className="container mx-auto">
-          <div className="flex items-center justify-between h-16">
+          <div className="flex items-center justify-between py-2.5">
             {/* Left: Contact Info */}
             <div className="hidden lg:flex items-center gap-6 text-sm text-zinc-400">
               <a href="tel:01624670590" className="flex items-center gap-2 hover:text-white transition-colors">
@@ -39,9 +39,9 @@ export function Header() {
               <Image
                 src="/images/TD-white-logo.png"
                 alt="TD Car Centre"
-                width={150}
-                height={50}
-                className="w-[120px] lg:w-[150px] h-auto"
+                width={250}
+                height={83}
+                className="w-[250px] h-auto"
                 priority
               />
             </Link>
