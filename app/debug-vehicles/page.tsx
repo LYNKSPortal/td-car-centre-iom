@@ -8,7 +8,6 @@ export default async function DebugVehiclesPage() {
     title: vehicles.title,
     make: vehicles.make,
     model: vehicles.model,
-    variant: vehicles.variant,
   }).from(vehicles).orderBy(desc(vehicles.createdAt)).limit(5);
 
   return (
@@ -20,7 +19,6 @@ export default async function DebugVehiclesPage() {
             <p><strong>Title:</strong> {vehicle.title}</p>
             <p><strong>Make:</strong> {vehicle.make}</p>
             <p><strong>Model:</strong> {vehicle.model || '(empty)'}</p>
-            <p><strong>Variant:</strong> {vehicle.variant || '(empty)'}</p>
           </div>
         ))}
       </div>
