@@ -39,3 +39,34 @@ export function formatDimension(dimension: string): string {
   
   return `${numericValue}mm (${feet} Feet)`;
 }
+
+export function calculateWeeklyPayment(price: number | string): number {
+  // Convert price to number
+  const principal = typeof price === 'string' ? parseFloat(price) : price;
+  
+  // Finance parameters
+  const annualRate = 0.07; // 7% annual interest rate
+  const termMonths = 60; // 5 years = 60 months
+  const monthlyRate = annualRate / 12;
+  
+  // Calculate monthly payment using loan amortization formula
+  // M = P * [r(1+r)^n] / [(1+r)^n - 1]
+  const monthlyPayment = principal * 
+    (monthlyRate * Math.pow(1 + monthlyRate, termMonths)) / 
+    (Math.pow(1 + monthlyRate, termMonths) - 1);
+  
+  // Convert monthly to weekly (monthly × 12 ÷ 52)
+  const weeklyPayment = (monthlyPayment * 12) / 52;
+  
+  return weeklyPayment;
+}
+
+export function formatWeeklyPayment(price: number | string): string {
+  const weekly = calculateWeeklyPayment(price);
+  return new Intl.NumberFormat('en-GB', {
+    style: 'currency',
+    currency: 'GBP',
+    minimumFractionDigits: 0,
+    maximumFractionDigits: 0,
+  }).format(weekly);
+}

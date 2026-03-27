@@ -2,7 +2,7 @@ import Link from 'next/link';
 import Image from 'next/image';
 import { Calendar, Gauge, Fuel, Cog } from 'lucide-react';
 import { Button } from './ui/button';
-import { formatPrice, formatMileage } from '@/lib/utils';
+import { formatPrice, formatMileage, formatWeeklyPayment } from '@/lib/utils';
 
 interface VehicleCardProps {
   vehicle: {
@@ -78,8 +78,13 @@ export function VehicleCard({ vehicle }: VehicleCardProps) {
           </p>
         </Link>
         
-        <div className="text-2xl font-bold text-white mb-4">
-          {formatPrice(parseFloat(vehicle.price))}
+        <div className="flex items-baseline justify-between mb-4">
+          <div className="text-2xl font-bold text-white">
+            {formatPrice(parseFloat(vehicle.price))}
+          </div>
+          <div className="text-lg font-semibold text-zinc-300">
+            {formatWeeklyPayment(parseFloat(vehicle.price))}<span className="text-sm text-zinc-500">/week</span>
+          </div>
         </div>
 
         <div className="grid grid-cols-2 gap-3 mb-6 text-sm">
