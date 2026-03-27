@@ -1,7 +1,7 @@
 import { notFound } from 'next/navigation';
 import Image from 'next/image';
 import Link from 'next/link';
-import { Calendar, Gauge, Fuel, Cog, Palette, Users, DoorClosed, FileText, User } from 'lucide-react';
+import { Calendar, Gauge, Fuel, Cog, Palette, Users, DoorClosed, FileText, User, Ruler } from 'lucide-react';
 import { getVehicleBySlug, getSimilarVehicles } from '@/lib/queries';
 import { formatPrice, formatMileage } from '@/lib/utils';
 import { Button } from '@/components/ui/button';
@@ -175,6 +175,33 @@ export default async function VehicleDetailPage({ params }: { params: { slug: st
                       <div>
                         <p className="text-xs text-zinc-500">Body Type</p>
                         <p className="font-semibold">{vehicle.bodyType}</p>
+                      </div>
+                    </div>
+                  )}
+                  {vehicle.height && (
+                    <div className="flex items-center gap-3 bg-zinc-900/50 border border-white/10 p-4">
+                      <Ruler className="w-6 h-6 text-red-600" />
+                      <div>
+                        <p className="text-xs text-zinc-500">Height</p>
+                        <p className="font-semibold">{vehicle.height}</p>
+                      </div>
+                    </div>
+                  )}
+                  {vehicle.length && (
+                    <div className="flex items-center gap-3 bg-zinc-900/50 border border-white/10 p-4">
+                      <Ruler className="w-6 h-6 text-red-600" />
+                      <div>
+                        <p className="text-xs text-zinc-500">Length</p>
+                        <p className="font-semibold">{vehicle.length}</p>
+                      </div>
+                    </div>
+                  )}
+                  {vehicle.width && (
+                    <div className="flex items-center gap-3 bg-zinc-900/50 border border-white/10 p-4">
+                      <Ruler className="w-6 h-6 text-red-600" />
+                      <div>
+                        <p className="text-xs text-zinc-500">Width</p>
+                        <p className="font-semibold">{vehicle.width}</p>
                       </div>
                     </div>
                   )}

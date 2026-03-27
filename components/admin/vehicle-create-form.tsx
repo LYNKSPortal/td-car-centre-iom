@@ -30,6 +30,9 @@ export function VehicleCreateForm() {
     seats: 5,
     registration: '',
     previousOwners: 0,
+    height: '',
+    length: '',
+    width: '',
     description: '',
     status: 'available',
     featured: false,
@@ -350,6 +353,36 @@ export function VehicleCreateForm() {
             type="number"
             value={formData.previousOwners}
             onChange={(e) => setFormData({ ...formData, previousOwners: parseInt(e.target.value) })}
+          />
+        </div>
+
+        <div>
+          <Label htmlFor="height">Height</Label>
+          <Input
+            id="height"
+            value={formData.height}
+            onChange={(e) => setFormData({ ...formData, height: e.target.value })}
+            placeholder="e.g., 1850mm"
+          />
+        </div>
+
+        <div>
+          <Label htmlFor="length">Length</Label>
+          <Input
+            id="length"
+            value={formData.length}
+            onChange={(e) => setFormData({ ...formData, length: e.target.value })}
+            placeholder="e.g., 4900mm"
+          />
+        </div>
+
+        <div>
+          <Label htmlFor="width">Width</Label>
+          <Input
+            id="width"
+            value={formData.width}
+            onChange={(e) => setFormData({ ...formData, width: e.target.value })}
+            placeholder="e.g., 1904mm"
           />
         </div>
 

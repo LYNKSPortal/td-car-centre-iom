@@ -27,6 +27,9 @@ type Vehicle = {
   seats: number | null;
   registration: string | null;
   previousOwners: number | null;
+  height: string | null;
+  length: string | null;
+  width: string | null;
   description: string | null;
   status: string;
   featured: boolean;
@@ -56,6 +59,9 @@ export function VehicleEditForm({ vehicle }: { vehicle: Vehicle }) {
     seats: vehicle.seats || 5,
     registration: vehicle.registration || '',
     previousOwners: vehicle.previousOwners || 0,
+    height: vehicle.height || '',
+    length: vehicle.length || '',
+    width: vehicle.width || '',
     description: vehicle.description || '',
     status: vehicle.status,
     featured: vehicle.featured,
@@ -368,6 +374,36 @@ export function VehicleEditForm({ vehicle }: { vehicle: Vehicle }) {
             type="number"
             value={formData.previousOwners}
             onChange={(e) => setFormData({ ...formData, previousOwners: parseInt(e.target.value) })}
+          />
+        </div>
+
+        <div>
+          <Label htmlFor="height">Height</Label>
+          <Input
+            id="height"
+            value={formData.height}
+            onChange={(e) => setFormData({ ...formData, height: e.target.value })}
+            placeholder="e.g., 1850mm"
+          />
+        </div>
+
+        <div>
+          <Label htmlFor="length">Length</Label>
+          <Input
+            id="length"
+            value={formData.length}
+            onChange={(e) => setFormData({ ...formData, length: e.target.value })}
+            placeholder="e.g., 4900mm"
+          />
+        </div>
+
+        <div>
+          <Label htmlFor="width">Width</Label>
+          <Input
+            id="width"
+            value={formData.width}
+            onChange={(e) => setFormData({ ...formData, width: e.target.value })}
+            placeholder="e.g., 1904mm"
           />
         </div>
 
