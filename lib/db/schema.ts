@@ -4,7 +4,32 @@ import { relations } from 'drizzle-orm';
 export const vehicleStatusEnum = pgEnum('vehicle_status', ['available', 'reserved', 'sold']);
 export const transmissionEnum = pgEnum('transmission', ['Manual', 'Automatic', 'Semi-Automatic']);
 export const fuelTypeEnum = pgEnum('fuel_type', ['Petrol', 'Diesel', 'Hybrid', 'Electric', 'Plug-in Hybrid']);
-export const bodyTypeEnum = pgEnum('body_type', ['Saloon', 'Coupe', 'SUV', 'Estate', 'Convertible', 'Hatchback', 'Sports Car']);
+export const bodyTypeEnum = pgEnum('body_type', [
+  'Saloon',
+  'Hatchback',
+  'Estate',
+  'SUV',
+  'Coupe',
+  'Convertible',
+  'MPV',
+  'Crossover (CUV)',
+  'Convertible SUV',
+  'Coupe SUV',
+  'Hatchback SUV',
+  'Electric (EV)',
+  'Hybrid',
+  'Pickup Truck',
+  'Off-road (4x4)',
+  'Luxury Saloon',
+  'Sports Car',
+  'Supercar',
+  'Hypercar',
+  'Roadster',
+  'Fastback',
+  'Shooting Brake',
+  'Microcar',
+  'City Car'
+]);
 export const drivetrainEnum = pgEnum('drivetrain', ['FWD', 'RWD', 'AWD', '4WD']);
 export const enquiryTypeEnum = pgEnum('enquiry_type', ['general', 'vehicle', 'finance', 'test_drive', 'part_exchange', 'sell_my_car', 'sourcing']);
 export const userRoleEnum = pgEnum('user_role', ['admin', 'staff']);
