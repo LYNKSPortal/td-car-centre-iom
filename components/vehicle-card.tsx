@@ -74,7 +74,7 @@ export function VehicleCard({ vehicle }: VehicleCardProps) {
             {vehicle.make}
           </h3>
           <p className="text-sm text-zinc-400 mb-4 line-clamp-2">
-            {vehicle.title.replace(vehicle.make, '').trim()}
+            {vehicle.model}
           </p>
         </Link>
         
