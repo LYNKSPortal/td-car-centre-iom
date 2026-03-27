@@ -165,7 +165,7 @@ export function VehicleImageManager({
           <p className="text-sm text-zinc-500">Click "Upload Images" to add photos</p>
         </div>
       ) : (
-        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+        <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-8 gap-4">
           {images.map((image, index) => (
             <div
               key={image.id}
