@@ -38,9 +38,8 @@ export default async function VehicleDetailPage({ params }: { params: { slug: st
   return (
     <div className="bg-black min-h-screen">
       <div className="container mx-auto px-4 py-12">
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-12">
-          <div className="lg:col-span-2">
-            <VehicleGallery images={vehicle.images} title={vehicle.title} />
+        <div>
+          <VehicleGallery images={vehicle.images} title={vehicle.title} />
 
             <div className="mt-12">
               <h1 className="text-4xl font-bold mb-4">{vehicle.title}</h1>
@@ -196,44 +195,6 @@ export default async function VehicleDetailPage({ params }: { params: { slug: st
                 </div>
               )}
             </div>
-          </div>
-
-          <div className="lg:col-span-1">
-            <div className="sticky top-24 space-y-6">
-              <div className="bg-zinc-900/50 border border-white/10 p-6">
-                <h3 className="text-xl font-bold mb-6">Interested in this vehicle?</h3>
-                <div className="space-y-3">
-                  <Button variant="primary" size="lg" className="w-full" asChild>
-                    <a href="#enquire">Enquire Now</a>
-                  </Button>
-                  <Button variant="outline" size="lg" className="w-full" asChild>
-                    <Link href="/finance">Calculate Finance</Link>
-                  </Button>
-                  <Button variant="outline" size="lg" className="w-full" asChild>
-                    <Link href="/contact">Book Test Drive</Link>
-                  </Button>
-                </div>
-              </div>
-
-              <div className="bg-zinc-900/50 border border-white/10 p-6">
-                <h3 className="text-lg font-semibold mb-4">Need Help?</h3>
-                <div className="space-y-3 text-sm">
-                  <a href="tel:+441234567890" className="flex items-center gap-2 text-zinc-300 hover:text-white transition-colors">
-                    <div className="w-8 h-8 bg-red-600/10 rounded-full flex items-center justify-center">
-                      <span className="text-red-600">📞</span>
-                    </div>
-                    <span>+44 1234 567890</span>
-                  </a>
-                  <a href="mailto:sales@tdcarcentre.co.uk" className="flex items-center gap-2 text-zinc-300 hover:text-white transition-colors">
-                    <div className="w-8 h-8 bg-red-600/10 rounded-full flex items-center justify-center">
-                      <span className="text-red-600">✉️</span>
-                    </div>
-                    <span>sales@tdcarcentre.co.uk</span>
-                  </a>
-                </div>
-              </div>
-            </div>
-          </div>
         </div>
 
         <div id="enquire" className="mt-16 scroll-mt-24">
