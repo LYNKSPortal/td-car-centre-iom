@@ -25,3 +25,17 @@ export function generateSlug(text: string): string {
     .replace(/[^a-z0-9]+/g, '-')
     .replace(/^-+|-+$/g, '');
 }
+
+export function formatDimension(dimension: string): string {
+  // Extract numeric value from dimension string (e.g., "1850mm" or "1850")
+  const numericValue = parseFloat(dimension.replace(/[^0-9.]/g, ''));
+  
+  if (isNaN(numericValue)) {
+    return dimension;
+  }
+  
+  // Convert mm to feet (1mm = 0.00328084 feet)
+  const feet = (numericValue * 0.00328084).toFixed(3);
+  
+  return `${numericValue}mm (${feet} Feet)`;
+}

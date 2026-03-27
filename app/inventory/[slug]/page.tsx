@@ -3,7 +3,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { Calendar, Gauge, Fuel, Cog, Palette, Users, DoorClosed, FileText, User, Ruler } from 'lucide-react';
 import { getVehicleBySlug, getSimilarVehicles } from '@/lib/queries';
-import { formatPrice, formatMileage } from '@/lib/utils';
+import { formatPrice, formatMileage, formatDimension } from '@/lib/utils';
 import { Button } from '@/components/ui/button';
 import { VehicleCard } from '@/components/vehicle-card';
 import { VehicleGallery } from '@/components/vehicle-gallery';
@@ -183,7 +183,7 @@ export default async function VehicleDetailPage({ params }: { params: { slug: st
                       <Ruler className="w-6 h-6 text-red-600" />
                       <div>
                         <p className="text-xs text-zinc-500">Height</p>
-                        <p className="font-semibold">{vehicle.height}</p>
+                        <p className="font-semibold">{formatDimension(vehicle.height)}</p>
                       </div>
                     </div>
                   )}
@@ -192,7 +192,7 @@ export default async function VehicleDetailPage({ params }: { params: { slug: st
                       <Ruler className="w-6 h-6 text-red-600" />
                       <div>
                         <p className="text-xs text-zinc-500">Length</p>
-                        <p className="font-semibold">{vehicle.length}</p>
+                        <p className="font-semibold">{formatDimension(vehicle.length)}</p>
                       </div>
                     </div>
                   )}
@@ -201,7 +201,7 @@ export default async function VehicleDetailPage({ params }: { params: { slug: st
                       <Ruler className="w-6 h-6 text-red-600" />
                       <div>
                         <p className="text-xs text-zinc-500">Width</p>
-                        <p className="font-semibold">{vehicle.width}</p>
+                        <p className="font-semibold">{formatDimension(vehicle.width)}</p>
                       </div>
                     </div>
                   )}
