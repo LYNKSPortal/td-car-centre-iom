@@ -282,6 +282,23 @@ export function VehicleCreateForm() {
             <option value="Coupe">Coupe</option>
             <option value="Convertible">Convertible</option>
             <option value="MPV">MPV</option>
+            <option value="Crossover (CUV)">Crossover (CUV)</option>
+            <option value="Convertible SUV">Convertible SUV</option>
+            <option value="Coupe SUV">Coupe SUV</option>
+            <option value="Hatchback SUV">Hatchback SUV</option>
+            <option value="Electric (EV)">Electric (EV)</option>
+            <option value="Hybrid">Hybrid</option>
+            <option value="Pickup Truck">Pickup Truck</option>
+            <option value="Off-road (4x4)">Off-road (4x4)</option>
+            <option value="Luxury Saloon">Luxury Saloon</option>
+            <option value="Sports Car">Sports Car</option>
+            <option value="Supercar">Supercar</option>
+            <option value="Hypercar">Hypercar</option>
+            <option value="Roadster">Roadster</option>
+            <option value="Fastback">Fastback</option>
+            <option value="Shooting Brake">Shooting Brake</option>
+            <option value="Microcar">Microcar</option>
+            <option value="City Car">City Car</option>
           </select>
         </div>
 
