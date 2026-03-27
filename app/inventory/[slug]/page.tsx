@@ -49,8 +49,8 @@ export default async function VehicleDetailPage({ params }: { params: { slug: st
               <div className="text-4xl font-bold text-red-600">
                 {formatPrice(parseFloat(vehicle.price))}
               </div>
-              <div className="text-xl font-semibold text-zinc-300 mt-2">
-                {formatWeeklyPayment(parseFloat(vehicle.price))}<span className="text-sm text-zinc-500">/week</span>
+              <div className="text-sm md:text-base lg:text-lg font-semibold text-zinc-300 mt-2">
+                {formatWeeklyPayment(parseFloat(vehicle.price))}<span className="text-xs md:text-sm text-zinc-500">/week</span>
               </div>
             </div>
           </div>
