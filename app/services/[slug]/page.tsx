@@ -159,19 +159,10 @@ export default async function ServicePage({ params }: { params: { slug: string }
 
   return (
     <div className="bg-black min-h-screen">
-      <div className="relative h-[400px] overflow-hidden">
-        <Image
-          src={service.image}
-          alt={service.title}
-          fill
-          className="object-cover"
-        />
-        <div className="absolute inset-0 bg-gradient-to-r from-black via-black/80 to-transparent" />
-        <div className="relative container mx-auto px-4 h-full flex items-center">
-          <div className="max-w-2xl">
-            <h1 className="text-5xl font-bold mb-4">{service.heroTitle}</h1>
-            <p className="text-xl text-zinc-300">{service.heroSubtitle}</p>
-          </div>
+      <div className="bg-zinc-950 border-b border-white/10 py-16">
+        <div className="container mx-auto px-4">
+          <h1 className="text-4xl md:text-5xl font-bold mb-4">{service.heroTitle}</h1>
+          <p className="text-xl text-zinc-400">{service.heroSubtitle}</p>
         </div>
       </div>
 
