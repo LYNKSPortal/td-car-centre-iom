@@ -12,9 +12,9 @@ export function Footer() {
               <Image
                 src="/images/logo-white-and-red.png"
                 alt="TD Car Centre"
-                width={150}
-                height={50}
-                className="w-[150px] h-auto"
+                width={300}
+                height={100}
+                className="w-[300px] h-auto"
               />
             </div>
             <p className="text-zinc-400 text-sm leading-relaxed mb-6">
