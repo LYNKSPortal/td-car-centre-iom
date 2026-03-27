@@ -80,12 +80,14 @@ export function VehicleEditForm({ vehicle }: { vehicle: Vehicle }) {
       });
 
       if (!response.ok) {
-        throw new Error('Failed to update vehicle');
+        const errorData = await response.json();
+        throw new Error(errorData.details || errorData.error || 'Failed to update vehicle');
       }
 
       router.push('/admin/dashboard/vehicles');
       router.refresh();
     } catch (err) {
+      console.error('Update error:', err);
       setError(err instanceof Error ? err.message : 'Failed to update vehicle');
     } finally {
       setLoading(false);

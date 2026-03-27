@@ -52,8 +52,9 @@ export async function PATCH(
 
     return NextResponse.json({ success: true });
   } catch (error) {
+    console.error('Vehicle update error:', error);
     return NextResponse.json(
-      { error: 'Failed to update vehicle' },
+      { error: 'Failed to update vehicle', details: error instanceof Error ? error.message : 'Unknown error' },
       { status: 500 }
     );
   }
