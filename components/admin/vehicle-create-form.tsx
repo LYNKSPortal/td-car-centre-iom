@@ -14,10 +14,8 @@ export function VehicleCreateForm() {
     title: '',
     make: '',
     model: '',
-    variant: '',
     year: new Date().getFullYear(),
     price: '',
-    financeMonthly: '',
     mileage: 0,
     transmission: 'Automatic',
     fuelType: 'Petrol',
@@ -28,7 +26,6 @@ export function VehicleCreateForm() {
     engineSize: '',
     doors: 4,
     seats: 5,
-    registration: '',
     previousOwners: 0,
     height: '',
     length: '',
@@ -202,16 +199,6 @@ export function VehicleCreateForm() {
         </div>
 
         <div>
-          <Label htmlFor="variant">Variant</Label>
-          <Input
-            id="variant"
-            value={formData.variant}
-            onChange={(e) => setFormData({ ...formData, variant: e.target.value })}
-            placeholder="e.g., Competition"
-          />
-        </div>
-
-        <div>
           <Label htmlFor="year">Year *</Label>
           <Input
             id="year"
@@ -353,16 +340,6 @@ export function VehicleCreateForm() {
         </div>
 
         <div>
-          <Label htmlFor="registration">Registration</Label>
-          <Input
-            id="registration"
-            value={formData.registration}
-            onChange={(e) => setFormData({ ...formData, registration: e.target.value })}
-            placeholder="e.g., AB23 XYZ"
-          />
-        </div>
-
-        <div>
           <Label htmlFor="previousOwners">Previous Owners</Label>
           <Input
             id="previousOwners"
@@ -399,18 +376,6 @@ export function VehicleCreateForm() {
             value={formData.width}
             onChange={(e) => setFormData({ ...formData, width: e.target.value })}
             placeholder="e.g., 1904mm"
-          />
-        </div>
-
-        <div>
-          <Label htmlFor="financeMonthly">Finance Monthly</Label>
-          <Input
-            id="financeMonthly"
-            type="number"
-            step="0.01"
-            value={formData.financeMonthly}
-            onChange={(e) => setFormData({ ...formData, financeMonthly: e.target.value })}
-            placeholder="e.g., 450"
           />
         </div>
 

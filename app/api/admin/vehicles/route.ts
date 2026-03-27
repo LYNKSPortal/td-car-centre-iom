@@ -20,17 +20,15 @@ export async function POST(request: Request) {
       .replace(/[^a-z0-9]+/g, '-')
       .replace(/^-|-$/g, '');
 
-    const [newVehicle] = await db
+    const newVehicle = await db
       .insert(vehicles)
       .values({
         title: body.title,
         slug,
         make: body.make,
         model: body.model,
-        variant: body.variant || null,
         year: body.year,
         price: body.price,
-        financeMonthly: body.financeMonthly || null,
         mileage: body.mileage,
         transmission: body.transmission,
         fuelType: body.fuelType,
@@ -41,7 +39,6 @@ export async function POST(request: Request) {
         engineSize: body.engineSize || null,
         doors: body.doors || null,
         seats: body.seats || null,
-        registration: body.registration || null,
         previousOwners: body.previousOwners || null,
         height: body.height || null,
         length: body.length || null,

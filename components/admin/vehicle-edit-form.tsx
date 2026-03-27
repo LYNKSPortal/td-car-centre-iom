@@ -11,10 +11,8 @@ type Vehicle = {
   title: string;
   make: string;
   model: string;
-  variant: string | null;
   year: number;
   price: string;
-  financeMonthly: string | null;
   mileage: number;
   transmission: string;
   fuelType: string;
@@ -25,7 +23,6 @@ type Vehicle = {
   engineSize: string | null;
   doors: number | null;
   seats: number | null;
-  registration: string | null;
   previousOwners: number | null;
   height: string | null;
   length: string | null;
@@ -42,10 +39,8 @@ export function VehicleEditForm({ vehicle }: { vehicle: Vehicle }) {
     title: vehicle.title,
     make: vehicle.make,
     model: vehicle.model,
-    variant: vehicle.variant || '',
     year: vehicle.year,
     price: vehicle.price,
-    financeMonthly: vehicle.financeMonthly || '',
     mileage: vehicle.mileage,
     transmission: vehicle.transmission,
     fuelType: vehicle.fuelType,
@@ -56,7 +51,6 @@ export function VehicleEditForm({ vehicle }: { vehicle: Vehicle }) {
     engineSize: vehicle.engineSize || '',
     doors: vehicle.doors || 4,
     seats: vehicle.seats || 5,
-    registration: vehicle.registration || '',
     previousOwners: vehicle.previousOwners || 0,
     height: vehicle.height || '',
     length: vehicle.length || '',
@@ -228,15 +222,6 @@ export function VehicleEditForm({ vehicle }: { vehicle: Vehicle }) {
         </div>
 
         <div>
-          <Label htmlFor="variant">Variant</Label>
-          <Input
-            id="variant"
-            value={formData.variant}
-            onChange={(e) => setFormData({ ...formData, variant: e.target.value })}
-          />
-        </div>
-
-        <div>
           <Label htmlFor="year">Year *</Label>
           <Input
             id="year"
@@ -376,15 +361,6 @@ export function VehicleEditForm({ vehicle }: { vehicle: Vehicle }) {
         </div>
 
         <div>
-          <Label htmlFor="registration">Registration</Label>
-          <Input
-            id="registration"
-            value={formData.registration}
-            onChange={(e) => setFormData({ ...formData, registration: e.target.value })}
-          />
-        </div>
-
-        <div>
           <Label htmlFor="previousOwners">Previous Owners</Label>
           <Input
             id="previousOwners"
@@ -421,17 +397,6 @@ export function VehicleEditForm({ vehicle }: { vehicle: Vehicle }) {
             value={formData.width}
             onChange={(e) => setFormData({ ...formData, width: e.target.value })}
             placeholder="e.g., 1904mm"
-          />
-        </div>
-
-        <div>
-          <Label htmlFor="financeMonthly">Finance Monthly</Label>
-          <Input
-            id="financeMonthly"
-            type="number"
-            step="0.01"
-            value={formData.financeMonthly}
-            onChange={(e) => setFormData({ ...formData, financeMonthly: e.target.value })}
           />
         </div>
 
