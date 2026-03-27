@@ -104,43 +104,9 @@ export function FinanceCalculator() {
         </div>
       </div>
 
-      <div className="bg-gradient-to-r from-red-600 to-red-600 p-6 mb-6 finance-calculator-content">
+      <div className="bg-gradient-to-r from-red-600 to-red-600 p-6 finance-calculator-content">
         <p className="text-white/70 mb-1">Estimated Monthly Payment</p>
         <h2 className="text-4xl font-bold text-white">{formatPrice(monthlyPayment)}</h2>
-      </div>
-
-      <div className="space-y-3 mb-6 finance-calculator-content">
-        <div className="flex justify-between">
-          <span className="text-zinc-400">Amount to Finance:</span>
-          <span className="font-semibold">{formatPrice(vehiclePrice - deposit)}</span>
-        </div>
-        <div className="flex justify-between">
-          <span className="text-zinc-400">Total Interest:</span>
-          <span className="font-semibold">{formatPrice(totalInterest)}</span>
-        </div>
-        <div className="flex justify-between">
-          <span className="text-zinc-400">Total Payable:</span>
-          <span className="font-semibold">{formatPrice(totalPayable)}</span>
-        </div>
-      </div>
-
-      <p className="text-zinc-500 mb-6 finance-calculator-content">
-        This is an example calculation only. Actual rates and terms may vary based on your credit profile 
-        and the vehicle selected. Subject to status and affordability checks.
-      </p>
-
-      <Button variant="primary" size="lg" className="w-full">
-        Apply for Finance
-      </Button>
-
-      <div className="mt-6 flex justify-center">
-        <Image
-          src="/images/Conister-approved-partner.png"
-          alt="Conister Approved Partner"
-          width={400}
-          height={160}
-          className="w-[250px] md:w-[300px] lg:w-[400px] h-auto"
-        />
       </div>
     </div>
   );
