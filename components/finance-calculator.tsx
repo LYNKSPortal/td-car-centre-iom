@@ -26,8 +26,6 @@ export function FinanceCalculator() {
 
   return (
     <div className="bg-zinc-900/50 border border-white/10 p-8">
-      <h2 className="text-2xl font-bold mb-6">Finance Calculator</h2>
-      
       <div className="space-y-6 mb-8 finance-calculator-content">
         <div>
           <label className="block font-medium mb-2 text-zinc-300">
