@@ -10,7 +10,7 @@ export function Footer() {
           <div>
             <div className="mb-6">
               <Image
-                src="/images/white-logo.png"
+                src="/images/logo-white-and-red.png"
                 alt="TD Car Centre"
                 width={150}
                 height={50}
