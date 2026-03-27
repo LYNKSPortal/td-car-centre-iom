@@ -39,13 +39,22 @@ export default async function VehicleDetailPage({ params }: { params: { slug: st
     <div className="bg-black min-h-screen">
       <div className="container mx-auto px-4 py-12">
         <div>
+          {/* Title and Price Section */}
+          <div className="flex justify-between items-start mb-8">
+            <div>
+              <h1 className="text-4xl font-bold mb-2">{vehicle.title}</h1>
+              <p className="text-xl text-zinc-400">{vehicle.model}</p>
+            </div>
+            <div className="text-right">
+              <div className="text-4xl font-bold text-red-600">
+                {formatPrice(parseFloat(vehicle.price))}
+              </div>
+            </div>
+          </div>
+
           <VehicleGallery images={vehicle.images} title={vehicle.title} />
 
             <div className="mt-12">
-              <h1 className="text-4xl font-bold mb-4">{vehicle.title}</h1>
-              <div className="text-3xl font-bold text-red-600 mb-8">
-                {formatPrice(parseFloat(vehicle.price))}
-              </div>
 
               {vehicle.financeMonthly && (
                 <div className="bg-gradient-to-r from-red-600/10 to-red-600/10 border border-red-600/20 p-6 mb-8">
