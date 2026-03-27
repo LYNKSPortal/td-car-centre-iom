@@ -151,8 +151,8 @@ export function VehicleGallery({ images, title }: VehicleGalleryProps) {
                   setTimeout(() => setIsTransitioning(false), 500);
                 }
               }}
-              className={`relative flex-shrink-0 w-32 h-24 overflow-hidden border-2 transition-all ${
-                index === currentIndex ? 'border-red-600' : 'border-white/10 hover:border-white/30'
+              className={`relative flex-shrink-0 w-32 h-24 overflow-hidden transition-all ${
+                index === currentIndex ? 'ring-2 ring-red-600' : 'opacity-70 hover:opacity-100'
               }`}
             >
               <Image
