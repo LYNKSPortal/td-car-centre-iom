@@ -60,18 +60,6 @@ export default async function VehicleDetailPage({ params }: { params: { slug: st
 
             <div className="mt-12">
 
-              {vehicle.financeMonthly && (
-                <div className="bg-gradient-to-r from-red-600/10 to-red-600/10 border border-red-600/20 p-6 mb-8">
-                  <p className="text-sm text-zinc-400 mb-1">Finance from</p>
-                  <p className="text-2xl font-bold text-red-600">
-                    {formatPrice(parseFloat(vehicle.financeMonthly))}/month
-                  </p>
-                  <p className="text-xs text-zinc-500 mt-2">
-                    Representative example. Subject to status and affordability.
-                  </p>
-                </div>
-              )}
-
               {vehicle.description && (
                 <div className="mb-12">
                   <h2 className="text-2xl font-bold mb-4">Description</h2>
@@ -152,15 +140,6 @@ export default async function VehicleDetailPage({ params }: { params: { slug: st
                       <div>
                         <p className="text-xs text-zinc-500">Seats</p>
                         <p className="font-semibold">{vehicle.seats}</p>
-                      </div>
-                    </div>
-                  )}
-                  {vehicle.registration && (
-                    <div className="flex items-center gap-3 bg-zinc-900/50 border border-white/10 p-4">
-                      <FileText className="w-6 h-6 text-red-600" />
-                      <div>
-                        <p className="text-xs text-zinc-500">Registration</p>
-                        <p className="font-semibold">{vehicle.registration}</p>
                       </div>
                     </div>
                   )}
