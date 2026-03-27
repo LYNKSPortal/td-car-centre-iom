@@ -68,7 +68,7 @@ export default async function VehicleDetailPage({ params }: { params: { slug: st
 
               <div className="mb-12">
                 <h2 className="text-2xl font-bold mb-6">Specification</h2>
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
                   <div className="flex items-center gap-3 bg-zinc-900/50 border border-white/10 p-4">
                     <Calendar className="w-6 h-6 text-red-600" />
                     <div>
