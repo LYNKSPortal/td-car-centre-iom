@@ -245,7 +245,7 @@ export default async function VehicleDetailPage({ params }: { params: { slug: st
             </div>
             <div>
               <h2 className="text-2xl font-bold mb-6">Finance Calculator</h2>
-              <FinanceCalculator />
+              <FinanceCalculator vehiclePrice={parseFloat(vehicle.price)} />
             </div>
           </div>
         </div>
