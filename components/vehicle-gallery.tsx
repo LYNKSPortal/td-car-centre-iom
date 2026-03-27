@@ -17,47 +17,43 @@ export function VehicleGallery({ images, title }: VehicleGalleryProps) {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [isTransitioning, setIsTransitioning] = useState(false);
 
-  if (images.length === 0) {
-    return (
-      <div className="relative w-full aspect-[16/9] bg-zinc-900">
-        <Image
-          src="/images/images-coming-soon.jpg"
-          alt="Images coming soon"
-          fill
-          className="object-cover"
-        />
-      </div>
-    );
-  }
+  // Create placeholder images array if no images
+  const displayImages = images.length === 0 
+    ? [
+        { id: '1', imageUrl: '/images/images-coming-soon.jpg', altText: 'Images coming soon' },
+        { id: '2', imageUrl: '/images/images-coming-soon.jpg', altText: 'Images coming soon' },
+        { id: '3', imageUrl: '/images/images-coming-soon.jpg', altText: 'Images coming soon' }
+      ]
+    : images;
 
   const goToPrevious = () => {
     if (isTransitioning) return;
     setIsTransitioning(true);
-    setCurrentIndex((prev) => (prev === 0 ? images.length - 1 : prev - 1));
+    setCurrentIndex((prev) => (prev === 0 ? displayImages.length - 1 : prev - 1));
     setTimeout(() => setIsTransitioning(false), 500);
   };
 
   const goToNext = () => {
     if (isTransitioning) return;
     setIsTransitioning(true);
-    setCurrentIndex((prev) => (prev === images.length - 1 ? 0 : prev + 1));
+    setCurrentIndex((prev) => (prev === displayImages.length - 1 ? 0 : prev + 1));
     setTimeout(() => setIsTransitioning(false), 500);
   };
 
-  const getPrevIndex = () => (currentIndex === 0 ? images.length - 1 : currentIndex - 1);
-  const getNextIndex = () => (currentIndex === images.length - 1 ? 0 : currentIndex + 1);
+  const getPrevIndex = () => (currentIndex === 0 ? displayImages.length - 1 : currentIndex - 1);
+  const getNextIndex = () => (currentIndex === displayImages.length - 1 ? 0 : currentIndex + 1);
 
   return (
     <div className="space-y-4">
       {/* Main carousel with side previews */}
       <div className="relative w-full aspect-[16/9] bg-black overflow-hidden flex items-center gap-4">
-        {images.length > 1 && (
+        {displayImages.length > 1 && (
           <>
             {/* Previous image preview (left side) - 50% visible */}
             <div className="relative w-1/6 h-full z-0 opacity-50 overflow-hidden">
               <div className="absolute right-0 top-0 bottom-0 w-[200%]">
                 <Image
-                  src={images[getPrevIndex()].imageUrl}
+                  src={displayImages[getPrevIndex()].imageUrl}
                   alt="Previous"
                   fill
                   sizes="12vw"
@@ -70,7 +66,7 @@ export function VehicleGallery({ images, title }: VehicleGalleryProps) {
 
         {/* Main centered image */}
         <div className="relative flex-1 h-full z-10">
-          {images.map((image, index) => (
+          {displayImages.map((image, index) => (
             <div
               key={image.id}
               className={`absolute inset-0 transition-opacity duration-500 ${
@@ -89,13 +85,13 @@ export function VehicleGallery({ images, title }: VehicleGalleryProps) {
           ))}
         </div>
 
-        {images.length > 1 && (
+        {displayImages.length > 1 && (
           <>
             {/* Next image preview (right side) - 50% visible */}
             <div className="relative w-1/6 h-full z-0 opacity-50 overflow-hidden">
               <div className="absolute left-0 top-0 bottom-0 w-[200%]">
                 <Image
-                  src={images[getNextIndex()].imageUrl}
+                  src={displayImages[getNextIndex()].imageUrl}
                   alt="Next"
                   fill
                   sizes="12vw"
@@ -106,7 +102,7 @@ export function VehicleGallery({ images, title }: VehicleGalleryProps) {
           </>
         )}
 
-        {images.length > 1 && (
+        {displayImages.length > 1 && (
           <>
             <button
               onClick={goToPrevious}
@@ -135,16 +131,16 @@ export function VehicleGallery({ images, title }: VehicleGalleryProps) {
             <div className="absolute bottom-16 right-8 z-20 text-white text-4xl font-light">
               <span className="font-normal">{currentIndex + 1}</span>
               <span className="text-white/50 mx-2">/</span>
-              <span className="text-white/50">{images.length}</span>
+              <span className="text-white/50">{displayImages.length}</span>
             </div>
           </>
         )}
       </div>
 
       {/* Thumbnail row */}
-      {images.length > 1 && (
+      {displayImages.length > 1 && (
         <div className="flex gap-2 overflow-x-auto pb-2">
-          {images.map((image, index) => (
+          {displayImages.map((image, index) => (
             <button
               key={image.id}
               onClick={() => {
