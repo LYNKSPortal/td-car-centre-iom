@@ -19,10 +19,13 @@ export function VehicleGallery({ images, title }: VehicleGalleryProps) {
 
   if (images.length === 0) {
     return (
-      <div className="relative w-full pb-[100%] bg-zinc-900">
-        <div className="absolute inset-0 flex items-center justify-center">
-          <p className="text-zinc-500">No images available</p>
-        </div>
+      <div className="relative w-full aspect-[16/9] bg-zinc-900">
+        <Image
+          src="/images/images-coming-soon.jpg"
+          alt="Images coming soon"
+          fill
+          className="object-cover"
+        />
       </div>
     );
   }

@@ -53,12 +53,12 @@ export function VehicleCard({ vehicle }: VehicleCardProps) {
               className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
             />
           ) : (
-            <div className="absolute inset-0 flex items-center justify-center">
-              <div className="text-center">
-                <div className="text-6xl mb-2">🚗</div>
-                <p className="text-zinc-500 text-sm">No Image</p>
-              </div>
-            </div>
+            <Image
+              src="/images/images-coming-soon.jpg"
+              alt="Images coming soon"
+              fill
+              className="object-cover group-hover:scale-105 transition-transform duration-500"
+            />
           )}
           <div className="absolute top-4 right-4">
             <div className={`${getStatusColor(vehicle.status)} text-white px-3 py-1.5 font-semibold uppercase text-sm`}>
