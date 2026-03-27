@@ -32,7 +32,6 @@ type Vehicle = {
   width: string | null;
   description: string | null;
   status: string;
-  featured: boolean;
 };
 
 export function VehicleEditForm({ vehicle }: { vehicle: Vehicle }) {
@@ -64,7 +63,6 @@ export function VehicleEditForm({ vehicle }: { vehicle: Vehicle }) {
     width: vehicle.width || '',
     description: vehicle.description || '',
     status: vehicle.status,
-    featured: vehicle.featured,
   });
 
   const handleSubmit = async (e: React.FormEvent) => {
@@ -443,17 +441,6 @@ export function VehicleEditForm({ vehicle }: { vehicle: Vehicle }) {
           rows={4}
           className="w-full px-3 py-2 bg-zinc-800 border border-white/10 rounded-md text-white"
         />
-      </div>
-
-      <div className="flex items-center gap-2">
-        <input
-          type="checkbox"
-          id="featured"
-          checked={formData.featured}
-          onChange={(e) => setFormData({ ...formData, featured: e.target.checked })}
-          className="w-4 h-4"
-        />
-        <Label htmlFor="featured">Featured Vehicle</Label>
       </div>
 
       <div className="flex gap-3 pt-6 border-t border-white/10">

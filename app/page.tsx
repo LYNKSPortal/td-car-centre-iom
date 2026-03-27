@@ -4,10 +4,10 @@ import { ArrowRight, Shield, Truck, Search, CreditCard, RefreshCw, Headphones, S
 import { Button } from '@/components/ui/button';
 import { VehicleCard } from '@/components/vehicle-card';
 import { HeroSlider } from '@/components/hero-slider';
-import { getFeaturedVehicles } from '@/lib/queries';
+import { getLatestVehicles } from '@/lib/queries';
 
 export default async function Home() {
-  const featuredVehicles = await getFeaturedVehicles(3);
+  const latestVehicles = await getLatestVehicles(4);
 
   return (
     <div className="bg-black">
@@ -30,12 +30,12 @@ export default async function Home() {
       <section className="py-24 bg-zinc-950">
         <div className="container mx-auto px-4">
           <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-bold mb-4">Featured Vehicles</h2>
-            <p className="text-xl text-zinc-400">Handpicked prestige and performance cars</p>
+            <h2 className="text-4xl md:text-5xl font-bold mb-4">Latest Vehicles</h2>
+            <p className="text-xl text-zinc-400">Our newest arrivals</p>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
-            {featuredVehicles.map((vehicle) => (
+            {latestVehicles.map((vehicle) => (
               <VehicleCard key={vehicle.id} vehicle={vehicle} />
             ))}
           </div>

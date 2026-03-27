@@ -98,10 +98,9 @@ export async function getVehicleBySlug(slug: string) {
   return vehicle;
 }
 
-export async function getFeaturedVehicles(limit = 6) {
+export async function getLatestVehicles(limit = 6) {
   return await db.query.vehicles.findMany({
     where: and(
-      eq(vehicles.featured, true),
       eq(vehicles.published, true),
       eq(vehicles.status, 'available')
     ),
