@@ -13,7 +13,6 @@ interface VehicleCardProps {
     model: string;
     year: number;
     price: string;
-    financeMonthly: string | null;
     mileage: number;
     transmission: string;
     fuelType: string;

@@ -13,12 +13,12 @@ export default async function Home() {
     <div className="bg-black">
       <HeroSlider />
 
-      <section className="bg-gradient-to-b from-red-600 to-red-600 py-8">
-        <div className="container mx-auto px-4">
-          <div className="flex flex-col md:flex-row items-center justify-between gap-6 text-white">
+      <section className="bg-gradient-to-b from-red-600 to-red-600 py-4 md:py-6 lg:py-8">
+        <div className="container mx-auto px-4 md:px-6 lg:px-8">
+          <div className="flex flex-col md:flex-row items-center justify-between gap-4 md:gap-6 text-white">
             <div className="text-center md:text-left">
-              <h2 className="text-2xl md:text-3xl font-bold mb-2">Car Finance Made Easy</h2>
-              <p className="text-lg">Competitive rates from 6.9% APR representative</p>
+              <h2 className="text-xl md:text-2xl lg:text-3xl font-bold mb-1 md:mb-2">Car Finance Made Easy</h2>
+              <p className="text-base md:text-lg">Competitive rates from 6.9% APR representative</p>
             </div>
             <Button variant="default" size="lg" asChild>
               <Link href="/finance">Calculate Finance</Link>
@@ -27,14 +27,14 @@ export default async function Home() {
         </div>
       </section>
 
-      <section className="py-24 bg-zinc-950">
-        <div className="container mx-auto px-4">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-bold mb-4">Latest Vehicles</h2>
-            <p className="text-xl text-zinc-400">Our newest arrivals</p>
+      <section className="py-8 md:py-16 lg:py-24 bg-zinc-950">
+        <div className="container mx-auto px-4 md:px-6 lg:px-8">
+          <div className="text-center mb-6 md:mb-12 lg:mb-16">
+            <h2 className="text-2xl md:text-4xl lg:text-5xl font-bold mb-2 md:mb-4">Latest Vehicles</h2>
+            <p className="text-base md:text-lg lg:text-xl text-zinc-400">Our newest arrivals</p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6 lg:gap-8 mb-6 md:mb-10 lg:mb-12">
             {latestVehicles.map((vehicle) => (
               <VehicleCard key={vehicle.id} vehicle={vehicle} />
             ))}
@@ -50,69 +50,69 @@ export default async function Home() {
         </div>
       </section>
 
-      <section className="py-24 bg-black">
-        <div className="container mx-auto px-4">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-bold mb-4">Why Choose TD Car Centre</h2>
-            <p className="text-xl text-zinc-400">Premium service at every step</p>
+      <section className="py-8 md:py-16 lg:py-24 bg-black">
+        <div className="container mx-auto px-4 md:px-6 lg:px-8">
+          <div className="text-center mb-6 md:mb-12 lg:mb-16">
+            <h2 className="text-2xl md:text-4xl lg:text-5xl font-bold mb-2 md:mb-4">Why Choose TD Car Centre</h2>
+            <p className="text-base md:text-lg lg:text-xl text-zinc-400">Premium service at every step</p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            <div className="bg-zinc-900/50 border border-white/10 p-8 text-center group hover:border-red-600/50 transition-all">
-              <div className="w-16 h-16 bg-red-600/10 rounded-full flex items-center justify-center mx-auto mb-6 group-hover:bg-red-600/20 transition-colors">
-                <Shield className="w-8 h-8 text-red-600" />
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6 lg:gap-8">
+            <div className="bg-zinc-900/50 border border-white/10 p-4 md:p-6 lg:p-8 text-center group hover:border-red-600/50 transition-all">
+              <div className="w-12 h-12 md:w-14 md:h-14 lg:w-16 lg:h-16 bg-red-600/10 rounded-full flex items-center justify-center mx-auto mb-3 md:mb-4 lg:mb-6 group-hover:bg-red-600/20 transition-colors">
+                <Shield className="w-6 h-6 md:w-7 md:h-7 lg:w-8 lg:h-8 text-red-600" />
               </div>
-              <h3 className="text-xl font-semibold mb-3">Comprehensive Warranty</h3>
-              <p className="text-zinc-400">All vehicles come with warranty options for complete peace of mind</p>
+              <h3 className="text-base md:text-lg lg:text-xl font-semibold mb-2 md:mb-3">Comprehensive Warranty</h3>
+              <p className="text-sm md:text-base text-zinc-400">All vehicles come with warranty options for complete peace of mind</p>
             </div>
 
-            <div className="bg-zinc-900/50 border border-white/10 p-8 text-center group hover:border-red-600/50 transition-all">
-              <div className="w-16 h-16 bg-red-600/10 rounded-full flex items-center justify-center mx-auto mb-6 group-hover:bg-red-600/20 transition-colors">
-                <Truck className="w-8 h-8 text-red-600" />
+            <div className="bg-zinc-900/50 border border-white/10 p-4 md:p-6 lg:p-8 text-center group hover:border-red-600/50 transition-all">
+              <div className="w-12 h-12 md:w-14 md:h-14 lg:w-16 lg:h-16 bg-red-600/10 rounded-full flex items-center justify-center mx-auto mb-3 md:mb-4 lg:mb-6 group-hover:bg-red-600/20 transition-colors">
+                <Truck className="w-6 h-6 md:w-7 md:h-7 lg:w-8 lg:h-8 text-red-600" />
               </div>
-              <h3 className="text-xl font-semibold mb-3">Nationwide Delivery</h3>
-              <p className="text-zinc-400">We deliver your dream car directly to your door, anywhere in the UK</p>
+              <h3 className="text-base md:text-lg lg:text-xl font-semibold mb-2 md:mb-3">Nationwide Delivery</h3>
+              <p className="text-sm md:text-base text-zinc-400">We deliver your dream car directly to your door, anywhere in the UK</p>
             </div>
 
-            <div className="bg-zinc-900/50 border border-white/10 p-8 text-center group hover:border-red-600/50 transition-all">
-              <div className="w-16 h-16 bg-red-600/10 rounded-full flex items-center justify-center mx-auto mb-6 group-hover:bg-red-600/20 transition-colors">
-                <Search className="w-8 h-8 text-red-600" />
+            <div className="bg-zinc-900/50 border border-white/10 p-4 md:p-6 lg:p-8 text-center group hover:border-red-600/50 transition-all">
+              <div className="w-12 h-12 md:w-14 md:h-14 lg:w-16 lg:h-16 bg-red-600/10 rounded-full flex items-center justify-center mx-auto mb-3 md:mb-4 lg:mb-6 group-hover:bg-red-600/20 transition-colors">
+                <Search className="w-6 h-6 md:w-7 md:h-7 lg:w-8 lg:h-8 text-red-600" />
               </div>
-              <h3 className="text-xl font-semibold mb-3">Vehicle Sourcing</h3>
-              <p className="text-zinc-400">Can't find what you're looking for? We'll source your perfect vehicle</p>
+              <h3 className="text-base md:text-lg lg:text-xl font-semibold mb-2 md:mb-3">Vehicle Sourcing</h3>
+              <p className="text-sm md:text-base text-zinc-400">Can't find what you're looking for? We'll source your perfect vehicle</p>
             </div>
 
-            <div className="bg-zinc-900/50 border border-white/10 p-8 text-center group hover:border-red-600/50 transition-all">
-              <div className="w-16 h-16 bg-red-600/10 rounded-full flex items-center justify-center mx-auto mb-6 group-hover:bg-red-600/20 transition-colors">
-                <CreditCard className="w-8 h-8 text-red-600" />
+            <div className="bg-zinc-900/50 border border-white/10 p-4 md:p-6 lg:p-8 text-center group hover:border-red-600/50 transition-all">
+              <div className="w-12 h-12 md:w-14 md:h-14 lg:w-16 lg:h-16 bg-red-600/10 rounded-full flex items-center justify-center mx-auto mb-3 md:mb-4 lg:mb-6 group-hover:bg-red-600/20 transition-colors">
+                <CreditCard className="w-6 h-6 md:w-7 md:h-7 lg:w-8 lg:h-8 text-red-600" />
               </div>
-              <h3 className="text-xl font-semibold mb-3">Flexible Finance</h3>
-              <p className="text-zinc-400">Competitive finance packages tailored to your budget and requirements</p>
+              <h3 className="text-base md:text-lg lg:text-xl font-semibold mb-2 md:mb-3">Flexible Finance</h3>
+              <p className="text-sm md:text-base text-zinc-400">Competitive finance packages tailored to your budget and requirements</p>
             </div>
 
-            <div className="bg-zinc-900/50 border border-white/10 p-8 text-center group hover:border-red-600/50 transition-all">
-              <div className="w-16 h-16 bg-red-600/10 rounded-full flex items-center justify-center mx-auto mb-6 group-hover:bg-red-600/20 transition-colors">
-                <RefreshCw className="w-8 h-8 text-red-600" />
+            <div className="bg-zinc-900/50 border border-white/10 p-4 md:p-6 lg:p-8 text-center group hover:border-red-600/50 transition-all">
+              <div className="w-12 h-12 md:w-14 md:h-14 lg:w-16 lg:h-16 bg-red-600/10 rounded-full flex items-center justify-center mx-auto mb-3 md:mb-4 lg:mb-6 group-hover:bg-red-600/20 transition-colors">
+                <RefreshCw className="w-6 h-6 md:w-7 md:h-7 lg:w-8 lg:h-8 text-red-600" />
               </div>
-              <h3 className="text-xl font-semibold mb-3">Part Exchange</h3>
-              <p className="text-zinc-400">Get the best value for your current vehicle with our part exchange service</p>
+              <h3 className="text-base md:text-lg lg:text-xl font-semibold mb-2 md:mb-3">Part Exchange</h3>
+              <p className="text-sm md:text-base text-zinc-400">Get the best value for your current vehicle with our part exchange service</p>
             </div>
 
-            <div className="bg-zinc-900/50 border border-white/10 p-8 text-center group hover:border-red-600/50 transition-all">
-              <div className="w-16 h-16 bg-red-600/10 rounded-full flex items-center justify-center mx-auto mb-6 group-hover:bg-red-600/20 transition-colors">
-                <Headphones className="w-8 h-8 text-red-600" />
+            <div className="bg-zinc-900/50 border border-white/10 p-4 md:p-6 lg:p-8 text-center group hover:border-red-600/50 transition-all">
+              <div className="w-12 h-12 md:w-14 md:h-14 lg:w-16 lg:h-16 bg-red-600/10 rounded-full flex items-center justify-center mx-auto mb-3 md:mb-4 lg:mb-6 group-hover:bg-red-600/20 transition-colors">
+                <Headphones className="w-6 h-6 md:w-7 md:h-7 lg:w-8 lg:h-8 text-red-600" />
               </div>
-              <h3 className="text-xl font-semibold mb-3">After Sales Support</h3>
-              <p className="text-zinc-400">Dedicated support team available to assist you after your purchase</p>
+              <h3 className="text-base md:text-lg lg:text-xl font-semibold mb-2 md:mb-3">After Sales Support</h3>
+              <p className="text-sm md:text-base text-zinc-400">Dedicated support team available to assist you after your purchase</p>
             </div>
           </div>
         </div>
       </section>
 
-      <section className="py-24 bg-zinc-950">
-        <div className="container mx-auto px-4">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-            <div className="relative h-[500px] overflow-hidden">
+      <section className="py-8 md:py-16 lg:py-24 bg-zinc-950">
+        <div className="container mx-auto px-4 md:px-6 lg:px-8">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 md:gap-10 lg:gap-12 items-center">
+            <div className="relative h-[300px] md:h-[400px] lg:h-[500px] overflow-hidden">
               <Image
                 src="https://images.unsplash.com/photo-1563720360172-67b8f3dce741?w=800&q=80"
                 alt="About TD Car Centre"
@@ -121,15 +121,15 @@ export default async function Home() {
               />
             </div>
             <div>
-              <h2 className="text-4xl md:text-5xl font-bold mb-6">
+              <h2 className="text-2xl md:text-4xl lg:text-5xl font-bold mb-3 md:mb-5 lg:mb-6">
                 Your Trusted Partner in<br />
                 <span className="text-red-600">Luxury Motoring</span>
               </h2>
-              <p className="text-lg text-zinc-400 mb-6 leading-relaxed">
+              <p className="text-sm md:text-base lg:text-lg text-zinc-400 mb-3 md:mb-5 lg:mb-6 leading-relaxed">
                 At TD Car Centre, we specialize in premium and prestige vehicles. Our carefully curated 
                 collection features the finest luxury cars from the world's most prestigious manufacturers.
               </p>
-              <p className="text-lg text-zinc-400 mb-8 leading-relaxed">
+              <p className="text-sm md:text-base lg:text-lg text-zinc-400 mb-4 md:mb-6 lg:mb-8 leading-relaxed">
                 With years of experience in the luxury automotive sector, we pride ourselves on delivering 
                 exceptional customer service, competitive finance options, and a seamless purchasing experience.
               </p>
@@ -141,26 +141,26 @@ export default async function Home() {
         </div>
       </section>
 
-      <section className="py-24 bg-black">
-        <div className="container mx-auto px-4">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-bold mb-4">What Our Customers Say</h2>
-            <div className="flex items-center justify-center gap-2 text-red-600 mb-4">
+      <section className="py-8 md:py-16 lg:py-24 bg-black">
+        <div className="container mx-auto px-4 md:px-6 lg:px-8">
+          <div className="text-center mb-6 md:mb-12 lg:mb-16">
+            <h2 className="text-2xl md:text-4xl lg:text-5xl font-bold mb-2 md:mb-4">What Our Customers Say</h2>
+            <div className="flex items-center justify-center gap-1 md:gap-2 text-red-600 mb-2 md:mb-4">
               {[...Array(5)].map((_, i) => (
-                <Star key={i} className="w-6 h-6 fill-current" />
+                <Star key={i} className="w-4 h-4 md:w-5 md:h-5 lg:w-6 lg:h-6 fill-current" />
               ))}
             </div>
-            <p className="text-xl text-zinc-400">Rated 5.0 out of 5 from over 200 reviews</p>
+            <p className="text-base md:text-lg lg:text-xl text-zinc-400">Rated 5.0 out of 5 from over 200 reviews</p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <div className="bg-zinc-900/50 border border-white/10 p-8">
-              <div className="flex gap-1 text-red-600 mb-4">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-6 lg:gap-8">
+            <div className="bg-zinc-900/50 border border-white/10 p-4 md:p-6 lg:p-8">
+              <div className="flex gap-1 text-red-600 mb-2 md:mb-3 lg:mb-4">
                 {[...Array(5)].map((_, i) => (
-                  <Star key={i} className="w-4 h-4 fill-current" />
+                  <Star key={i} className="w-3 h-3 md:w-4 md:h-4 fill-current" />
                 ))}
               </div>
-              <p className="text-zinc-300 mb-6 leading-relaxed">
+              <p className="text-sm md:text-base text-zinc-300 mb-3 md:mb-5 lg:mb-6 leading-relaxed">
                 "Exceptional service from start to finish. The team went above and beyond to help me find 
                 the perfect vehicle. Highly recommended!"
               </p>
@@ -168,13 +168,13 @@ export default async function Home() {
               <p className="text-sm text-zinc-500">Porsche 911 Owner</p>
             </div>
 
-            <div className="bg-zinc-900/50 border border-white/10 p-8">
-              <div className="flex gap-1 text-red-600 mb-4">
+            <div className="bg-zinc-900/50 border border-white/10 p-4 md:p-6 lg:p-8">
+              <div className="flex gap-1 text-red-600 mb-2 md:mb-3 lg:mb-4">
                 {[...Array(5)].map((_, i) => (
-                  <Star key={i} className="w-4 h-4 fill-current" />
+                  <Star key={i} className="w-3 h-3 md:w-4 md:h-4 fill-current" />
                 ))}
               </div>
-              <p className="text-zinc-300 mb-6 leading-relaxed">
+              <p className="text-sm md:text-base text-zinc-300 mb-3 md:mb-5 lg:mb-6 leading-relaxed">
                 "The finance process was incredibly smooth and transparent. Got a great deal on my Range Rover 
                 and couldn't be happier with the service."
               </p>
@@ -182,13 +182,13 @@ export default async function Home() {
               <p className="text-sm text-zinc-500">Range Rover Owner</p>
             </div>
 
-            <div className="bg-zinc-900/50 border border-white/10 p-8">
-              <div className="flex gap-1 text-red-600 mb-4">
+            <div className="bg-zinc-900/50 border border-white/10 p-4 md:p-6 lg:p-8">
+              <div className="flex gap-1 text-red-600 mb-2 md:mb-3 lg:mb-4">
                 {[...Array(5)].map((_, i) => (
-                  <Star key={i} className="w-4 h-4 fill-current" />
+                  <Star key={i} className="w-3 h-3 md:w-4 md:h-4 fill-current" />
                 ))}
               </div>
-              <p className="text-zinc-300 mb-6 leading-relaxed">
+              <p className="text-sm md:text-base text-zinc-300 mb-3 md:mb-5 lg:mb-6 leading-relaxed">
                 "Professional, knowledgeable, and trustworthy. The car was delivered exactly as described. 
                 Will definitely be returning for my next purchase."
               </p>
@@ -199,12 +199,12 @@ export default async function Home() {
         </div>
       </section>
 
-      <section className="py-20 bg-gradient-to-r from-zinc-900 to-black border-t border-white/10">
-        <div className="container mx-auto px-4">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-            <div className="bg-zinc-900/50 border border-white/10 p-12 group hover:border-red-600/50 transition-all">
-              <h3 className="text-3xl font-bold mb-4">Sell Your Car</h3>
-              <p className="text-zinc-400 mb-6 leading-relaxed">
+      <section className="py-8 md:py-12 lg:py-20 bg-gradient-to-r from-zinc-900 to-black border-t border-white/10">
+        <div className="container mx-auto px-4 md:px-6 lg:px-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6 lg:gap-8">
+            <div className="bg-zinc-900/50 border border-white/10 p-6 md:p-8 lg:p-12 group hover:border-red-600/50 transition-all">
+              <h3 className="text-xl md:text-2xl lg:text-3xl font-bold mb-2 md:mb-3 lg:mb-4">Sell Your Car</h3>
+              <p className="text-sm md:text-base text-zinc-400 mb-4 md:mb-5 lg:mb-6 leading-relaxed">
                 Get an instant valuation for your vehicle. We offer competitive prices and a hassle-free selling experience.
               </p>
               <Button variant="primary" size="lg" asChild>
@@ -212,9 +212,9 @@ export default async function Home() {
               </Button>
             </div>
 
-            <div className="bg-zinc-900/50 border border-white/10 p-12 group hover:border-red-600/50 transition-all">
-              <h3 className="text-3xl font-bold mb-4">Part Exchange</h3>
-              <p className="text-zinc-400 mb-6 leading-relaxed">
+            <div className="bg-zinc-900/50 border border-white/10 p-6 md:p-8 lg:p-12 group hover:border-red-600/50 transition-all">
+              <h3 className="text-xl md:text-2xl lg:text-3xl font-bold mb-2 md:mb-3 lg:mb-4">Part Exchange</h3>
+              <p className="text-sm md:text-base text-zinc-400 mb-4 md:mb-5 lg:mb-6 leading-relaxed">
                 Use your current vehicle as part payment towards your next dream car. Simple, quick, and convenient.
               </p>
               <Button variant="primary" size="lg" asChild>
