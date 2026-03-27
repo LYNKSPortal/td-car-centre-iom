@@ -5,13 +5,13 @@ import { Input } from './ui/input';
 import { formatPrice } from '@/lib/utils';
 
 interface FinanceCalculatorProps {
-  vehiclePrice: number;
+  vehiclePrice?: number;
 }
 
 const TERM_OPTIONS = [12, 24, 36, 48, 54, 60];
 const FIXED_INTEREST_RATE = 7; // 7% APR fixed
 
-export function FinanceCalculator({ vehiclePrice }: FinanceCalculatorProps) {
+export function FinanceCalculator({ vehiclePrice = 30000 }: FinanceCalculatorProps) {
   const [deposit, setDeposit] = useState(0);
   const [termMonths, setTermMonths] = useState(60); // Default 60 months
 
