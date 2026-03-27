@@ -3,7 +3,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { Calendar, Gauge, Fuel, Cog, Palette, Users, DoorClosed, FileText, User, Ruler } from 'lucide-react';
 import { getVehicleBySlug, getSimilarVehicles } from '@/lib/queries';
-import { formatPrice, formatMileage, formatDimension } from '@/lib/utils';
+import { formatPrice, formatMileage, formatDimension, formatWeeklyPayment } from '@/lib/utils';
 import { Button } from '@/components/ui/button';
 import { VehicleCard } from '@/components/vehicle-card';
 import { VehicleGallery } from '@/components/vehicle-gallery';
@@ -48,6 +48,9 @@ export default async function VehicleDetailPage({ params }: { params: { slug: st
             <div className="text-right">
               <div className="text-4xl font-bold text-red-600">
                 {formatPrice(parseFloat(vehicle.price))}
+              </div>
+              <div className="text-xl font-semibold text-zinc-300 mt-2">
+                {formatWeeklyPayment(parseFloat(vehicle.price))}<span className="text-sm text-zinc-500">/week</span>
               </div>
             </div>
           </div>
