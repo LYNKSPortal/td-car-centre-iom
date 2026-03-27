@@ -159,25 +159,25 @@ export default async function ServicePage({ params }: { params: { slug: string }
 
   return (
     <div className="bg-black min-h-screen">
-      <div className="bg-zinc-950 border-b border-white/10 py-16">
-        <div className="container mx-auto px-4">
-          <h1 className="text-4xl md:text-5xl font-bold mb-4">{service.heroTitle}</h1>
-          <p className="text-xl text-zinc-400">{service.heroSubtitle}</p>
+      <div className="bg-zinc-950 border-b border-white/10 py-8 md:py-12 lg:py-16">
+        <div className="container mx-auto px-4 md:px-6 lg:px-8">
+          <h1 className="text-2xl md:text-4xl lg:text-5xl font-bold mb-2 md:mb-3 lg:mb-4">{service.heroTitle}</h1>
+          <p className="text-base md:text-lg lg:text-xl text-zinc-400">{service.heroSubtitle}</p>
         </div>
       </div>
 
-      <div className="container mx-auto px-4 py-16">
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-12">
+      <div className="container mx-auto px-4 md:px-6 lg:px-8 py-8 md:py-12 lg:py-16">
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 md:gap-10 lg:gap-12">
           <div className="lg:col-span-2">
             <div 
-              className="prose prose-invert prose-lg max-w-none
+              className="prose prose-invert prose-sm md:prose-base lg:prose-lg max-w-none
                 prose-headings:text-white prose-headings:font-bold
-                prose-h2:text-3xl prose-h2:mb-6 prose-h2:mt-12
-                prose-h3:text-xl prose-h3:mb-4 prose-h3:mt-8 prose-h3:text-red-600
-                prose-p:text-zinc-300 prose-p:leading-relaxed prose-p:mb-6
-                prose-ul:text-zinc-300 prose-ul:mb-6
-                prose-ol:text-zinc-300 prose-ol:mb-6
-                prose-li:mb-2
+                prose-h2:text-xl md:prose-h2:text-2xl lg:prose-h2:text-3xl prose-h2:mb-3 md:prose-h2:mb-5 lg:prose-h2:mb-6 prose-h2:mt-6 md:prose-h2:mt-10 lg:prose-h2:mt-12
+                prose-h3:text-base md:prose-h3:text-lg lg:prose-h3:text-xl prose-h3:mb-2 md:prose-h3:mb-3 lg:prose-h3:mb-4 prose-h3:mt-4 md:prose-h3:mt-6 lg:prose-h3:mt-8 prose-h3:text-red-600
+                prose-p:text-zinc-300 prose-p:leading-relaxed prose-p:mb-3 md:prose-p:mb-5 lg:prose-p:mb-6
+                prose-ul:text-zinc-300 prose-ul:mb-3 md:prose-ul:mb-5 lg:prose-ul:mb-6
+                prose-ol:text-zinc-300 prose-ol:mb-3 md:prose-ol:mb-5 lg:prose-ol:mb-6
+                prose-li:mb-1 md:prose-li:mb-2
                 prose-strong:text-white"
               dangerouslySetInnerHTML={{ __html: service.content }}
             />
@@ -187,10 +187,10 @@ export default async function ServicePage({ params }: { params: { slug: string }
             <div className="sticky top-24">
               <EnquiryForm />
               
-              <div className="mt-6 bg-zinc-900/50 border border-white/10 p-6">
-                <h3 className="text-lg font-semibold mb-4">Quick Links</h3>
-                <div className="space-y-2">
-                  <Link href="/inventory" className="block text-zinc-400 hover:text-white transition-colors">
+              <div className="mt-4 md:mt-5 lg:mt-6 bg-zinc-900/50 border border-white/10 p-4 md:p-5 lg:p-6">
+                <h3 className="text-base md:text-lg font-semibold mb-3 md:mb-4">Quick Links</h3>
+                <div className="space-y-1.5 md:space-y-2">
+                  <Link href="/inventory" className="block text-sm md:text-base text-zinc-400 hover:text-white transition-colors">
                     View Our Stock
                   </Link>
                   <Link href="/finance" className="block text-zinc-400 hover:text-white transition-colors">
@@ -208,9 +208,9 @@ export default async function ServicePage({ params }: { params: { slug: string }
           </div>
         </div>
 
-        <div className="mt-16 bg-gradient-to-r from-zinc-900 to-black border border-white/10 p-12 text-center">
-          <h2 className="text-3xl font-bold mb-4">Ready to Get Started?</h2>
-          <p className="text-xl text-zinc-400 mb-8">
+        <div className="mt-8 md:mt-12 lg:mt-16 bg-gradient-to-r from-zinc-900 to-black border border-white/10 p-6 md:p-10 lg:p-12 text-center">
+          <h2 className="text-2xl md:text-3xl font-bold mb-3 md:mb-4">Ready to Get Started?</h2>
+          <p className="text-base md:text-lg lg:text-xl text-zinc-400 mb-4 md:mb-6 lg:mb-8">
             Get in touch with our team today
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
