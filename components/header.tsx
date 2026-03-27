@@ -16,9 +16,9 @@ export function Header() {
           <div className="flex items-center justify-between py-8">
             {/* Left: Contact Info */}
             <div className="hidden lg:flex items-center gap-6 text-sm text-white">
-              <a href="tel:01942945371" className="flex items-center gap-2 hover:text-zinc-300 transition-colors">
+              <a href="tel:01624670590" className="flex items-center gap-2 hover:text-zinc-300 transition-colors">
                 <Phone className="w-4 h-4" />
-                <span>01942 945371</span>
+                <span>01624 670590</span>
               </a>
               <div className="h-8 w-px bg-white/20"></div>
               <a href="mailto:tony@tdcar.im" className="flex items-center gap-2 hover:text-zinc-300 transition-colors">
