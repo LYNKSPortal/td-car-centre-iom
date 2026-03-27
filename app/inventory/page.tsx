@@ -27,17 +27,17 @@ export default async function InventoryPage({
 
   return (
     <div className="bg-black min-h-screen">
-      <div className="bg-zinc-950 border-b border-white/10 py-16">
-        <div className="container mx-auto px-4">
-          <h1 className="text-4xl md:text-5xl font-bold mb-4">Our Stock</h1>
-          <p className="text-xl text-zinc-400">
+      <div className="bg-zinc-950 border-b border-white/10 py-8 md:py-12 lg:py-16">
+        <div className="container mx-auto px-4 md:px-6 lg:px-8">
+          <h1 className="text-2xl md:text-4xl lg:text-5xl font-bold mb-2 md:mb-3 lg:mb-4">Our Stock</h1>
+          <p className="text-base md:text-lg lg:text-xl text-zinc-400">
             Discover our curated collection of {totalCount} premium vehicles
           </p>
         </div>
       </div>
 
-      <div className="container mx-auto px-4 py-12">
-        <div className="flex flex-col lg:flex-row gap-8">
+      <div className="container mx-auto px-4 md:px-6 lg:px-8 py-6 md:py-10 lg:py-12">
+        <div className="flex flex-col lg:flex-row gap-4 md:gap-6 lg:gap-8">
           <aside className="lg:w-96 flex-shrink-0">
             <div className="sticky top-24">
               <Suspense fallback={<div>Loading filters...</div>}>
@@ -58,7 +58,7 @@ export default async function InventoryPage({
               </div>
             ) : (
               <>
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-5 lg:gap-6 mb-6 md:mb-10 lg:mb-12">
                   {vehicles.map((vehicle) => (
                     <VehicleCard key={vehicle.id} vehicle={vehicle} />
                   ))}
