@@ -47,55 +47,61 @@ export function VehicleGallery({ images, title }: VehicleGalleryProps) {
   return (
     <div className="space-y-4">
       {/* Main carousel with side previews */}
-      <div className="relative w-full aspect-[16/9] bg-zinc-950 overflow-hidden flex items-center">
+      <div className="relative w-full aspect-[16/9] bg-black overflow-hidden flex items-center gap-4 px-4">
         {images.length > 1 && (
           <>
-            {/* Previous image preview (left side) */}
-            <div className="absolute left-0 top-0 bottom-0 w-1/4 z-0 opacity-50">
-              <Image
-                src={images[getPrevIndex()].imageUrl}
-                alt="Previous"
-                fill
-                sizes="25vw"
-                className="object-cover"
-              />
-            </div>
-
-            {/* Next image preview (right side) */}
-            <div className="absolute right-0 top-0 bottom-0 w-1/4 z-0 opacity-50">
-              <Image
-                src={images[getNextIndex()].imageUrl}
-                alt="Next"
-                fill
-                sizes="25vw"
-                className="object-cover"
-              />
+            {/* Previous image preview (left side) - 50% visible */}
+            <div className="relative w-1/6 h-full z-0 opacity-50 overflow-hidden">
+              <div className="absolute right-0 top-0 bottom-0 w-[200%]">
+                <Image
+                  src={images[getPrevIndex()].imageUrl}
+                  alt="Previous"
+                  fill
+                  sizes="12vw"
+                  className="object-cover"
+                />
+              </div>
             </div>
           </>
         )}
 
         {/* Main centered image */}
-        <div className="relative w-full h-full flex items-center justify-center z-10">
-          <div className="relative w-3/4 h-full">
-            {images.map((image, index) => (
-              <div
-                key={image.id}
-                className={`absolute inset-0 transition-opacity duration-500 ${
-                  index === currentIndex ? 'opacity-100' : 'opacity-0'
-                }`}
-              >
+        <div className="relative flex-1 h-full z-10">
+          {images.map((image, index) => (
+            <div
+              key={image.id}
+              className={`absolute inset-0 transition-opacity duration-500 ${
+                index === currentIndex ? 'opacity-100' : 'opacity-0'
+              }`}
+            >
+              <Image
+                src={image.imageUrl}
+                alt={image.altText || title}
+                fill
+                sizes="(max-width: 768px) 100vw, 66vw"
+                className="object-cover"
+                priority={index === 0}
+              />
+            </div>
+          ))}
+        </div>
+
+        {images.length > 1 && (
+          <>
+            {/* Next image preview (right side) - 50% visible */}
+            <div className="relative w-1/6 h-full z-0 opacity-50 overflow-hidden">
+              <div className="absolute left-0 top-0 bottom-0 w-[200%]">
                 <Image
-                  src={image.imageUrl}
-                  alt={image.altText || title}
+                  src={images[getNextIndex()].imageUrl}
+                  alt="Next"
                   fill
-                  sizes="(max-width: 768px) 100vw, 75vw"
+                  sizes="12vw"
                   className="object-cover"
-                  priority={index === 0}
                 />
               </div>
-            ))}
-          </div>
-        </div>
+            </div>
+          </>
+        )}
 
         {images.length > 1 && (
           <>
