@@ -424,13 +424,12 @@ async function seed() {
   ];
 
   for (const vehicle of luxuryVehicles) {
-    const { images, features, ...vehicleData } = vehicle;
-    const slug = generateSlug(`${vehicleData.year} ${vehicleData.make} ${vehicleData.model} ${vehicleData.variant || ''}`);
+    const { images, features, variant, financeMonthly, registration, ...vehicleData } = vehicle;
+    const slug = generateSlug(`${vehicleData.year} ${vehicleData.make} ${vehicleData.model}`);
 
     const [insertedVehicle] = await db.insert(vehicles).values({
       ...vehicleData,
       price: vehicleData.price.toString(),
-      financeMonthly: vehicleData.financeMonthly?.toString(),
       slug,
     }).returning();
 
