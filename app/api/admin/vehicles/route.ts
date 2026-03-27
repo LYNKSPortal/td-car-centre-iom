@@ -48,7 +48,6 @@ export async function POST(request: Request) {
         width: body.width || null,
         description: body.description || null,
         status: body.status,
-        featured: body.featured,
         published: true,
       })
       .returning();

@@ -47,7 +47,6 @@ export async function PATCH(
         width: body.width || null,
         description: body.description || null,
         status: body.status,
-        featured: body.featured,
       })
       .where(eq(vehicles.id, params.id));
 
