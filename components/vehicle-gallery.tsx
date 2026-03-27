@@ -43,7 +43,8 @@ export function VehicleGallery({ images, title }: VehicleGalleryProps) {
 
   return (
     <div className="space-y-4">
-      <div className="relative w-full pb-[100%] bg-zinc-950 overflow-hidden">
+      {/* Main large image */}
+      <div className="relative w-full aspect-[16/9] bg-zinc-950 overflow-hidden">
         {images.map((image, index) => (
           <div
             key={image.id}
@@ -97,13 +98,20 @@ export function VehicleGallery({ images, title }: VehicleGalleryProps) {
         )}
       </div>
 
+      {/* Thumbnail row */}
       {images.length > 1 && (
-        <div className="grid grid-cols-4 md:grid-cols-6 gap-2">
+        <div className="flex gap-2 overflow-x-auto pb-2">
           {images.map((image, index) => (
             <button
               key={image.id}
-              onClick={() => setCurrentIndex(index)}
-              className={`relative w-full pb-[100%] overflow-hidden border-2 transition-all ${
+              onClick={() => {
+                if (!isTransitioning) {
+                  setIsTransitioning(true);
+                  setCurrentIndex(index);
+                  setTimeout(() => setIsTransitioning(false), 500);
+                }
+              }}
+              className={`relative flex-shrink-0 w-32 h-24 overflow-hidden border-2 transition-all ${
                 index === currentIndex ? 'border-red-600' : 'border-white/10 hover:border-white/30'
               }`}
             >
@@ -111,8 +119,8 @@ export function VehicleGallery({ images, title }: VehicleGalleryProps) {
                 src={image.imageUrl}
                 alt={image.altText || `${title} - Image ${index + 1}`}
                 fill
-                sizes="(max-width: 768px) 25vw, 10vw"
-                className="absolute inset-0 object-cover"
+                sizes="128px"
+                className="object-cover"
               />
             </button>
           ))}
