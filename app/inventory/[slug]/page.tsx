@@ -237,6 +237,7 @@ export default async function VehicleDetailPage({ params }: { params: { slug: st
         </div>
 
         <div id="enquire" className="mt-16 scroll-mt-24">
+          <h2 className="text-2xl font-bold mb-6">Enquire About {vehicle.title}</h2>
           <EnquiryForm vehicleId={vehicle.id} vehicleTitle={vehicle.title} />
         </div>
 
