@@ -70,9 +70,12 @@ export function VehicleCard({ vehicle }: VehicleCardProps) {
 
       <div className="p-6">
         <Link href={`/inventory/${vehicle.slug}`}>
-          <h3 className="text-xl font-semibold text-white mb-2 group-hover:text-red-600 transition-colors leading-tight">
-            {vehicle.title}
+          <h3 className="text-2xl font-bold text-white mb-1 group-hover:text-red-600 transition-colors">
+            {vehicle.make}
           </h3>
+          <p className="text-sm text-zinc-400 mb-4">
+            {vehicle.model}
+          </p>
         </Link>
         
         <div className="text-2xl font-bold text-white mb-4">
