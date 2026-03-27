@@ -35,7 +35,7 @@ export function formatDimension(dimension: string): string {
   }
   
   // Convert mm to feet (1mm = 0.00328084 feet)
-  const feet = (numericValue * 0.00328084).toFixed(3);
+  const feet = (numericValue * 0.00328084).toFixed(1);
   
   return `${numericValue}mm (${feet} Feet)`;
 }
