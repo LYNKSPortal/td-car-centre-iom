@@ -47,7 +47,7 @@ export function VehicleGallery({ images, title }: VehicleGalleryProps) {
   return (
     <div className="space-y-4">
       {/* Main carousel with side previews */}
-      <div className="relative w-full aspect-[16/9] bg-black overflow-hidden flex items-center gap-4 px-4">
+      <div className="relative w-full aspect-[16/9] bg-black overflow-hidden flex items-center gap-4">
         {images.length > 1 && (
           <>
             {/* Previous image preview (left side) - 50% visible */}
