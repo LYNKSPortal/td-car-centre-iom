@@ -6,9 +6,11 @@ import * as schema from './schema';
 const getDatabaseUrl = () => {
   const url = process.env.DATABASE_URL;
   if (!url || url.trim() === '') {
+    console.log('[DB] No DATABASE_URL found, using dummy connection for build');
     // Return a valid dummy URL for build time
     return 'postgresql://dummy:dummy@localhost:5432/dummy';
   }
+  console.log('[DB] DATABASE_URL found, length:', url.length);
   return url;
 };
 
