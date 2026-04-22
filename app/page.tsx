@@ -6,6 +6,8 @@ import { VehicleCard } from '@/components/vehicle-card';
 import { HeroSlider } from '@/components/hero-slider';
 import { getLatestVehicles } from '@/lib/queries';
 
+export const dynamic = 'force-dynamic';
+
 export default async function Home() {
   const latestVehicles = await getLatestVehicles(4);
 
