@@ -22,6 +22,12 @@ const client = postgres(connectionString, {
   connect_timeout: 10,
   idle_timeout: 20,
   max_lifetime: 60 * 30,
+  // Prevent postgres from trying to use individual PG* env vars
+  host: undefined,
+  port: undefined,
+  database: undefined,
+  username: undefined,
+  password: undefined,
 });
 
 export const db = drizzle(client, { schema });
