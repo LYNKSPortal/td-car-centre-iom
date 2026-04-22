@@ -19,11 +19,10 @@ const nextConfig: NextConfig = {
       },
     ],
   },
-  // Disable caching during development
   experimental: {
     staleTimes: {
-      dynamic: 0,
-      static: 0,
+      dynamic: 30,
+      static: 180,
     },
   },
 };
