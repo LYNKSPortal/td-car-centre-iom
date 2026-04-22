@@ -25,9 +25,6 @@ const nextConfig: NextConfig = {
       static: 180,
     },
   },
-  // Skip static optimization to prevent build-time errors
-  skipTrailingSlashRedirect: true,
-  skipMiddlewareUrlNormalize: true,
 };
 
 export default nextConfig;
