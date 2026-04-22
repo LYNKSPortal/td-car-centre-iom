@@ -4,6 +4,8 @@ import "./globals.css";
 import { ConditionalLayout } from "@/components/conditional-layout";
 import { NextAuthProvider } from "@/components/providers/session-provider";
 
+export const dynamic = 'force-dynamic';
+
 const hostGrotesk = Host_Grotesk({
   subsets: ["latin"],
   variable: "--font-host-grotesk",
