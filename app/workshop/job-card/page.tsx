@@ -329,7 +329,7 @@ export default function WorkshopJobCardPage() {
                 </div>
                 <div>
                   <label className={labelCls}>Work Performed</label>
-                  <input className={inputCls} placeholder="Describe work done" value={row.workPerformed} onChange={e => updateWork(i, 'workPerformed', e.target.value)} />
+                  <textarea rows={5} className={inputCls} placeholder="Describe work done" value={row.workPerformed} onChange={e => updateWork(i, 'workPerformed', e.target.value)} />
                 </div>
                 <div>
                   <label className={labelCls}>Hours Worked</label>
