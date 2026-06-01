@@ -3,8 +3,6 @@ import { Resend } from 'resend';
 import { createEnquiry } from '@/lib/queries';
 import { enquirySchema } from '@/lib/validations';
 
-const resend = new Resend(process.env.RESEND_API_KEY);
-
 export async function POST(request: NextRequest) {
   try {
     const body = await request.json();
@@ -14,6 +12,7 @@ export async function POST(request: NextRequest) {
 
     if (process.env.RESEND_API_KEY) {
       try {
+        const resend = new Resend(process.env.RESEND_API_KEY);
         await resend.emails.send({
           from: 'TD Car Centre <enquiries@tdcar.im>',
           to: 'tony@tdcar.im',
