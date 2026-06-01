@@ -460,16 +460,16 @@ Additional Notes: ${formData.message || 'None'}
             <h2 className="text-lg font-semibold">TD Rentals – TT 2026 Vehicle Rental Terms &amp; Conditions</h2>
           </div>
 
-          <div className="px-6 py-8 prose prose-invert prose-sm max-w-none
+          <div className="px-6 py-8 prose prose-invert max-w-none
               prose-headings:text-white prose-headings:font-bold
-              prose-h2:text-lg prose-h2:mt-8 prose-h2:mb-3 prose-h2:first:mt-0
-              prose-h3:text-base prose-h3:text-zinc-200 prose-h3:mt-5 prose-h3:mb-2
-              prose-p:text-zinc-300 prose-p:leading-relaxed prose-p:mb-3
-              prose-ul:text-zinc-300 prose-ul:mb-3 prose-ul:pl-5
-              prose-li:mb-1.5
+              prose-h2:text-2xl prose-h2:mt-10 prose-h2:mb-4
+              prose-h3:text-lg prose-h3:text-zinc-200 prose-h3:mt-6 prose-h3:mb-2
+              prose-p:text-zinc-300 prose-p:leading-relaxed prose-p:mb-4
+              prose-ul:text-zinc-300 prose-ul:mb-4 prose-ul:pl-6
+              prose-li:mb-2
               prose-strong:text-white
               prose-a:text-red-500 prose-a:no-underline hover:prose-a:underline
-              prose-hr:border-white/10">
+              prose-hr:border-white/10 prose-hr:my-8">
               <h2>1. Introduction</h2>
               <p>These Terms &amp; Conditions govern the rental of vehicles provided by TD Rentals, a trading division of TD Car Centre ("TD Rentals", "we", "us", or "our"). By submitting a rental enquiry, making payment, or collecting a vehicle, the renter ("you" or "the Hirer") agrees to be bound by these Terms &amp; Conditions.</p>
               <hr />
