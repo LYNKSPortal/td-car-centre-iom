@@ -39,3 +39,6 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# vehicle image uploads (uploaded to Cloudinary, no need in git)
+/public/New website

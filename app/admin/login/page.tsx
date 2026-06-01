@@ -101,14 +101,6 @@ export default function AdminLoginPage() {
               {loading ? 'Signing in...' : 'Sign In'}
             </Button>
           </form>
-
-          <div className="mt-6 pt-6 border-t border-white/10">
-            <p className="text-sm text-zinc-500 text-center">
-              Default credentials:<br />
-              Email: admin@tdcarcentre.co.uk<br />
-              Password: admin123
-            </p>
-          </div>
         </div>
       </div>
     </div>
