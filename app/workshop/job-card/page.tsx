@@ -274,41 +274,39 @@ export default function WorkshopJobCardPage() {
         {/* Parts Required */}
         <div className={sectionCls}>
           <h2 className={sectionTitle}>Parts Required / To Be Ordered</h2>
-          <div className="overflow-x-auto">
-            <table className="w-full text-sm mb-3">
-              <thead>
-                <tr className="text-zinc-400 border-b border-white/10">
-                  <th className="text-left py-2 pr-2 font-medium">Part Description</th>
-                  <th className="text-left py-2 px-2 font-medium w-20">Qty</th>
-                  <th className="text-left py-2 px-2 font-medium">Supplier</th>
-                  <th className="text-left py-2 px-2 font-medium">Ordered By</th>
-                  <th className="text-left py-2 px-2 font-medium">Delivery ETA</th>
-                  <th className="w-8" />
-                </tr>
-              </thead>
-              <tbody>
-                {parts.map((row, i) => (
-                  <tr key={i} className="border-b border-white/5">
-                    {(['description', 'quantity', 'supplier', 'orderedBy', 'deliveryEta'] as (keyof PartRow)[]).map(key => (
-                      <td key={key} className="py-1 px-1">
-                        <input
-                          className="w-full bg-zinc-800 border border-white/10 rounded px-2 py-1.5 text-white text-xs placeholder-zinc-600 focus:outline-none focus:border-red-600"
-                          value={row[key]}
-                          onChange={e => updatePart(i, key, e.target.value)}
-                        />
-                      </td>
-                    ))}
-                    <td className="py-1 pl-1">
-                      <button type="button" onClick={() => removePart(i)} className="text-zinc-600 hover:text-red-500 transition-colors">
-                        <Trash2 className="w-4 h-4" />
-                      </button>
-                    </td>
-                  </tr>
-                ))}
-              </tbody>
-            </table>
+          <div className="space-y-4">
+            {parts.map((row, i) => (
+              <div key={i} className="bg-zinc-800/50 border border-white/10 rounded-lg p-4 space-y-3">
+                <div className="flex items-center justify-between mb-1">
+                  <span className="text-xs font-semibold text-zinc-400 uppercase tracking-wide">Part {i + 1}</span>
+                  <button type="button" onClick={() => removePart(i)} className="text-zinc-600 hover:text-red-500 transition-colors">
+                    <Trash2 className="w-4 h-4" />
+                  </button>
+                </div>
+                <div>
+                  <label className={labelCls}>Part Description</label>
+                  <input className={inputCls} placeholder="e.g. Oil filter" value={row.description} onChange={e => updatePart(i, 'description', e.target.value)} />
+                </div>
+                <div>
+                  <label className={labelCls}>Quantity</label>
+                  <input className={inputCls} placeholder="e.g. 2" value={row.quantity} onChange={e => updatePart(i, 'quantity', e.target.value)} />
+                </div>
+                <div>
+                  <label className={labelCls}>Supplier</label>
+                  <input className={inputCls} placeholder="e.g. Euro Car Parts" value={row.supplier} onChange={e => updatePart(i, 'supplier', e.target.value)} />
+                </div>
+                <div>
+                  <label className={labelCls}>Ordered By</label>
+                  <input className={inputCls} placeholder="Name" value={row.orderedBy} onChange={e => updatePart(i, 'orderedBy', e.target.value)} />
+                </div>
+                <div>
+                  <label className={labelCls}>Delivery ETA</label>
+                  <input className={inputCls} placeholder="e.g. Tomorrow AM" value={row.deliveryEta} onChange={e => updatePart(i, 'deliveryEta', e.target.value)} />
+                </div>
+              </div>
+            ))}
           </div>
-          <button type="button" onClick={addPart} className="flex items-center gap-1 text-sm text-red-500 hover:text-red-400 transition-colors">
+          <button type="button" onClick={addPart} className="flex items-center gap-1 text-sm text-red-500 hover:text-red-400 transition-colors mt-4">
             <Plus className="w-4 h-4" /> Add Part
           </button>
         </div>
@@ -316,43 +314,35 @@ export default function WorkshopJobCardPage() {
         {/* Work Carried Out */}
         <div className={sectionCls}>
           <h2 className={sectionTitle}>Work Carried Out</h2>
-          <div className="overflow-x-auto">
-            <table className="w-full text-sm mb-3">
-              <thead>
-                <tr className="text-zinc-400 border-b border-white/10">
-                  <th className="text-left py-2 pr-2 font-medium">Mechanic Name</th>
-                  <th className="text-left py-2 px-2 font-medium">Work Performed</th>
-                  <th className="text-left py-2 px-2 font-medium w-24">Hours Worked</th>
-                  <th className="text-left py-2 px-2 font-medium w-32">Date</th>
-                  <th className="w-8" />
-                </tr>
-              </thead>
-              <tbody>
-                {workRows.map((row, i) => (
-                  <tr key={i} className="border-b border-white/5">
-                    <td className="py-1 pr-1">
-                      <input className="w-full bg-zinc-800 border border-white/10 rounded px-2 py-1.5 text-white text-xs placeholder-zinc-600 focus:outline-none focus:border-red-600" value={row.mechanicName} onChange={e => updateWork(i, 'mechanicName', e.target.value)} />
-                    </td>
-                    <td className="py-1 px-1">
-                      <input className="w-full bg-zinc-800 border border-white/10 rounded px-2 py-1.5 text-white text-xs placeholder-zinc-600 focus:outline-none focus:border-red-600" value={row.workPerformed} onChange={e => updateWork(i, 'workPerformed', e.target.value)} />
-                    </td>
-                    <td className="py-1 px-1">
-                      <input className="w-full bg-zinc-800 border border-white/10 rounded px-2 py-1.5 text-white text-xs placeholder-zinc-600 focus:outline-none focus:border-red-600" value={row.hoursWorked} onChange={e => updateWork(i, 'hoursWorked', e.target.value)} />
-                    </td>
-                    <td className="py-1 px-1">
-                      <input type="date" className="w-full bg-zinc-800 border border-white/10 rounded px-2 py-1.5 text-white text-xs focus:outline-none focus:border-red-600" value={row.date} onChange={e => updateWork(i, 'date', e.target.value)} />
-                    </td>
-                    <td className="py-1 pl-1">
-                      <button type="button" onClick={() => removeWork(i)} className="text-zinc-600 hover:text-red-500 transition-colors">
-                        <Trash2 className="w-4 h-4" />
-                      </button>
-                    </td>
-                  </tr>
-                ))}
-              </tbody>
-            </table>
+          <div className="space-y-4">
+            {workRows.map((row, i) => (
+              <div key={i} className="bg-zinc-800/50 border border-white/10 rounded-lg p-4 space-y-3">
+                <div className="flex items-center justify-between mb-1">
+                  <span className="text-xs font-semibold text-zinc-400 uppercase tracking-wide">Entry {i + 1}</span>
+                  <button type="button" onClick={() => removeWork(i)} className="text-zinc-600 hover:text-red-500 transition-colors">
+                    <Trash2 className="w-4 h-4" />
+                  </button>
+                </div>
+                <div>
+                  <label className={labelCls}>Mechanic Name</label>
+                  <input className={inputCls} placeholder="Name" value={row.mechanicName} onChange={e => updateWork(i, 'mechanicName', e.target.value)} />
+                </div>
+                <div>
+                  <label className={labelCls}>Work Performed</label>
+                  <input className={inputCls} placeholder="Describe work done" value={row.workPerformed} onChange={e => updateWork(i, 'workPerformed', e.target.value)} />
+                </div>
+                <div>
+                  <label className={labelCls}>Hours Worked</label>
+                  <input className={inputCls} placeholder="e.g. 2.5" value={row.hoursWorked} onChange={e => updateWork(i, 'hoursWorked', e.target.value)} />
+                </div>
+                <div>
+                  <label className={labelCls}>Date</label>
+                  <input type="date" className={inputCls} value={row.date} onChange={e => updateWork(i, 'date', e.target.value)} />
+                </div>
+              </div>
+            ))}
           </div>
-          <button type="button" onClick={addWork} className="flex items-center gap-1 text-sm text-red-500 hover:text-red-400 transition-colors">
+          <button type="button" onClick={addWork} className="flex items-center gap-1 text-sm text-red-500 hover:text-red-400 transition-colors mt-4">
             <Plus className="w-4 h-4" /> Add Row
           </button>
         </div>
