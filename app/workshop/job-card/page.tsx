@@ -350,7 +350,7 @@ export default function WorkshopJobCardPage() {
         {/* Additional Repairs */}
         <div className={sectionCls}>
           <h2 className={sectionTitle}>Additional Repairs Required / Recommendations</h2>
-          <textarea rows={3} className={inputCls} placeholder="List any additional repairs recommended..." value={form.additionalRepairs} onChange={e => setField('additionalRepairs', e.target.value)} />
+          <textarea rows={5} className={inputCls} placeholder="List any additional repairs recommended..." value={form.additionalRepairs} onChange={e => setField('additionalRepairs', e.target.value)} />
         </div>
 
         {/* Comments */}
