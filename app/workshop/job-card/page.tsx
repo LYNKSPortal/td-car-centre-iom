@@ -383,21 +383,6 @@ export default function WorkshopJobCardPage() {
           </div>
         </div>
 
-        {/* Customer Approval */}
-        <div className={sectionCls}>
-          <h2 className={sectionTitle}>Customer Approval</h2>
-          <p className="text-sm text-zinc-400 mb-4">I authorise TD Car Centre to carry out the above work and understand that additional repairs may require further approval.</p>
-          <div className="space-y-4">
-            <div>
-              <label className={labelCls}>Customer Signature (printed name)</label>
-              <input className={inputCls} placeholder="Customer full name" value={form.customerSignature} onChange={e => setField('customerSignature', e.target.value)} />
-            </div>
-            <div>
-              <label className={labelCls}>Date</label>
-              <input type="date" className={inputCls} value={form.customerApprovalDate} onChange={e => setField('customerApprovalDate', e.target.value)} />
-            </div>
-          </div>
-        </div>
 
         {/* Workshop Completion */}
         <div className={sectionCls}>
