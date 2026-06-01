@@ -1,13 +1,11 @@
 'use client';
 
 import { useState } from 'react';
-import { Car, Shield, Key, Phone, CheckCircle, AlertCircle, ChevronDown } from 'lucide-react';
+import { Car, Shield, Key, Phone, CheckCircle, AlertCircle } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 
 export default function TTRentalsPage() {
-  const [termsOpen, setTermsOpen] = useState(false);
-
   const [formData, setFormData] = useState({
     name: '',
     phone: '',
@@ -457,20 +455,12 @@ Additional Notes: ${formData.message || 'None'}
         </div>
 
         {/* Terms & Conditions */}
-        <div className="mt-10 md:mt-12 border border-white/10 rounded-lg overflow-hidden">
-          <button
-            onClick={() => setTermsOpen(!termsOpen)}
-            className="w-full flex items-center justify-between px-6 py-5 bg-zinc-900/50 hover:bg-zinc-900 transition-colors text-left"
-          >
-            <div>
-              <h2 className="text-lg font-semibold">TD Rentals – TT 2026 Vehicle Rental Terms &amp; Conditions</h2>
-              <p className="text-sm text-zinc-400 mt-0.5">Click to read the full terms and conditions</p>
-            </div>
-            <ChevronDown className={`w-5 h-5 text-zinc-400 flex-shrink-0 ml-4 transition-transform duration-200 ${termsOpen ? 'rotate-180' : ''}`} />
-          </button>
+        <div className="mt-10 md:mt-12 bg-zinc-900/50 border border-white/10 rounded-lg overflow-hidden">
+          <div className="px-6 py-5 border-b border-white/10">
+            <h2 className="text-lg font-semibold">TD Rentals – TT 2026 Vehicle Rental Terms &amp; Conditions</h2>
+          </div>
 
-          {termsOpen && (
-            <div className="px-6 py-8 bg-zinc-950 border-t border-white/10 prose prose-invert prose-sm max-w-none
+          <div className="px-6 py-8 prose prose-invert prose-sm max-w-none
               prose-headings:text-white prose-headings:font-bold
               prose-h2:text-lg prose-h2:mt-8 prose-h2:mb-3 prose-h2:first:mt-0
               prose-h3:text-base prose-h3:text-zinc-200 prose-h3:mt-5 prose-h3:mb-2
@@ -676,7 +666,6 @@ Additional Notes: ${formData.message || 'None'}
               <hr />
               <p className="text-zinc-400 text-xs italic">By submitting a rental enquiry and collecting a vehicle, you confirm that you have read, understood, and agreed to these Terms &amp; Conditions.</p>
             </div>
-          )}
         </div>
 
       </div>
