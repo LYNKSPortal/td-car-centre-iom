@@ -356,7 +356,7 @@ export default function WorkshopJobCardPage() {
         {/* Comments */}
         <div className={sectionCls}>
           <h2 className={sectionTitle}>Comments / Issues Found</h2>
-          <textarea rows={3} className={inputCls} placeholder="Any additional comments or issues found..." value={form.comments} onChange={e => setField('comments', e.target.value)} />
+          <textarea rows={5} className={inputCls} placeholder="Any additional comments or issues found..." value={form.comments} onChange={e => setField('comments', e.target.value)} />
         </div>
 
         {/* Valeting & Preparation */}
