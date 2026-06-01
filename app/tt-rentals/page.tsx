@@ -468,16 +468,15 @@ Additional Notes: ${formData.message || 'None'}
               prose-ul:text-zinc-300 prose-ul:mb-4 prose-ul:pl-6
               prose-li:mb-2
               prose-strong:text-white
-              prose-a:text-red-500 prose-a:no-underline hover:prose-a:underline
-              prose-hr:border-white/10 prose-hr:my-5">
+              prose-a:text-red-500 prose-a:no-underline hover:prose-a:underline">
               <h2>1. Introduction</h2>
               <p>These Terms &amp; Conditions govern the rental of vehicles provided by TD Rentals, a trading division of TD Car Centre ("TD Rentals", "we", "us", or "our"). By submitting a rental enquiry, making payment, or collecting a vehicle, the renter ("you" or "the Hirer") agrees to be bound by these Terms &amp; Conditions.</p>
-              <hr />
+              <div className="border-t border-white/10 my-5"></div>
 
               <h2>2. Rental Period</h2>
               <p>The standard TT rental package covers the Isle of Man TT 2026 fortnight as agreed at the time of booking.</p>
               <p>The vehicle must be returned on or before the agreed return date and time. Failure to return the vehicle as agreed may result in additional charges.</p>
-              <hr />
+              <div className="border-t border-white/10 my-5"></div>
 
               <h2>3. Rental Charges &amp; Deposit</h2>
               <ul>
@@ -492,7 +491,7 @@ Additional Notes: ${formData.message || 'None'}
                 <li>No breach of these Terms &amp; Conditions.</li>
               </ul>
               <p>TD Rentals reserves the right to retain part or all of the deposit where additional charges apply.</p>
-              <hr />
+              <div className="border-t border-white/10 my-5"></div>
 
               <h2>4. Driver Eligibility</h2>
               <p>To rent and drive a TD Rentals vehicle, all drivers must:</p>
@@ -504,7 +503,7 @@ Additional Notes: ${formData.message || 'None'}
                 <li>Have no major driving convictions, disqualifications, or dangerous driving offences within the previous five years.</li>
               </ul>
               <p>TD Rentals reserves the right to refuse rental at its sole discretion if a driver does not meet our insurance requirements.</p>
-              <hr />
+              <div className="border-t border-white/10 my-5"></div>
 
               <h2>5. Additional Drivers</h2>
               <p>Any additional driver must:</p>
@@ -514,7 +513,7 @@ Additional Notes: ${formData.message || 'None'}
                 <li>Be approved by TD Rentals.</li>
               </ul>
               <p>Unauthorised drivers are not permitted to operate the vehicle and may invalidate insurance cover.</p>
-              <hr />
+              <div className="border-t border-white/10 my-5"></div>
 
               <h2>6. Insurance</h2>
               <p>Comprehensive insurance is included within the rental price, subject to the terms and conditions of our insurer.</p>
@@ -526,7 +525,7 @@ Additional Notes: ${formData.message || 'None'}
                 <li>False information has been provided during the booking process.</li>
               </ul>
               <p>The Hirer remains liable for any uninsured losses, insurance excesses, penalties, or damages resulting from a breach of these Terms.</p>
-              <hr />
+              <div className="border-t border-white/10 my-5"></div>
 
               <h2>7. Vehicle Use</h2>
               <p>The vehicle must only be used:</p>
@@ -544,17 +543,17 @@ Additional Notes: ${formData.message || 'None'}
                 <li>Carrying passengers for hire or reward;</li>
                 <li>Any illegal, dangerous, or reckless activity.</li>
               </ul>
-              <hr />
+              <div className="border-t border-white/10 my-5"></div>
 
               <h2>8. Fuel</h2>
               <p>Vehicles will be supplied with a full tank of fuel and should be returned with a full tank.</p>
               <p>If the vehicle is returned with less fuel than supplied, TD Rentals may charge the cost of refuelling together with an administration fee.</p>
-              <hr />
+              <div className="border-t border-white/10 my-5"></div>
 
               <h2>9. Mileage</h2>
               <p>Unlimited mileage is provided within the Isle of Man during the rental period.</p>
               <p>Vehicles must not be removed from the Isle of Man without prior written consent from TD Rentals.</p>
-              <hr />
+              <div className="border-t border-white/10 my-5"></div>
 
               <h2>10. Breakdown &amp; Recovery</h2>
               <p>Breakdown cover is included throughout the rental period.</p>
@@ -563,7 +562,7 @@ Additional Notes: ${formData.message || 'None'}
               <p><strong>Przemek (WhatsApp): <a href="https://wa.me/447624255793">+44 76 2425 5793</a></strong></p>
               <p>Repairs, recovery arrangements, or vehicle modifications must not be authorised or undertaken without the prior approval of TD Rentals, except where immediate action is required to prevent further damage or ensure safety.</p>
               <p>The Hirer must take all reasonable steps to safeguard the vehicle until assistance arrives.</p>
-              <hr />
+              <div className="border-t border-white/10 my-5"></div>
 
               <h2>11. Accidents &amp; Damage</h2>
               <p>The Hirer must immediately report:</p>
@@ -580,7 +579,7 @@ Additional Notes: ${formData.message || 'None'}
                 <li>Cooperate fully with insurance investigations.</li>
               </ul>
               <p>The Hirer remains responsible for any damage not covered by insurance.</p>
-              <hr />
+              <div className="border-t border-white/10 my-5"></div>
 
               <h2>12. Parking Fines &amp; Traffic Offences</h2>
               <p>The Hirer is responsible for:</p>
@@ -591,7 +590,7 @@ Additional Notes: ${formData.message || 'None'}
                 <li>Any penalties incurred during the rental period.</li>
               </ul>
               <p>TD Rentals may provide driver details to relevant authorities and may charge an administration fee for processing such notices.</p>
-              <hr />
+              <div className="border-t border-white/10 my-5"></div>
 
               <h2>13. Cancellation Policy</h2>
               <h3>More than 14 days before collection</h3>
@@ -601,7 +600,7 @@ Additional Notes: ${formData.message || 'None'}
               <h3>Less than 7 days before collection</h3>
               <p>No refund.</p>
               <p>TD Rentals may waive cancellation charges at its discretion.</p>
-              <hr />
+              <div className="border-t border-white/10 my-5"></div>
 
               <h2>14. Vehicle Condition</h2>
               <p>The vehicle will be inspected before and after the rental period.</p>
@@ -615,7 +614,7 @@ Additional Notes: ${formData.message || 'None'}
                 <li>Lost keys;</li>
                 <li>Wheel, tyre, or bodywork damage beyond normal wear and tear.</li>
               </ul>
-              <hr />
+              <div className="border-t border-white/10 my-5"></div>
 
               <h2>15. Refusal of Rental</h2>
               <p>TD Rentals reserves the right to refuse or cancel any rental where:</p>
@@ -626,7 +625,7 @@ Additional Notes: ${formData.message || 'None'}
                 <li>The Hirer behaves abusively, aggressively, or unlawfully.</li>
               </ul>
               <p>In such cases, TD Rentals' liability shall be limited to the return of any sums paid where appropriate.</p>
-              <hr />
+              <div className="border-t border-white/10 my-5"></div>
 
               <h2>16. Limitation of Liability</h2>
               <p>TD Rentals shall not be liable for:</p>
@@ -639,17 +638,17 @@ Additional Notes: ${formData.message || 'None'}
                 <li>Consequential or indirect losses arising from vehicle breakdown, accident, or unavailability.</li>
               </ul>
               <p>Nothing in these Terms excludes liability that cannot be excluded by law.</p>
-              <hr />
+              <div className="border-t border-white/10 my-5"></div>
 
               <h2>17. Data Protection</h2>
               <p>Personal information provided during the booking process will be processed in accordance with our Privacy Policy and applicable Isle of Man data protection legislation.</p>
               <p>Information may be shared with insurers, breakdown providers, recovery operators, and law enforcement authorities where required.</p>
-              <hr />
+              <div className="border-t border-white/10 my-5"></div>
 
               <h2>18. Governing Law</h2>
               <p>These Terms &amp; Conditions shall be governed by and construed in accordance with the laws of the Isle of Man.</p>
               <p>Any disputes arising from the rental agreement shall be subject to the exclusive jurisdiction of the Courts of the Isle of Man.</p>
-              <hr />
+              <div className="border-t border-white/10 my-5"></div>
 
               <h2>19. Contact Information</h2>
               <p>
@@ -663,7 +662,7 @@ Additional Notes: ${formData.message || 'None'}
               </p>
               <p>Telephone: <a href="tel:01624670590">01624 670590</a></p>
               <p>Email: <a href="mailto:tony@tdcar.im">tony@tdcar.im</a></p>
-              <hr />
+              <div className="border-t border-white/10 my-5"></div>
               <p className="text-zinc-400 text-xs italic">By submitting a rental enquiry and collecting a vehicle, you confirm that you have read, understood, and agreed to these Terms &amp; Conditions.</p>
             </div>
         </div>
