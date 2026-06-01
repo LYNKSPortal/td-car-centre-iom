@@ -28,6 +28,7 @@ export default function WorkshopJobCardPage() {
 
   const [form, setForm] = useState({
     date: new Date().toISOString().split('T')[0],
+    submittedBy: '',
     customerName: '',
     customerPhone: '',
     customerEmail: '',
@@ -110,9 +111,9 @@ export default function WorkshopJobCardPage() {
       <div className="min-h-screen bg-black flex items-center justify-center p-6">
         <div className="text-center max-w-md">
           <CheckCircle className="w-16 h-16 text-red-600 mx-auto mb-4" />
-          <h1 className="text-2xl font-bold text-white mb-2">Job Card Submitted</h1>
+          <h1 className="text-2xl font-bold text-white mb-2">Thank you{form.submittedBy ? `, ${form.submittedBy}` : ''}!</h1>
+          <p className="text-zinc-300 mb-4">This job card has been sent to <strong>Tony</strong> and <strong>Tomasz</strong> for approval.</p>
           <p className="text-zinc-400 mb-2">Job Card No: <span className="text-white font-mono font-semibold">{jobCardNo}</span></p>
-          <p className="text-zinc-400 mb-6">The job card has been saved to the dashboard.</p>
           <button
             onClick={() => { setSubmitted(false); window.location.reload(); }}
             className="bg-red-600 hover:bg-red-700 text-white font-semibold px-6 py-3 rounded-lg transition-colors"
@@ -148,6 +149,10 @@ export default function WorkshopJobCardPage() {
         {/* Header Info */}
         <div className={sectionCls}>
           <div className="space-y-4">
+            <div>
+              <label className={labelCls}>Your Name (Submitting Mechanic) *</label>
+              <input required className={inputCls} placeholder="Your full name" value={form.submittedBy} onChange={e => setField('submittedBy', e.target.value)} />
+            </div>
             <div>
               <label className={labelCls}>Date</label>
               <input type="date" className={inputCls} value={form.date} onChange={e => setField('date', e.target.value)} />
