@@ -260,7 +260,7 @@ export default function WorkshopJobCardPage() {
                   </label>
                 </div>
                 <textarea
-                  rows={4}
+                  rows={5}
                   className={inputCls}
                   placeholder="Notes..."
                   value={healthChecks[item.key].notes}
