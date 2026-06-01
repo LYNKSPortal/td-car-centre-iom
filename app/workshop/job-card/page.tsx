@@ -17,7 +17,20 @@ const HEALTH_CHECK_ITEMS = [
   { key: 'airConditioning', label: 'Air Conditioning' },
 ];
 
-type HealthCheck = { ok: boolean; attention: boolean; notes: string };
+type HealthCheckStatus = 'red' | 'yellow' | 'green' | null;
+type HealthCheck = { status: HealthCheckStatus; notes: string };
+
+const TRAFFIC_LIGHTS: { value: HealthCheckStatus; label: string; bg: string; activeBg: string; dot: string }[] = [
+  { value: 'red',    label: 'Needs Fixing Now',       bg: 'border-red-700/40 hover:border-red-600',    activeBg: 'bg-red-600/20 border-red-500',    dot: 'bg-red-500' },
+  { value: 'yellow', label: 'Good for Now',            bg: 'border-yellow-700/40 hover:border-yellow-600', activeBg: 'bg-yellow-500/20 border-yellow-400', dot: 'bg-yellow-400' },
+  { value: 'green',  label: "Doesn't Need Attention", bg: 'border-green-700/40 hover:border-green-600',  activeBg: 'bg-green-600/20 border-green-500',  dot: 'bg-green-500' },
+];
+
+const CARD_STATUS_STYLE: Record<string, string> = {
+  red:    'bg-red-950/30 border-red-600/60',
+  yellow: 'bg-yellow-950/30 border-yellow-500/60',
+  green:  'bg-green-950/30 border-green-600/60',
+};
 type PartRow = { description: string; quantity: string; supplier: string; orderedBy: string; deliveryEta: string };
 type WorkRow = { mechanicName: string; workPerformed: string; hoursWorked: string; date: string };
 
@@ -53,7 +66,7 @@ export default function WorkshopJobCardPage() {
   });
 
   const [healthChecks, setHealthChecks] = useState<Record<string, HealthCheck>>(
-    Object.fromEntries(HEALTH_CHECK_ITEMS.map(i => [i.key, { ok: false, attention: false, notes: '' }]))
+    Object.fromEntries(HEALTH_CHECK_ITEMS.map(i => [i.key, { status: null, notes: '' }]))
   );
 
   const [parts, setParts] = useState<PartRow[]>([
@@ -67,7 +80,7 @@ export default function WorkshopJobCardPage() {
   const setField = (key: string, value: string | boolean) =>
     setForm(prev => ({ ...prev, [key]: value }));
 
-  const setHealthCheck = (key: string, field: keyof HealthCheck, value: boolean | string) =>
+  const setHealthCheck = (key: string, field: keyof HealthCheck, value: HealthCheckStatus | string) =>
     setHealthChecks(prev => ({ ...prev, [key]: { ...prev[key], [field]: value } }));
 
   const addPart = () => setParts(p => [...p, { description: '', quantity: '', supplier: '', orderedBy: '', deliveryEta: '' }]);
@@ -241,38 +254,41 @@ export default function WorkshopJobCardPage() {
         <div className={sectionCls}>
           <h2 className={sectionTitle}>Vehicle Health Check</h2>
           <div className="space-y-3">
-            {HEALTH_CHECK_ITEMS.map(item => (
-              <div key={item.key} className="bg-zinc-800/50 border border-white/10 rounded-lg p-4">
-                <p className="text-sm font-medium text-white mb-3">{item.label}</p>
-                <div className="flex gap-6 mb-3">
-                  <label className="flex items-center gap-2 cursor-pointer">
-                    <input
-                      type="checkbox"
-                      className="w-5 h-5 accent-red-600"
-                      checked={healthChecks[item.key].ok}
-                      onChange={e => setHealthCheck(item.key, 'ok', e.target.checked)}
-                    />
-                    <span className="text-sm text-zinc-300">OK</span>
-                  </label>
-                  <label className="flex items-center gap-2 cursor-pointer">
-                    <input
-                      type="checkbox"
-                      className="w-5 h-5 accent-red-600"
-                      checked={healthChecks[item.key].attention}
-                      onChange={e => setHealthCheck(item.key, 'attention', e.target.checked)}
-                    />
-                    <span className="text-sm text-zinc-300">Attention Required</span>
-                  </label>
+            {HEALTH_CHECK_ITEMS.map(item => {
+              const current = healthChecks[item.key].status;
+              const cardStyle = current ? CARD_STATUS_STYLE[current] : 'bg-zinc-800/50 border-white/10';
+              return (
+                <div key={item.key} className={`border rounded-lg p-4 transition-colors duration-200 ${cardStyle}`}>
+                  <p className="text-sm font-semibold text-white mb-3">{item.label}</p>
+                  <div className="flex flex-col gap-2 mb-4">
+                    {TRAFFIC_LIGHTS.map(light => {
+                      const isActive = current === light.value;
+                      return (
+                        <button
+                          key={light.value}
+                          type="button"
+                          onClick={() => setHealthCheck(item.key, 'status', isActive ? null : light.value)}
+                          className={`flex items-center gap-3 w-full px-4 py-3 rounded-lg border transition-colors duration-150 ${
+                            isActive ? light.activeBg : `bg-zinc-900/60 ${light.bg}`
+                          }`}
+                        >
+                          <span className={`w-4 h-4 rounded-full flex-shrink-0 ${light.dot} ${isActive ? 'ring-2 ring-white/40' : 'opacity-60'}`} />
+                          <span className={`text-sm font-medium ${isActive ? 'text-white' : 'text-zinc-400'}`}>{light.label}</span>
+                          {isActive && <span className="ml-auto text-xs text-white/60">✓</span>}
+                        </button>
+                      );
+                    })}
+                  </div>
+                  <textarea
+                    rows={5}
+                    className={inputCls}
+                    placeholder="Notes..."
+                    value={healthChecks[item.key].notes}
+                    onChange={e => setHealthCheck(item.key, 'notes', e.target.value)}
+                  />
                 </div>
-                <textarea
-                  rows={5}
-                  className={inputCls}
-                  placeholder="Notes..."
-                  value={healthChecks[item.key].notes}
-                  onChange={e => setHealthCheck(item.key, 'notes', e.target.value)}
-                />
-              </div>
-            ))}
+              );
+            })}
           </div>
         </div>
 
