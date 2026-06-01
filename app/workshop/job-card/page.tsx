@@ -235,48 +235,39 @@ export default function WorkshopJobCardPage() {
         {/* Vehicle Health Check */}
         <div className={sectionCls}>
           <h2 className={sectionTitle}>Vehicle Health Check</h2>
-          <div className="overflow-x-auto">
-            <table className="w-full text-sm">
-              <thead>
-                <tr className="text-zinc-400 border-b border-white/10">
-                  <th className="text-left py-2 pr-4 font-medium">Check Item</th>
-                  <th className="text-center py-2 px-3 font-medium w-16">OK</th>
-                  <th className="text-center py-2 px-3 font-medium w-32">Attention Required</th>
-                  <th className="text-left py-2 pl-4 font-medium">Notes</th>
-                </tr>
-              </thead>
-              <tbody>
-                {HEALTH_CHECK_ITEMS.map(item => (
-                  <tr key={item.key} className="border-b border-white/5">
-                    <td className="py-2 pr-4 text-zinc-200">{item.label}</td>
-                    <td className="text-center py-2 px-3">
-                      <input
-                        type="checkbox"
-                        className="w-4 h-4 accent-red-600"
-                        checked={healthChecks[item.key].ok}
-                        onChange={e => setHealthCheck(item.key, 'ok', e.target.checked)}
-                      />
-                    </td>
-                    <td className="text-center py-2 px-3">
-                      <input
-                        type="checkbox"
-                        className="w-4 h-4 accent-red-600"
-                        checked={healthChecks[item.key].attention}
-                        onChange={e => setHealthCheck(item.key, 'attention', e.target.checked)}
-                      />
-                    </td>
-                    <td className="py-2 pl-4">
-                      <input
-                        className="w-full bg-zinc-800 border border-white/10 rounded px-2 py-1 text-white text-xs placeholder-zinc-600 focus:outline-none focus:border-red-600"
-                        placeholder="Notes..."
-                        value={healthChecks[item.key].notes}
-                        onChange={e => setHealthCheck(item.key, 'notes', e.target.value)}
-                      />
-                    </td>
-                  </tr>
-                ))}
-              </tbody>
-            </table>
+          <div className="space-y-3">
+            {HEALTH_CHECK_ITEMS.map(item => (
+              <div key={item.key} className="bg-zinc-800/50 border border-white/10 rounded-lg p-4">
+                <p className="text-sm font-medium text-white mb-3">{item.label}</p>
+                <div className="flex gap-6 mb-3">
+                  <label className="flex items-center gap-2 cursor-pointer">
+                    <input
+                      type="checkbox"
+                      className="w-5 h-5 accent-red-600"
+                      checked={healthChecks[item.key].ok}
+                      onChange={e => setHealthCheck(item.key, 'ok', e.target.checked)}
+                    />
+                    <span className="text-sm text-zinc-300">OK</span>
+                  </label>
+                  <label className="flex items-center gap-2 cursor-pointer">
+                    <input
+                      type="checkbox"
+                      className="w-5 h-5 accent-red-600"
+                      checked={healthChecks[item.key].attention}
+                      onChange={e => setHealthCheck(item.key, 'attention', e.target.checked)}
+                    />
+                    <span className="text-sm text-zinc-300">Attention Required</span>
+                  </label>
+                </div>
+                <textarea
+                  rows={4}
+                  className={inputCls}
+                  placeholder="Notes..."
+                  value={healthChecks[item.key].notes}
+                  onChange={e => setHealthCheck(item.key, 'notes', e.target.value)}
+                />
+              </div>
+            ))}
           </div>
         </div>
 
