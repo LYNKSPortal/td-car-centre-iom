@@ -469,7 +469,7 @@ Additional Notes: ${formData.message || 'None'}
               prose-li:mb-2
               prose-strong:text-white
               prose-a:text-red-500 prose-a:no-underline hover:prose-a:underline
-              prose-hr:border-white/10 prose-hr:my-12">
+              prose-hr:border-white/10 prose-hr:my-5">
               <h2>1. Introduction</h2>
               <p>These Terms &amp; Conditions govern the rental of vehicles provided by TD Rentals, a trading division of TD Car Centre ("TD Rentals", "we", "us", or "our"). By submitting a rental enquiry, making payment, or collecting a vehicle, the renter ("you" or "the Hirer") agrees to be bound by these Terms &amp; Conditions.</p>
               <hr />
