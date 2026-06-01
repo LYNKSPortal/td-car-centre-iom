@@ -224,7 +224,7 @@ export default function WorkshopJobCardPage() {
         <div className={sectionCls}>
           <h2 className={sectionTitle}>Work Requested / Customer Complaint</h2>
           <textarea
-            rows={4}
+            rows={10}
             className={inputCls}
             placeholder="Describe the work requested or customer complaint..."
             value={form.workRequested}
