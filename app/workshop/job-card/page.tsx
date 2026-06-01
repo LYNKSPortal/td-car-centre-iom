@@ -126,17 +126,24 @@ export default function WorkshopJobCardPage() {
 
   return (
     <div className="min-h-screen bg-black text-white">
-      <div className="border-b border-white/10 bg-zinc-950 px-6 py-4">
-        <div className="max-w-4xl mx-auto flex items-center justify-between">
-          <div>
-            <h1 className="text-xl font-bold">TD Car Centre – Workshop Job Card</h1>
-            <p className="text-sm text-zinc-400">Repair Order Form</p>
+      {/* Hero */}
+      <div className="bg-zinc-950 border-b border-white/10 py-8 md:py-12 lg:py-16">
+        <div className="container mx-auto px-4 md:px-6 lg:px-8">
+          <div className="flex items-center gap-3 mb-3">
+            <span className="bg-red-600 text-white text-xs font-bold px-3 py-1 uppercase tracking-wider rounded">
+              Staff Only
+            </span>
           </div>
-          <span className="text-xs text-zinc-500 bg-zinc-800 px-3 py-1 rounded-full">Staff Only</span>
+          <h1 className="text-2xl md:text-4xl lg:text-5xl font-bold mb-2 md:mb-3">
+            Workshop Job Card
+          </h1>
+          <p className="text-base md:text-lg text-zinc-400 max-w-2xl">
+            TD Car Centre – Repair Order Form. Complete all relevant sections and submit to save to the dashboard.
+          </p>
         </div>
       </div>
 
-      <form onSubmit={handleSubmit} className="max-w-4xl mx-auto px-6 py-8">
+      <form onSubmit={handleSubmit} className="container mx-auto px-4 md:px-6 lg:px-8 py-8 md:py-12 max-w-4xl">
 
         {/* Header Info */}
         <div className={sectionCls}>
