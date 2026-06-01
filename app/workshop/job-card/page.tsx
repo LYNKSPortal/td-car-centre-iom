@@ -147,7 +147,7 @@ export default function WorkshopJobCardPage() {
 
         {/* Header Info */}
         <div className={sectionCls}>
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+          <div className="space-y-4">
             <div>
               <label className={labelCls}>Date</label>
               <input type="date" className={inputCls} value={form.date} onChange={e => setField('date', e.target.value)} />
@@ -162,8 +162,8 @@ export default function WorkshopJobCardPage() {
         {/* Customer Details */}
         <div className={sectionCls}>
           <h2 className={sectionTitle}>Customer Details</h2>
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-            <div className="sm:col-span-2">
+          <div className="space-y-4">
+            <div>
               <label className={labelCls}>Customer Name *</label>
               <input required className={inputCls} placeholder="Full name" value={form.customerName} onChange={e => setField('customerName', e.target.value)} />
             </div>
@@ -181,7 +181,7 @@ export default function WorkshopJobCardPage() {
         {/* Vehicle Details */}
         <div className={sectionCls}>
           <h2 className={sectionTitle}>Vehicle Details</h2>
-          <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
+          <div className="space-y-4">
             <div>
               <label className={labelCls}>Make</label>
               <input className={inputCls} placeholder="e.g. Ford" value={form.vehicleMake} onChange={e => setField('vehicleMake', e.target.value)} />
@@ -194,7 +194,7 @@ export default function WorkshopJobCardPage() {
               <label className={labelCls}>Registration Number</label>
               <input className={`${inputCls} uppercase`} placeholder="e.g. AB12 CDE" value={form.registration} onChange={e => setField('registration', e.target.value.toUpperCase())} />
             </div>
-            <div className="sm:col-span-2">
+            <div>
               <label className={labelCls}>VIN / Chassis Number</label>
               <input className={inputCls} placeholder="17-character VIN" value={form.vin} onChange={e => setField('vin', e.target.value)} />
             </div>
@@ -406,7 +406,7 @@ export default function WorkshopJobCardPage() {
         <div className={sectionCls}>
           <h2 className={sectionTitle}>Customer Approval</h2>
           <p className="text-sm text-zinc-400 mb-4">I authorise TD Car Centre to carry out the above work and understand that additional repairs may require further approval.</p>
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+          <div className="space-y-4">
             <div>
               <label className={labelCls}>Customer Signature (printed name)</label>
               <input className={inputCls} placeholder="Customer full name" value={form.customerSignature} onChange={e => setField('customerSignature', e.target.value)} />
@@ -421,7 +421,7 @@ export default function WorkshopJobCardPage() {
         {/* Workshop Completion */}
         <div className={sectionCls}>
           <h2 className={sectionTitle}>Workshop Completion</h2>
-          <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
+          <div className="space-y-4">
             <div>
               <label className={labelCls}>Completed By</label>
               <input className={inputCls} placeholder="Mechanic name" value={form.completedBy} onChange={e => setField('completedBy', e.target.value)} />
