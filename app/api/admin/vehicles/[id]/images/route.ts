@@ -18,6 +18,16 @@ export async function POST(
 
   const params = await context.params;
 
+  // Check Cloudinary env vars are present
+  if (!process.env.CLOUDINARY_CLOUD_NAME || !process.env.CLOUDINARY_API_KEY || !process.env.CLOUDINARY_API_SECRET) {
+    console.error('Missing Cloudinary environment variables:', {
+      cloud_name: !!process.env.CLOUDINARY_CLOUD_NAME,
+      api_key: !!process.env.CLOUDINARY_API_KEY,
+      api_secret: !!process.env.CLOUDINARY_API_SECRET,
+    });
+    return NextResponse.json({ error: 'Server misconfiguration: Cloudinary credentials not set' }, { status: 500 });
+  }
+
   try {
     const formData = await request.formData();
     const file = formData.get('file') as File;
@@ -36,8 +46,10 @@ export async function POST(
           resource_type: 'auto',
         },
         (error, result) => {
-          if (error) reject(error);
-          else resolve(result);
+          if (error) {
+            console.error('Cloudinary upload error:', JSON.stringify(error));
+            reject(error);
+          } else resolve(result);
         }
       ).end(buffer);
     });
