@@ -48,10 +48,11 @@ export function VehicleImageManager({
           throw new Error('Failed to upload image');
         }
 
-        return response.json();
+        return response.json() as Promise<VehicleImage>;
       });
 
-      await Promise.all(uploadPromises);
+      const newImages = await Promise.all(uploadPromises);
+      setImages(prev => [...prev, ...newImages]);
       router.refresh();
     } catch (error) {
       console.error('Upload error:', error);
@@ -118,6 +119,7 @@ export function VehicleImageManager({
         throw new Error('Failed to delete image');
       }
 
+      setImages(prev => prev.filter(img => img.id !== imageId));
       router.refresh();
     } catch (error) {
       console.error('Delete error:', error);
