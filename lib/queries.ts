@@ -39,23 +39,28 @@ export async function getVehicles(filters: VehicleFilter) {
   if (drivetrain) conditions.push(eq(vehicles.drivetrain, drivetrain));
   if (status) conditions.push(eq(vehicles.status, status));
 
-  let orderBy;
+  let secondaryOrderBy;
   switch (sort) {
     case 'price-asc':
-      orderBy = asc(vehicles.price);
+      secondaryOrderBy = asc(vehicles.price);
       break;
     case 'price-desc':
-      orderBy = desc(vehicles.price);
+      secondaryOrderBy = desc(vehicles.price);
       break;
     case 'mileage-asc':
-      orderBy = asc(vehicles.mileage);
+      secondaryOrderBy = asc(vehicles.mileage);
       break;
     case 'year-desc':
-      orderBy = desc(vehicles.year);
+      secondaryOrderBy = desc(vehicles.year);
       break;
     default:
-      orderBy = desc(vehicles.createdAt);
+      secondaryOrderBy = desc(vehicles.createdAt);
   }
+
+  const orderBy = [
+    sql`CASE ${vehicles.status} WHEN 'available' THEN 0 WHEN 'reserved' THEN 1 WHEN 'sold' THEN 2 END`,
+    secondaryOrderBy,
+  ];
 
   const [vehiclesList, totalCount] = await Promise.all([
     db.query.vehicles.findMany({
