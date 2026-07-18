@@ -20,7 +20,7 @@ export async function POST(request: Request) {
       .replace(/[^a-z0-9]+/g, '-')
       .replace(/^-|-$/g, '');
 
-    const newVehicle = await db
+    const [newVehicle] = await db
       .insert(vehicles)
       .values({
         title: body.title,
