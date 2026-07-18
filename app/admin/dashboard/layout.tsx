@@ -13,8 +13,7 @@ import {
   Menu,
   X,
   Shield,
-  Wrench,
-  ClipboardList
+  Wrench
 } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { useState } from 'react';
@@ -24,7 +23,6 @@ const navigation = [
   { name: 'Vehicles', href: '/admin/dashboard/vehicles', icon: Car },
   { name: 'Warranty Work', href: '/admin/dashboard/warranty', icon: Shield },
   { name: 'Garage Work', href: '/admin/dashboard/garage', icon: Wrench },
-  { name: 'Job Cards', href: '/admin/dashboard/job-cards', icon: ClipboardList },
   { name: 'Enquiries', href: '/admin/dashboard/enquiries', icon: MessageSquare },
   { name: 'Settings', href: '/admin/dashboard/settings', icon: Settings },
 ];
@@ -60,7 +58,7 @@ export default function AdminDashboardLayout({
             <nav className="px-4">
               {navigation.map((item, index) => {
                 const isActive = pathname === item.href;
-                const addMarginAfter = item.name === 'Dashboard' || item.name === 'Job Cards';
+                const addMarginAfter = item.name === 'Dashboard';
                 const addMarginBefore = index > 0 && !addMarginAfter;
                 return (
                   <div key={item.name} className={addMarginAfter ? 'mb-10' : addMarginBefore ? 'mt-2' : ''}>
@@ -101,7 +99,7 @@ export default function AdminDashboardLayout({
           <nav className="flex-1 px-4">
             {navigation.map((item, index) => {
               const isActive = pathname === item.href;
-              const addMarginAfter = item.name === 'Dashboard' || item.name === 'Job Cards';
+              const addMarginAfter = item.name === 'Dashboard';
               const addMarginBefore = index > 0 && !addMarginAfter;
               return (
                 <div key={item.name} className={addMarginAfter ? 'mb-10' : addMarginBefore ? 'mt-2' : ''}>

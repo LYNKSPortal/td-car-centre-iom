@@ -30,7 +30,68 @@ export default function WarrantyWorkPage() {
 
 async function WarrantyWorkList() {
   // TODO: Fetch warranty work data from database
-  const warrantyJobs: any[] = [];
+  const warrantyJobs = [
+    {
+      id: 'test-warranty-001',
+      vehicleMake: 'Land Rover',
+      vehicleModel: 'Range Rover Sport',
+      registration: 'MN24 TDC',
+      customerName: 'James Kelly',
+      customerPhone: '07624 555001',
+      issue: 'Engine management warning light and reduced performance message.',
+      status: 'Urgent',
+      trafficLight: 'red',
+      dateIn: '2026-07-18',
+    },
+    {
+      id: 'test-warranty-002',
+      vehicleMake: 'Porsche',
+      vehicleModel: '911 Carrera',
+      registration: 'MN23 TDC',
+      customerName: 'Sarah Moore',
+      customerPhone: '07624 555002',
+      issue: 'Intermittent PCM screen fault. Diagnostic work in progress.',
+      status: 'In Progress',
+      trafficLight: 'amber',
+      dateIn: '2026-07-17',
+    },
+    {
+      id: 'test-warranty-003',
+      vehicleMake: 'BMW',
+      vehicleModel: 'X5 M Sport',
+      registration: 'MN22 TDC',
+      customerName: 'David Quayle',
+      customerPhone: '07624 555003',
+      issue: 'Rear parking camera replacement booked under warranty.',
+      status: 'Booked In',
+      trafficLight: 'green',
+      dateIn: '2026-07-16',
+    },
+    {
+      id: 'test-warranty-004',
+      vehicleMake: 'Mercedes-Benz',
+      vehicleModel: 'GLE 450',
+      registration: 'MN21 TDC',
+      customerName: 'Emma Clark',
+      customerPhone: '07624 555004',
+      issue: 'Suspension warning light. Awaiting replacement sensor.',
+      status: 'Awaiting Parts',
+      trafficLight: 'amber',
+      dateIn: '2026-07-15',
+    },
+    {
+      id: 'test-warranty-005',
+      vehicleMake: 'Audi',
+      vehicleModel: 'RS6 Avant',
+      registration: 'MN20 TDC',
+      customerName: 'Mark Teare',
+      customerPhone: '07624 555005',
+      issue: 'Door lock actuator replaced and ready for collection.',
+      status: 'Ready to Collect',
+      trafficLight: 'green',
+      dateIn: '2026-07-14',
+    },
+  ];
 
   if (warrantyJobs.length === 0) {
     return (
@@ -97,13 +158,20 @@ async function WarrantyWorkList() {
                   {job.issue}
                 </td>
                 <td className="px-6 py-4">
-                  <span className={`inline-flex items-center px-3 py-1 rounded-full text-xs font-medium ${
-                    job.status === 'completed' 
-                      ? 'bg-green-600/20 text-green-400'
-                      : job.status === 'in-progress'
-                      ? 'bg-blue-600/20 text-blue-400'
-                      : 'bg-yellow-600/20 text-yellow-400'
+                  <span className={`inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-medium ${
+                    job.trafficLight === 'red'
+                      ? 'bg-red-500/10 text-red-400'
+                      : job.trafficLight === 'amber'
+                      ? 'bg-amber-500/10 text-amber-400'
+                      : 'bg-green-500/10 text-green-400'
                   }`}>
+                    <span className={`w-2 h-2 rounded-full ${
+                      job.trafficLight === 'red'
+                        ? 'bg-red-500'
+                        : job.trafficLight === 'amber'
+                        ? 'bg-amber-400'
+                        : 'bg-green-500'
+                    }`} />
                     {job.status}
                   </span>
                 </td>

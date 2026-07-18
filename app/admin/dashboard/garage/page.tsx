@@ -30,7 +30,63 @@ export default function GarageWorkPage() {
 
 async function GarageWorkList() {
   // TODO: Fetch garage work data from database
-  const garageJobs: any[] = [];
+  const garageJobs = [
+    {
+      id: 'test-garage-001',
+      vehicleMake: 'Volkswagen',
+      vehicleModel: 'Golf GTI',
+      registration: 'MN24 GTI',
+      customerName: 'Daniel Cowin',
+      customerPhone: '07624 555101',
+      jobType: 'Annual Service & MOT',
+      status: 'in-progress',
+      dateIn: '2026-07-18',
+    },
+    {
+      id: 'test-garage-002',
+      vehicleMake: 'BMW',
+      vehicleModel: '330d M Sport',
+      registration: 'MN23 BMW',
+      customerName: 'Olivia Kermode',
+      customerPhone: '07624 555102',
+      jobType: 'Front Brake Discs & Pads',
+      status: 'awaiting-parts',
+      dateIn: '2026-07-17',
+    },
+    {
+      id: 'test-garage-003',
+      vehicleMake: 'Ford',
+      vehicleModel: 'Ranger Wildtrak',
+      registration: 'MN22 FOR',
+      customerName: 'Lewis Radcliffe',
+      customerPhone: '07624 555103',
+      jobType: 'Diagnostic Check',
+      status: 'booked-in',
+      dateIn: '2026-07-16',
+    },
+    {
+      id: 'test-garage-004',
+      vehicleMake: 'Mercedes-Benz',
+      vehicleModel: 'A200 AMG Line',
+      registration: 'MN21 AMG',
+      customerName: 'Rachel Callister',
+      customerPhone: '07624 555104',
+      jobType: 'Air Conditioning Service',
+      status: 'completed',
+      dateIn: '2026-07-15',
+    },
+    {
+      id: 'test-garage-005',
+      vehicleMake: 'Nissan',
+      vehicleModel: 'Qashqai',
+      registration: 'MN20 NIS',
+      customerName: 'Tom Quirk',
+      customerPhone: '07624 555105',
+      jobType: 'Clutch Replacement',
+      status: 'in-progress',
+      dateIn: '2026-07-14',
+    },
+  ];
 
   if (garageJobs.length === 0) {
     return (
