@@ -1,11 +1,18 @@
 'use client';
 
 import { useState } from 'react';
+import { notFound } from 'next/navigation';
 import { Car, Shield, Key, Phone, CheckCircle, AlertCircle } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 
+// TT rentals have ended; page hidden from the site but kept in case it's needed again.
+const TT_RENTALS_ENABLED = false;
+
 export default function TTRentalsPage() {
+  if (!TT_RENTALS_ENABLED) {
+    notFound();
+  }
   const [formData, setFormData] = useState({
     name: '',
     phone: '',

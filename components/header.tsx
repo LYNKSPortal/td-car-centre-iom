@@ -59,9 +59,6 @@ export function Header() {
               <Link href="/services/sell-your-car" className="text-white hover:text-zinc-300 transition-colors">
                 Sell
               </Link>
-              <Link href="/tt-rentals" className="text-red-500 hover:text-red-400 transition-colors font-semibold">
-                TT Rentals
-              </Link>
               <div className="h-8 w-px bg-white/20"></div>
               <Link href="/inventory" className="text-white hover:text-zinc-300 transition-colors">
                 <Search className="w-5 h-5" />
@@ -108,9 +105,6 @@ export function Header() {
               </Link>
               <Link href="/contact" className="text-sm text-zinc-300 hover:text-white transition-colors py-2" onClick={() => setMobileMenuOpen(false)}>
                 Contact
-              </Link>
-              <Link href="/tt-rentals" className="text-sm text-red-500 hover:text-red-400 transition-colors py-2 font-semibold" onClick={() => setMobileMenuOpen(false)}>
-                TT Rentals
               </Link>
               <div className="flex flex-col gap-3 pt-4 border-t border-white/10">
                 <Button variant="outline" size="sm" asChild onClick={() => setMobileMenuOpen(false)}>
