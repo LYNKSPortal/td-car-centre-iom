@@ -4,7 +4,7 @@ import { NextResponse } from 'next/server';
 import { db } from '@/lib/db';
 import { vehicleImages } from '@/lib/db/schema';
 import { eq } from 'drizzle-orm';
-import cloudinary from '@/lib/cloudinary';
+import { uploadImage, deleteImage } from '@/lib/s3';
 
 export async function POST(
   request: Request,
@@ -18,14 +18,15 @@ export async function POST(
 
   const params = await context.params;
 
-  // Check Cloudinary env vars are present
-  if (!process.env.CLOUDINARY_CLOUD_NAME || !process.env.CLOUDINARY_API_KEY || !process.env.CLOUDINARY_API_SECRET) {
-    console.error('Missing Cloudinary environment variables:', {
-      cloud_name: !!process.env.CLOUDINARY_CLOUD_NAME,
-      api_key: !!process.env.CLOUDINARY_API_KEY,
-      api_secret: !!process.env.CLOUDINARY_API_SECRET,
+  // Check AWS S3 env vars are present
+  if (!process.env.AWS_ACCESS_KEY_ID || !process.env.AWS_SECRET_ACCESS_KEY || !process.env.AWS_REGION || !process.env.AWS_S3_BUCKET_NAME) {
+    console.error('Missing AWS S3 environment variables:', {
+      access_key_id: !!process.env.AWS_ACCESS_KEY_ID,
+      secret_access_key: !!process.env.AWS_SECRET_ACCESS_KEY,
+      region: !!process.env.AWS_REGION,
+      bucket_name: !!process.env.AWS_S3_BUCKET_NAME,
     });
-    return NextResponse.json({ error: 'Server misconfiguration: Cloudinary credentials not set' }, { status: 500 });
+    return NextResponse.json({ error: 'Server misconfiguration: AWS S3 credentials not set' }, { status: 500 });
   }
 
   try {
@@ -36,23 +37,7 @@ export async function POST(
       return NextResponse.json({ error: 'No file provided' }, { status: 400 });
     }
 
-    const arrayBuffer = await file.arrayBuffer();
-    const buffer = Buffer.from(arrayBuffer);
-
-    const result = await new Promise<any>((resolve, reject) => {
-      cloudinary.uploader.upload_stream(
-        {
-          folder: `td-car-centre/vehicles/${params.id}`,
-          resource_type: 'auto',
-        },
-        (error, result) => {
-          if (error) {
-            console.error('Cloudinary upload error:', JSON.stringify(error));
-            reject(error);
-          } else resolve(result);
-        }
-      ).end(buffer);
-    });
+    const result = await uploadImage(file, `vehicles/${params.id}`);
 
     const maxSortOrder = await db
       .select({ max: vehicleImages.sortOrder })
@@ -110,7 +95,7 @@ export async function DELETE(
     }
 
     if (image.publicId) {
-      await cloudinary.uploader.destroy(image.publicId);
+      await deleteImage(image.publicId);
     }
 
     await db.delete(vehicleImages).where(eq(vehicleImages.id, imageId));

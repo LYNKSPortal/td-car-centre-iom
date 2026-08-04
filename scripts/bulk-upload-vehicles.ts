@@ -4,7 +4,9 @@ import path from 'path';
 import { db } from '../lib/db';
 import { vehicles, vehicleImages } from '../lib/db/schema';
 import { eq } from 'drizzle-orm';
-import cloudinary from '../lib/cloudinary';
+import fsPromises from 'fs/promises';
+import { uploadBuffer, getPublicUrl, deleteImage } from '../lib/s3';
+import { randomUUID } from 'crypto';
 
 // Load environment variables from .env.local
 dotenv.config({ path: '.env.local' });
@@ -51,13 +53,14 @@ const vehicleMapping: Record<string, { make: string; model: string }> = {
   'VW Transporter - camper': { make: 'Volkswagen', model: 'Transporter Camper' },
 };
 
-async function uploadImageToCloudinary(imagePath: string, vehicleName: string): Promise<any> {
+async function uploadImageToS3(imagePath: string, vehicleName: string): Promise<any> {
   try {
-    const result = await cloudinary.uploader.upload(imagePath, {
-      folder: `td-car-centre/vehicles/${vehicleName}`,
-      resource_type: 'auto',
-    });
-    return result;
+    const buffer = await fsPromises.readFile(imagePath);
+    const ext = path.extname(imagePath);
+    const key = `td-car-centre/vehicles/${vehicleName}/${randomUUID()}${ext}`;
+    const contentType = ext === '.png' ? 'image/png' : ext === '.webp' ? 'image/webp' : 'image/jpeg';
+    await uploadBuffer(buffer, key, contentType);
+    return { secure_url: getPublicUrl(key), public_id: key };
   } catch (error) {
     console.error(`Error uploading ${imagePath}:`, error);
     throw error;
@@ -111,7 +114,7 @@ async function processVehicleFolder(folderName: string) {
   for (const img of existingImages) {
     try {
       if (img.publicId) {
-        await cloudinary.uploader.destroy(img.publicId);
+        await deleteImage(img.publicId);
       }
     } catch (error) {
       console.error(`   Error deleting old image ${img.publicId}:`, error);
@@ -129,7 +132,7 @@ async function processVehicleFolder(folderName: string) {
 
     try {
       console.log(`   ⬆️  Uploading ${i + 1}/${imageFiles.length}: ${imageFile}`);
-      const result = await uploadImageToCloudinary(imagePath, folderName);
+      const result = await uploadImageToS3(imagePath, folderName);
 
       await db.insert(vehicleImages).values({
         vehicleId: matchingVehicle.id,
