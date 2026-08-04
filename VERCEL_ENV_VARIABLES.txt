@@ -9,11 +9,12 @@ NEXTAUTH_SECRET=h7GOGoziJiL0TVj1wtA923JONz0GIOmit1Lxzbpx2Ek=
 # Replace with your actual production database URL from Neon/Vercel Postgres
 DATABASE_URL=postgresql://username:password@ep-xxx-xxx.region.aws.neon.tech/database?sslmode=require
 
-# Cloudinary Configuration (for image uploads)
-# Replace with your actual Cloudinary credentials
-CLOUDINARY_CLOUD_NAME=dq2wf5qcb
-CLOUDINARY_API_KEY=265867512641736
-CLOUDINARY_API_SECRET=8b-qin-mirhG0eLwCd_TLP12h5c
+# AWS S3 Configuration (for image uploads)
+# Replace with your actual AWS credentials
+AWS_ACCESS_KEY_ID=your-access-key-id
+AWS_SECRET_ACCESS_KEY=your-secret-access-key
+AWS_REGION=eu-north-1
+AWS_S3_BUCKET_NAME=td-car-centre-iom-bucket
 
 # Email Notifications (Resend)
 # Sign up free at https://resend.com, get your API key, and add your domain
