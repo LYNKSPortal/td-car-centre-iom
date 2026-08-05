@@ -63,7 +63,7 @@ export default async function VehicleDetailPage({ params }: { params: { slug: st
               {vehicle.description && (
                 <div className="mb-12">
                   <h2 className="text-2xl font-bold mb-4">Description</h2>
-                  <p className="text-zinc-300 leading-relaxed">{vehicle.description}</p>
+                  <p className="text-zinc-300 leading-relaxed whitespace-pre-line">{vehicle.description}</p>
                 </div>
               )}
 
