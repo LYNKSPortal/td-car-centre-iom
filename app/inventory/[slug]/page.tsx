@@ -70,7 +70,7 @@ export default async function VehicleDetailPage({ params }: { params: { slug: st
               <div className="mb-12">
                 <h2 className="text-2xl font-bold mb-4">TD Car Centre Promise</h2>
                 <p className="text-zinc-300 leading-relaxed">
-                  Every vehicle we offer is professionally sourced and hand-picked to meet our high standards. The advertised price is the fully inclusive on-the-road Isle of Man price, covering vehicle sourcing, shipping to the Island, inspection, testing, servicing where required, professional valeting, registration, and all preparation work. No hidden costs – just a quality vehicle, prepared to the standard you expect and ready to drive away.
+                  Every vehicle we offer is professionally sourced and hand-picked to meet our new standards. The advertised price is the fully inclusive on-the-road Isle of Man price, covering vehicle sourcing, shipping to the Island, inspection, testing, servicing where required, professional valeting, registration, and all preparation work. No hidden costs – just a quality vehicle, prepared to the standard you expect and ready to drive away.
                 </p>
               </div>
 
