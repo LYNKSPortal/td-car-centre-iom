@@ -68,6 +68,13 @@ export default async function VehicleDetailPage({ params }: { params: { slug: st
               )}
 
               <div className="mb-12">
+                <h2 className="text-2xl font-bold mb-4">TD Car Centre Promise</h2>
+                <p className="text-zinc-300 leading-relaxed">
+                  Every vehicle we offer is professionally sourced and hand-picked to meet our high standards. The advertised price is the fully inclusive on-the-road Isle of Man price, covering vehicle sourcing, shipping to the Island, inspection, testing, servicing where required, professional valeting, registration, and all preparation work. No hidden costs – just a quality vehicle, prepared to the standard you expect and ready to drive away.
+                </p>
+              </div>
+
+              <div className="mb-12">
                 <h2 className="text-2xl font-bold mb-6">Specification</h2>
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
                   <div className="flex items-center gap-3 bg-zinc-900/50 border border-white/10 p-4">
