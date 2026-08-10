@@ -1,7 +1,7 @@
 import { pgTable, uuid, varchar, text, integer, numeric, boolean, timestamp, pgEnum } from 'drizzle-orm/pg-core';
 import { relations } from 'drizzle-orm';
 
-export const vehicleStatusEnum = pgEnum('vehicle_status', ['available', 'reserved', 'sold']);
+export const vehicleStatusEnum = pgEnum('vehicle_status', ['available', 'reserved', 'sold', 'coming_soon']);
 export const transmissionEnum = pgEnum('transmission', ['Manual', 'Automatic', 'Semi-Automatic']);
 export const fuelTypeEnum = pgEnum('fuel_type', ['Petrol', 'Diesel', 'Hybrid', 'Electric', 'Plug-in Hybrid']);
 export const bodyTypeEnum = pgEnum('body_type', [

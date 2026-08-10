@@ -101,10 +101,12 @@ export default async function VehiclesPage() {
                             ? 'bg-green-500/10 text-green-500'
                             : vehicle.status === 'reserved'
                             ? 'bg-yellow-500/10 text-yellow-500'
+                            : vehicle.status === 'coming_soon'
+                            ? 'bg-blue-500/10 text-blue-500'
                             : 'bg-red-500/10 text-red-500'
                         }`}
                       >
-                        {vehicle.status}
+                        {vehicle.status === 'coming_soon' ? 'coming soon' : vehicle.status}
                       </span>
                     </td>
                     <td className="px-6 py-4">

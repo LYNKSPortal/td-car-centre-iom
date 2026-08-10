@@ -391,6 +391,7 @@ export function VehicleCreateForm() {
             <option value="available">Available</option>
             <option value="sold">Sold</option>
             <option value="reserved">Reserved</option>
+            <option value="coming_soon">Coming Soon</option>
           </select>
         </div>
       </div>

@@ -12,7 +12,7 @@ export const vehicleFilterSchema = z.object({
   fuelType: z.enum(['Petrol', 'Diesel', 'Hybrid', 'Electric', 'Plug-in Hybrid']).optional(),
   bodyType: z.enum(['Saloon', 'Coupe', 'SUV', 'Estate', 'Convertible', 'Hatchback', 'Sports Car']).optional(),
   drivetrain: z.enum(['FWD', 'RWD', 'AWD', '4WD']).optional(),
-  status: z.enum(['available', 'reserved', 'sold']).optional(),
+  status: z.enum(['available', 'reserved', 'sold', 'coming_soon']).optional(),
   sort: z.enum(['newest', 'price-asc', 'price-desc', 'mileage-asc', 'year-desc']).optional(),
   page: z.coerce.number().default(1),
 });
@@ -47,7 +47,7 @@ export const vehicleSchema = z.object({
   registration: z.string().optional(),
   previousOwners: z.number().optional(),
   description: z.string().optional(),
-  status: z.enum(['available', 'reserved', 'sold']).default('available'),
+  status: z.enum(['available', 'reserved', 'sold', 'coming_soon']).default('available'),
   featured: z.boolean().default(false),
   published: z.boolean().default(true),
 });

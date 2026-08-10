@@ -58,7 +58,7 @@ export async function getVehicles(filters: VehicleFilter) {
   }
 
   const orderBy = [
-    sql`CASE ${vehicles.status} WHEN 'reserved' THEN 0 WHEN 'available' THEN 1 WHEN 'sold' THEN 2 END`,
+    sql`CASE ${vehicles.status} WHEN 'reserved' THEN 0 WHEN 'coming_soon' THEN 1 WHEN 'available' THEN 2 WHEN 'sold' THEN 3 END`,
     secondaryOrderBy,
   ];
 
@@ -199,6 +199,7 @@ export async function getStockStats() {
     available: sql<number>`count(*) filter (where ${vehicles.status} = 'available')`,
     reserved: sql<number>`count(*) filter (where ${vehicles.status} = 'reserved')`,
     sold: sql<number>`count(*) filter (where ${vehicles.status} = 'sold')`,
+    comingSoon: sql<number>`count(*) filter (where ${vehicles.status} = 'coming_soon')`,
   }).from(vehicles).where(eq(vehicles.published, true));
 
   return {
@@ -206,5 +207,6 @@ export async function getStockStats() {
     available: Number(stats.available),
     reserved: Number(stats.reserved),
     sold: Number(stats.sold),
+    comingSoon: Number(stats.comingSoon),
   };
 }

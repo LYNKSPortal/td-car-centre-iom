@@ -36,9 +36,16 @@ export function VehicleCard({ vehicle }: VehicleCardProps) {
         return 'bg-green-600';
       case 'reserved':
         return 'bg-yellow-600';
+      case 'coming_soon':
+        return 'bg-blue-600';
       default:
         return 'bg-gray-600';
     }
+  };
+
+  const getStatusLabel = (status: string) => {
+    if (status.toLowerCase() === 'coming_soon') return 'Coming Soon';
+    return status;
   };
 
   return (
@@ -61,7 +68,7 @@ export function VehicleCard({ vehicle }: VehicleCardProps) {
           )}
           <div className="absolute top-4 right-4">
             <div className={`${getStatusColor(vehicle.status)} text-white px-3 py-1.5 font-semibold uppercase text-sm`}>
-              {vehicle.status}
+              {getStatusLabel(vehicle.status)}
             </div>
           </div>
         </div>
