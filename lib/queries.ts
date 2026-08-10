@@ -58,7 +58,7 @@ export async function getVehicles(filters: VehicleFilter) {
   }
 
   const orderBy = [
-    sql`CASE ${vehicles.status} WHEN 'reserved' THEN 0 WHEN 'coming_soon' THEN 1 WHEN 'available' THEN 2 WHEN 'sold' THEN 3 END`,
+    sql`CASE ${vehicles.status} WHEN 'coming_soon' THEN 0 WHEN 'reserved' THEN 1 WHEN 'available' THEN 2 WHEN 'sold' THEN 3 END`,
     secondaryOrderBy,
   ];
 
