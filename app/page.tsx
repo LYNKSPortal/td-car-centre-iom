@@ -20,7 +20,7 @@ export default async function Home() {
           <div className="flex flex-col md:flex-row items-center justify-between gap-4 md:gap-6 text-white">
             <div className="text-center md:text-left">
               <h2 className="text-xl md:text-2xl lg:text-3xl font-bold mb-1 md:mb-2">Car Finance Made Easy</h2>
-              <p className="text-base md:text-lg">Competitive rates from 6.9% APR representative</p>
+              <p className="text-base md:text-lg">Competitive rates from 7% APR representative</p>
             </div>
             <Button variant="default" size="lg" asChild>
               <Link href="/finance">Calculate Finance</Link>
