@@ -9,7 +9,7 @@ interface FinanceCalculatorProps {
 }
 
 const TERM_OPTIONS = [12, 24, 36, 48, 54, 60];
-const FIXED_INTEREST_RATE = 7; // 7% APR fixed
+const FIXED_INTEREST_RATE = 7; // 7% Flat Rate fixed
 
 export function FinanceCalculator({ vehiclePrice = 30000 }: FinanceCalculatorProps) {
   const [deposit, setDeposit] = useState(0);
@@ -96,7 +96,7 @@ export function FinanceCalculator({ vehiclePrice = 30000 }: FinanceCalculatorPro
 
         {/* Fixed Interest Rate Display */}
         <div className="text-sm text-zinc-400">
-          Interest Rate: <span className="font-semibold text-white">{FIXED_INTEREST_RATE}% APR</span> (fixed)
+          Interest Rate: <span className="font-semibold text-white">{FIXED_INTEREST_RATE}% Flat Rate</span> (fixed)
         </div>
       </div>
 

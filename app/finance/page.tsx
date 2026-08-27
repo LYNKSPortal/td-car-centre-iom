@@ -32,7 +32,7 @@ export default function FinancePage() {
             </p>
             <p className="text-lg text-zinc-300 mb-8 leading-relaxed">
               Our finance packages are designed to make luxury motoring accessible, with competitive rates 
-              starting from 7% APR representative.
+              starting from 7% Flat Rate representative.
             </p>
 
             <div className="space-y-3 md:space-y-4 mb-4 md:mb-6 lg:mb-8">
@@ -42,7 +42,7 @@ export default function FinancePage() {
                 </div>
                 <div>
                   <h3 className="text-sm md:text-base font-semibold mb-1">Competitive Rates</h3>
-                  <p className="text-zinc-400 text-xs md:text-sm">From 7% APR representative on selected vehicles</p>
+                  <p className="text-zinc-400 text-xs md:text-sm">From 7% Flat Rate representative on selected vehicles</p>
                 </div>
               </div>
 
@@ -126,7 +126,7 @@ export default function FinancePage() {
           <h2 className="text-xl md:text-2xl font-bold mb-3 md:mb-4">Important Information</h2>
           <div className="text-sm text-zinc-400 space-y-2">
             <p>
-              <strong className="text-white">Representative Example:</strong> 7% APR representative. 
+              <strong className="text-white">Representative Example:</strong> 7% Flat Rate representative. 
               Based on a cash price of £30,000 with a £3,000 deposit, leaving an amount of credit of £27,000. 
               48 monthly payments of £647.06. Total amount payable £34,058.88. Interest charged £4,058.88.
             </p>
